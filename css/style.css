@@ -7,11 +7,19 @@
 html.has-scroll-smooth {
   overflow: hidden;
 }
-
 body {
-  font-family: 'Mauline', 'Arial', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   background-color: #000;
   color: white;
+  font-weight: 300;
+}
+
+/* Apply the condensed font to headings */
+h1, h2, h3, .navbar-logo {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 /* @font-face {
@@ -237,13 +245,12 @@ button:hover ~ #custom-cursor,
   background-color: rgba(0, 0, 0, 0.1); /* Apply background on hover */
   backdrop-filter: blur(5px);
 }
-
+/* Make the navbar logo more distinctive */
 .navbar-logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 .navbar-links {
@@ -316,7 +323,7 @@ button:hover ~ #custom-cursor,
   position: fixed;
   bottom: 10%;
   left: 5%;
-  max-width: 600px;
+  max-width: 800px;
   width: 90%;
   color: white;
   z-index: 100;
@@ -324,19 +331,19 @@ button:hover ~ #custom-cursor,
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: all !important;
 }
-
 #hero-content h1 {
   font-size: 4.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: 0.03em;
   pointer-events: none;
 }
 
+
 #hero-content p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 2.5rem;
   line-height: 1.5;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -354,7 +361,7 @@ button:hover ~ #custom-cursor,
   color: black !important;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   cursor: pointer !important;
@@ -594,13 +601,19 @@ button:hover ~ #custom-cursor,
 
 .locations-header h2 {
   font-size: 3.5rem;
-  font-weight: 700;
+
   margin-bottom: 15px;
   text-transform: uppercase;
   background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.7) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.locations-header h2,
+.about-title h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .locations-header p {
@@ -616,7 +629,33 @@ button:hover ~ #custom-cursor,
   gap: 30px;
   width: 100%;
 }
+.location-details h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+/* Update paragraph styling for better readability */
+p, .location-description, .about-paragraph {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
 
+/* Style navigation links */
+.navbar-links a {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+}
+
+/* Style the CTA button */
+.cta-button, .location-button {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .location-card {
   background-color: rgba(15, 15, 15, 0.5);
   border-radius: 15px;
@@ -737,16 +776,10 @@ button:hover ~ #custom-cursor,
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
-  .locations-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .locations-header h2 {
-    font-size: 3rem;
-  }
-}
 
-@media (max-width: 768px) {
+
+
+@media (max-width: 1220px) {
   .section {
     height: auto !important; /* Override the fixed height */
     min-height: 100vh; /* Set minimum height instead */
