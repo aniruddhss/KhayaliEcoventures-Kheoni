@@ -572,7 +572,7 @@ button:hover ~ #custom-cursor,
   background-color: #050505;
   color: #fff;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Change from hidden to visible to allow content to show fully */
   padding: 0;
 }
 
@@ -741,22 +741,35 @@ button:hover ~ #custom-cursor,
   .locations-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-@media (max-width: 992px) {
-  .locations-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
   .locations-header h2 {
     font-size: 3rem;
   }
 }
 
 @media (max-width: 768px) {
-  .locations-container {
+  .section {
+    height: auto !important; /* Override the fixed height */
+    min-height: 100vh; /* Set minimum height instead */
     padding: 60px 20px;
   }
+
+
+/* Now update the locations section specifically */
+
+.locations-section {
+  height: auto !important;
+  padding-bottom: 40px;
+}
+
+.locations-container {
+  height: auto;
+  padding: 60px 20px 20px 20px; /* Adjusted padding */
+}
+
+.locations-grid {
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 30px;
+}
   
   .locations-header h2 {
     font-size: 2.5rem;
@@ -767,19 +780,33 @@ button:hover ~ #custom-cursor,
   }
   
   .location-card {
-    max-width: 450px;
+    max-width: 100%; /* Make cards fill the container width */
     margin: 0 auto;
   }
+  
+  .location-details {
+    padding: 20px; /* Slightly decrease padding */
+  }
+  
+  .location-description {
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
 }
+@media (max-width: 480px) {
+  .locations-section {
+    padding-bottom: 20px;
+  }
 
-@media (max-width: 576px) {
+  .locations-container {
+    padding: 40px 15px 10px 15px; /* Further reduced padding on very small screens */
+  }
+  
   .locations-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 25px;
   }
   
   .locations-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   
   .locations-header h2 {
@@ -787,6 +814,15 @@ button:hover ~ #custom-cursor,
   }
   
   .location-image {
-    height: 200px;
+    height: 180px; /* Slightly shorter images on very small screens */
+  }
+  
+  .location-details h3 {
+    font-size: 1.5rem; /* Smaller headings */
+  }
+  
+  .location-button {
+    padding: 10px 20px; /* Slightly smaller buttons */
+    font-size: 0.85rem;
   }
 }
