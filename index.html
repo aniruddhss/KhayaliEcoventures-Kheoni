@@ -1,0 +1,209 @@
+Travels\index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin="" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-scroll-container>
+    <div id="loader">
+      <div class="loader-content"></div>
+    </div>
+
+    <div id="video-container">
+      <video id="background-video" autoplay muted loop playsinline>
+        <source
+          src="khayali travels.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Hero content moved outside of video container -->
+    <div id="hero-content">
+      <h1>Khayali Ecoventures</h1>
+      <p>
+        Experience the journey of your dreams with our premium travel services
+      </p>
+      <a href="#" id="explore-button" class="cta-button">Explore Now</a>
+    </div>
+
+
+    <!-- Rest of your HTML -->
+    <div id="image-grid">
+      <div class="grid-image-container">
+        <img
+          class="grid-image"
+          src="Tiger black and white/row-1-column-1.jpg"
+          alt="Image 1"
+          id="image-1"
+        />
+      </div>
+      <div class="grid-image-container">
+        <img
+          class="grid-image"
+          src="Tiger black and white/row-1-column-2.jpg"
+          alt="Image 2"
+          id="image-2"
+        />
+      </div>
+      <div class="grid-image-container">
+        <img
+          class="grid-image"
+          src="Tiger black and white/row-2-column-1.jpg"
+          alt="Image 3"
+          id="image-3"
+        />
+      </div>
+      <div class="grid-image-container">
+        <img
+          class="grid-image"
+          src="Tiger black and white/row-2-column-2.jpg"
+          alt="Image 4"
+          id="image-4"
+        />
+      </div>
+    </div>
+    <div class="navbar" id="navbar">
+      <div class="navbar-logo">KHAYALI</div>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="#">Home</a>
+        <a href="#">Our Story</a>
+        <a href="#">Locations</a>
+        <a href="#">Journeys</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div id="content" data-scroll-section>
+      <div
+        class="section hero-section"
+        data-scroll></div>
+        <div class="section about-section" id="about-us" data-scroll>
+          <div class="about-container">
+           
+            <div class="about-content">
+              <div class="about-text">
+                <p class="about-paragraph">
+                  Founded in 2020, Khayali Ecoventures was born from a simple yet profound belief: that travel should rejuvenate not just the traveler, but also the places and communities we visit.
+                </p>
+                <p class="about-paragraph">
+                  Our journey began when a group of passionate explorers realized that the conventional tourism model was taking more than it was giving back. We set out to create experiences that would allow travelers to connect deeply with destinations while ensuring that local ecosystems and communities thrive.
+                </p>
+                <p class="about-paragraph">
+                  Today, we curate transformative journeys that balance adventure with responsibility, luxury with sustainability, and discovery with preservation. Every expedition is thoughtfully designed to leave a positive footprint.
+                </p>
+              </div>
+            </div>
+            <div class="about-title">
+              <h2>Our Story</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="section locations-section" id="locations" data-scroll>
+          <div class="locations-container">
+            <div class="locations-header">
+              <h2>Our Sanctuaries</h2>
+              <p>Discover our carefully curated destinations where luxury meets wilderness</p>
+              <!-- <div class="view-toggle">
+                <button class="view-button active" data-view="grid">Card View</button>
+                <button class="view-button" data-view="map">Map View</button>
+              </div> -->
+            </div>
+            <!-- <div class="map-container" style="display: none;">
+              <div id="locations-map"></div>
+            </div> -->
+            <div class="locations-grid">
+              <!-- Location 1 -->
+              <div class="location-card" data-location="1">
+                <div class="location-image">
+                  <img src="locations/location1.jpg" alt="Sol Retreat" />
+                </div>
+                <div class="location-details">
+                  <h3>Sol Retreat</h3>
+                  <p class="location-description">
+                    Nestled among ancient pine forests at 7,000 feet, our mountain sanctuary 
+                    offers breathtaking views and rejuvenating solitude.
+                  </p>
+                  <p class="location-address">
+                    <span class="location-icon">📍</span> Kanatal, Uttarakhand, India
+                  </p>
+                  <div class="location-cta">
+                    <a href="#" class="location-button">Explore Property</a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Location 2 -->
+              <div class="location-card" data-location="2">
+                <div class="location-image">
+                  <img src="locations/location2.jpg" alt="Keshar Parvat" />
+                </div>
+                <div class="location-details">
+                  <h3>Keshar Parvat</h3>
+                  <p class="location-description">
+                    Where the Arabian Sea meets pristine shores, our beachfront property 
+                    combines tranquility with adventure in perfect harmony.
+                  </p>
+                  <p class="location-address">
+                    <span class="location-icon">📍</span> Gokarna, Karnataka, India
+                  </p>
+                  <div class="location-cta">
+                    <a href="#" class="location-button">Explore Property</a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Location 3 -->
+              <div class="location-card" data-location="3">
+                <div class="location-image">
+                  <img src="locations/location3.jpg" alt="Kheoni Wildlife Sanctuary" />
+                </div>
+                <div class="location-details">
+                  <h3>Kheoni Wildlife Sanctuary</h3>
+                  <p class="location-description">
+                    A luxurious sanctuary amid the golden sands, offering starlit nights 
+                    and cultural immersion in Rajasthan's living heritage.
+                  </p>
+                  <p class="location-address">
+                    <span class="location-icon">📍</span> Jaisalmer, Rajasthan, India
+                  </p>
+                  <div class="location-cta">
+                    <a href="#" class="location-button">Explore Property</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="section" data-scroll style="background-color: #d0d0d0">
+        <h2>Final Section</h2>
+        <p>Even more content to demonstrate smooth scrolling.</p>
+      </div>
+    </div>
+
+    <div id="custom-cursor">
+      <div class="cursor-inner"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+        crossorigin=""></script> -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
