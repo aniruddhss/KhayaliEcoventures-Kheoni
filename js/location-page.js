@@ -8,60 +8,62 @@ window.addEventListener("load", function () {
   if (navbar) {
     navbar.style.opacity = "1";
   }
-  const isMobile = window.innerWidth <= 768;
 
-  // Initialize LocomotiveScroll only on desktop
-  if (!isMobile) {
-    const scrollContainer =
-      document.querySelector("[data-scroll-container]") ||
-      document.querySelector("body");
 
-    const locoScroll = new LocomotiveScroll({
-      el: scrollContainer,
-      smooth: true,
-      multiplier: 1,
-      smartphone: {
-        smooth: false, // Disable smooth scrolling on mobile
-      },
-      tablet: {
-        smooth: false, // Disable smooth scrolling on tablet
-      },
-    });
+  // const isMobile = window.innerWidth <= 768;
 
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.scrollerProxy(scrollSelector, {
-      scrollTop(value) {
-        return arguments.length
-          ? locoScroll.scrollTo(value, 0, 0)
-          : locoScroll.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: scrollContainer.style.transform ? "transform" : "fixed",
-    });
+  // // Initialize LocomotiveScroll only on desktop
+  // if (!isMobile) {
+  //   const scrollContainer =
+  //     document.querySelector("[data-scroll-container]") ||
+  //     document.querySelector("body");
 
-    // Update ScrollTrigger on scroll
-    locoScroll.on("scroll", ScrollTrigger.update);
+  //   const locoScroll = new LocomotiveScroll({
+  //     el: scrollContainer,
+  //     smooth: true,
+  //     multiplier: 1,
+  //     smartphone: {
+  //       smooth: false, // Disable smooth scrolling on mobile
+  //     },
+  //     tablet: {
+  //       smooth: false, // Disable smooth scrolling on tablet
+  //     },
+  //   });
 
-    // Update ScrollTrigger on scroll
-    locoScroll.on("scroll", ScrollTrigger.update);
+  //   // Register ScrollTrigger plugin
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   ScrollTrigger.scrollerProxy(scrollSelector, {
+  //     scrollTop(value) {
+  //       return arguments.length
+  //         ? locoScroll.scrollTo(value, 0, 0)
+  //         : locoScroll.scroll.instance.scroll.y;
+  //     },
+  //     getBoundingClientRect() {
+  //       return {
+  //         top: 0,
+  //         left: 0,
+  //         width: window.innerWidth,
+  //         height: window.innerHeight,
+  //       };
+  //     },
+  //     pinType: scrollContainer.style.transform ? "transform" : "fixed",
+  //   });
 
-    ScrollTrigger.refresh();
-  }
+  //   // Update ScrollTrigger on scroll
+  //   locoScroll.on("scroll", ScrollTrigger.update);
 
-  // Use the same selector for ScrollTrigger proxy
-  const scrollSelector =
-    scrollContainer.tagName.toLowerCase() +
-    (scrollContainer.hasAttribute("data-scroll-container")
-      ? "[data-scroll-container]"
-      : "");
+  //   // Update ScrollTrigger on scroll
+  //   locoScroll.on("scroll", ScrollTrigger.update);
+
+  //   ScrollTrigger.refresh();
+  // }
+
+  // // Use the same selector for ScrollTrigger proxy
+  // const scrollSelector =
+  //   scrollContainer.tagName.toLowerCase() +
+  //   (scrollContainer.hasAttribute("data-scroll-container")
+  //     ? "[data-scroll-container]"
+  //     : "");
 
 
   // Mobile menu toggle
