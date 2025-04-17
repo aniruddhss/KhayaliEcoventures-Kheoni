@@ -29,79 +29,12 @@ h1, h2, h3, .navbar-logo {
   font-style: normal;
   font-display: swap;
 } */
-/* Custom cursor styles */
 body {
-  cursor: none; /* Hide the default cursor */
+  cursor: default;
 }
 
-#custom-cursor {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  /* mix-blend-mode: difference;  */
-  /* Creates the negative color effect */ 
-  mix-blend-mode: hard-light ; 
-  transform: translate(-50%, -50%);
-  transition: transform 0.3s ease-out, width 0.5s ease, height 0.5s ease;
-}
-
-.cursor-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white; /* This will appear as inverted colors with mix-blend-mode */
-  border-radius: 50%;
-  transform: scale(1);
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-/* Special styling for links and clickable elements */
 a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"] {
-  cursor: none;
-}
-
-a:hover ~ #custom-cursor,
-button:hover ~ #custom-cursor,
-.cta-button:hover ~ #custom-cursor,
-.menu-toggle:hover ~ #custom-cursor {
-  transform: translate(-50%, -50%) scale(1.2);
-}
-
-/* Cursor scaling animation */
-.cursor-clicked {
-  animation: cursorClick 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-}
-
-@keyframes cursorClick {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(40);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-/* Cursor styles for different screen sizes */
-@media (max-width: 768px) {
-  #custom-cursor {
-    display: none; /* Hide custom cursor on mobile/tablet since they use touch */
-  }
-  
-  body {
-    cursor: auto; /* Restore default cursor for touch devices */
-  }
-  
-  a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"] {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 #loader {
   position: fixed;
