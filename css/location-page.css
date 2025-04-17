@@ -1,120 +1,118 @@
-/* Location Page Specific Styles */
-
-/* Reset some base styles for location pages */
 body {
-    overflow-x: hidden;
-  }
-  /* Add this at the top of your location-page.css file */
-/* Override navbar styling for location pages */
+  overflow-x: hidden;
+}
+
 .navbar {
-  background-color: rgba(0, 0, 0, 0.9) !important; /* Black background with slight transparency */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ) !important; /* Black background with slight transparency */
   backdrop-filter: blur(5px);
   opacity: 1 !important; /* Make visible by default */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Ensure text is white */
-.navbar-logo, 
-.navbar-links a, 
+.navbar-logo,
+.navbar-links a,
 .menu-toggle {
   color: white !important;
 }
 
-/* Remove the hover effect that changes background */
 .navbar:hover {
   background-color: rgba(0, 0, 0, 0.9) !important;
 }
-  /* Carousel Section */
-  .carousel-section {
-    height: 85vh; /* Make it tall but not sticky */
+
+.carousel-section {
+  height: 85vh; /* Make it tall but not sticky */
   width: 100%;
   position: relative; /* Change from sticky to relative */
   background-color: #000;
   margin-top: 80px;
-  }
-  
-  .carousel-container {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-  }
-  
-  .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Changed from contain to cover for better filling */
-    object-position: center; /* Center the image */
-    transition: transform 0.5s ease;
-    aspect-ratio: 16/9; /* Maintain aspect ratio */
-  }
-  
-  .carousel-nav {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    z-index: 0;
-  }
-  
-  
-  .carousel-prev,
-  .carousel-next {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  .carousel-slide:hover {
-    transform: scale(1.02);
-  }
-  .carousel-prev:hover,
-  .carousel-next:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-  .carousel-indicators {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .carousel-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .carousel-indicator.active {
-    background: white;
-  }
-  /* Add these to your location-page.css file */
+}
+
+.carousel-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from contain to cover for better filling */
+  object-position: center; /* Center the image */
+  transition: transform 0.5s ease;
+  aspect-ratio: 16/9; /* Maintain aspect ratio */
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 0;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.carousel-slide:hover {
+  transform: scale(1.02);
+}
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: white;
+}
+/* Add these to your location-page.css file */
 .carousel-track {
   display: flex;
   height: 100%;
@@ -124,13 +122,17 @@ body {
 
 /* Add overlay gradient to make controls more visible */
 .carousel-container::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
   pointer-events: none;
 }
 
@@ -146,357 +148,354 @@ body {
 .carousel-next:hover {
   opacity: 1;
 }
-  
-  /* Main Content Layout */
-  .location-container {
-    display: flex;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #000;
-    min-height: 100vh;
-  }
-  
-  .location-content {
-    flex: 2; /* Takes up 2/3 of the container */
-    padding-right: 3rem;
-    max-width: 800px;
-    margin-right: auto;
-  }
-  
-  .booking-panel {
-    flex: 1; /* Takes up 1/3 of the container */
-    position: sticky;
-    top: 100px; /* Aligns with bottom of carousel */
-    height: fit-content;
-    background-color: rgba(15, 15, 15, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    margin-bottom: 2rem;
-  }
-  
-  /* Content Styling */
-  .location-title {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-    color: white;
-  }
-  
-  .location-description p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .location-features {
-    margin-bottom: 3rem;
-  }
-  
-  .location-features h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .feature-icon {
-    color: #6dd5ed;
-    font-size: 1.2rem;
-  }
-  
-  .feature-text {
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .itinerary-section {
-    margin-bottom: 3rem;
-  }
-  
-  .itinerary-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .itinerary-item {
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .itinerary-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 1.5rem;
-    background-color: rgba(15, 15, 15, 0.8);
-    cursor: pointer;
-  }
-  
-  .itinerary-header h3 {
-    font-size: 1.4rem;
-    margin: 0;
-  }
-  
-  .toggle-icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .itinerary-item.active .toggle-icon {
-    transform: rotate(45deg);
-  }
-  
-  .itinerary-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1.5rem;
-    padding: 0 1.5rem 1.5rem;
-    display: none;
-  }
-  
-  .itinerary-item.active .itinerary-content {
-    display: grid;
-  }
-  
-  .itinerary-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .itinerary-details p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .must-know-section {
-    margin-bottom: 3rem;
-  }
-  
-  .must-know-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .must-know-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .must-know-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .must-know-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #6dd5ed;
-  }
-  
-  .bottom-cta {
-    text-align: center;
-    margin: 3rem 0;
-  }
-  
-  /* Booking Panel Styling */
-  .price-details {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .price-details h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .price {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
-  
-  .price-info {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .booking-form h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 1.2rem;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    color: white;
-    font-family: 'Work Sans', sans-serif;
-  }
-  
-  .form-group textarea {
-    height: 100px;
-    resize: vertical;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 15px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  
-  .submit-button:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Footer Styling */
-  .site-footer {
-    background-color: #0a0a0a;
-    padding: 4rem 2rem 2rem;
-  }
-  
-  .footer-content {
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  
-  .footer-logo {
-    font-size: 2rem;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    letter-spacing: 3px;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  .footer-column {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .footer-column h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: white;
-  }
-  
-  .footer-column a,
-  .footer-column p {
-    display: block;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-column a:hover {
-    color: white;
-  }
-  
-  .social-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .footer-bottom {
-    max-width: 1600px;
-    margin: 2rem auto 0;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 1024px) {
-      .carousel-section {
+
+/* Main Content Layout */
+.location-container {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.location-content {
+  flex: 2; /* Takes up 2/3 of the container */
+  padding-right: 3rem;
+  max-width: 800px;
+  margin-right: auto;
+}
+
+.booking-panel {
+  flex: 1; /* Takes up 1/3 of the container */
+  position: sticky;
+  top: 100px; /* Aligns with bottom of carousel */
+  height: fit-content;
+  background-color: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+/* Content Styling */
+.location-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: white;
+}
+
+.location-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.location-features {
+  margin-bottom: 3rem;
+}
+
+.location-features h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-icon {
+  color: #6dd5ed;
+  font-size: 1.2rem;
+}
+
+.feature-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.itinerary-section {
+  margin-bottom: 3rem;
+}
+
+.itinerary-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.itinerary-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.itinerary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background-color: rgba(15, 15, 15, 0.8);
+  cursor: pointer;
+}
+
+.itinerary-header h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.itinerary-item.active .toggle-icon {
+  transform: rotate(45deg);
+}
+
+.itinerary-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
+  display: none;
+}
+
+.itinerary-item.active .itinerary-content {
+  display: grid;
+}
+
+.itinerary-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.itinerary-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.must-know-section {
+  margin-bottom: 3rem;
+}
+
+.must-know-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.must-know-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.must-know-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.must-know-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6dd5ed;
+}
+
+.bottom-cta {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+/* Booking Panel Styling */
+.price-details {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.price-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.price-info {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.booking-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Styling */
+.site-footer {
+  background-color: #0a0a0a;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.footer-column a,
+.footer-column p {
+  display: block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-bottom {
+  max-width: 1600px;
+  margin: 2rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .carousel-section {
     height: 50vh;
     margin-top: 60px; /* Reduced top margin on mobile */
     position: relative; /* Contain the carousel nav within its bounds */
     overflow: hidden;
   }
   .carousel-nav {
-  
     bottom: 15px;
     z-index: 0; /* Lower z-index so it doesn't appear over other content */
-    position: absolute; 
+    position: absolute;
   }
-    .location-container {
-      flex-direction: column;
-      padding: 1.5rem;
-    }
-  
-    .location-content {
-      padding-right: 0;
-      margin-right: 0;
-      max-width: 100%;
-    }
-  
-    .booking-panel {
-      position: relative;
-      top: 0;
-      width: 100%;
-      margin-top: 3rem;
-    }
-  
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
+  .location-container {
+    flex-direction: column;
+    padding: 1.5rem;
   }
-  
 
+  .location-content {
+    padding-right: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
 
-  /* Style scrollbar for booking panel */
+  .booking-panel {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Style scrollbar for booking panel */
 .booking-panel::-webkit-scrollbar {
   width: 5px;
 }
@@ -567,18 +566,15 @@ html.has-scroll-dragging {
 
 /* Fix mobile layout for carousel and booking panel */
 @media (max-width: 768px) {
-
-  
   /* Make carousel navigation less intrusive on mobile */
 
-  
   .carousel-prev,
   .carousel-next {
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
   }
-  
+
   /* Fix booking panel on mobile */
   .booking-panel {
     position: relative;
@@ -595,7 +591,7 @@ html.has-scroll-dragging {
     margin-top: 2rem;
     overflow: visible;
   }
-  
+
   /* Fix overall container to ensure proper stacking */
   body[data-scroll-container] {
     overflow: visible;
@@ -603,7 +599,6 @@ html.has-scroll-dragging {
     min-height: 100vh;
   }
   /* Rest of your mobile styles... */
-
 
   .location-title {
     font-size: 2.5rem;
