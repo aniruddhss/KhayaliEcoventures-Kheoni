@@ -8,26 +8,53 @@ window.addEventListener("load", function () {
   if (navbar) {
     navbar.style.opacity = "1";
   }
+  const isMobile = window.innerWidth <= 768;
 
-  // Select the correct scrolling container (body element has data-scroll-container attribute)
-  const scrollContainer =
-    document.querySelector("[data-scroll-container]") ||
-    document.querySelector("body");
+  // Initialize LocomotiveScroll only on desktop
+  if (!isMobile) {
+    const scrollContainer =
+      document.querySelector("[data-scroll-container]") ||
+      document.querySelector("body");
 
-  const locoScroll = new LocomotiveScroll({
-    el: scrollContainer,
-    smooth: true,
-    multiplier: 1,
-    smartphone: {
+    const locoScroll = new LocomotiveScroll({
+      el: scrollContainer,
       smooth: true,
-    },
-    tablet: {
-      smooth: true,
-    },
-  });
+      multiplier: 1,
+      smartphone: {
+        smooth: false, // Disable smooth scrolling on mobile
+      },
+      tablet: {
+        smooth: false, // Disable smooth scrolling on tablet
+      },
+    });
 
-  // Register ScrollTrigger plugin
-  gsap.registerPlugin(ScrollTrigger);
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.scrollerProxy(scrollSelector, {
+      scrollTop(value) {
+        return arguments.length
+          ? locoScroll.scrollTo(value, 0, 0)
+          : locoScroll.scroll.instance.scroll.y;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      pinType: scrollContainer.style.transform ? "transform" : "fixed",
+    });
+
+    // Update ScrollTrigger on scroll
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    // Update ScrollTrigger on scroll
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.refresh();
+  }
 
   // Use the same selector for ScrollTrigger proxy
   const scrollSelector =
@@ -36,43 +63,6 @@ window.addEventListener("load", function () {
       ? "[data-scroll-container]"
       : "");
 
-  // Set up ScrollTrigger with Locomotive Scroll
-  ScrollTrigger.scrollerProxy(scrollSelector, {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: scrollContainer.style.transform ? "transform" : "fixed",
-  });
-
-  // Update ScrollTrigger on scroll
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  // Add smooth scroll for booking button
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: "smooth",
-        });
-      }
-    });
-  });
 
   // Mobile menu toggle
   if (menuToggle && navbarLinks) {
