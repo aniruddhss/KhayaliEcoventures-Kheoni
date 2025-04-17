@@ -36,7 +36,10 @@ body {
   .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Changed from contain to cover for better filling */
+    object-position: center; /* Center the image */
+    transition: transform 0.5s ease;
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
   }
   
   .carousel-nav {
@@ -90,6 +93,38 @@ body {
   .carousel-indicator.active {
     background: white;
   }
+  /* Add these to your location-page.css file */
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform; /* Performance optimization */
+}
+
+/* Add overlay gradient to make controls more visible */
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
+/* Make navigation buttons more visible */
+.carousel-prev,
+.carousel-next {
+  z-index: 5; /* Ensure buttons are clickable */
+  opacity: 0.7;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  opacity: 1;
+}
   
   /* Main Content Layout */
   .location-container {

@@ -43,7 +43,7 @@
           <img src="solretreat media/solretreat doublebed.jpg" alt="Sol Retreat Interior">
         </div>
         <div class="carousel-slide">
-          <img src="/solretreat.png" alt="Sol Retreat Activities">
+          <img src="solretreat.png" alt="Sol Retreat Activities">
         </div>
       </div>
       <div class="carousel-nav">
@@ -236,17 +236,92 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="js/location-page.js"></script>
+  // Update the script at the bottom of sol-retreat.html
   <script>
-    // Set up the carousel images
-    window.addEventListener("load", function() {
+    // Set up the carousel images when DOM is loaded
+    document.addEventListener("DOMContentLoaded", function() {
       const carouselTrack = document.querySelector('.carousel-track');
-      if (carouselTrack) {
-        // Get all slides
+      const carouselIndicators = document.querySelector('.carousel-indicators');
+      let currentSlide = 0;
+      
+      function updateCarousel() {
+        if (!carouselTrack) return;
+        carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update indicators
+        document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+          if (index === currentSlide) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        });
+      }
+      
+      // Create indicators for each slide
+      function createIndicators() {
+        if (!carouselIndicators) return;
         const slides = document.querySelectorAll('.carousel-slide');
-        // Set slideCount for the carousel functionality
-        slideCount = slides.length;
-        // Create indicators based on slide count
-        createIndicators();
+        carouselIndicators.innerHTML = '';
+        
+        slides.forEach((_, index) => {
+          const indicator = document.createElement('div');
+          indicator.classList.add('carousel-indicator');
+          if (index === 0) indicator.classList.add('active');
+          
+          indicator.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+          });
+          
+          carouselIndicators.appendChild(indicator);
+        });
+      }
+      
+      // Set up navigation buttons
+      const prevButton = document.querySelector('.carousel-prev');
+      const nextButton = document.querySelector('.carousel-next');
+      
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          const slides = document.querySelectorAll('.carousel-slide');
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          updateCarousel();
+        });
+      }
+      
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          const slides = document.querySelectorAll('.carousel-slide');
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateCarousel();
+        });
+      }
+      
+      // Initialize carousel
+      createIndicators();
+      
+      // Auto-advance carousel
+      let carouselInterval = setInterval(() => {
+        const slides = document.querySelectorAll('.carousel-slide');
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+      }, 5000);
+      
+      // Pause auto-advance when interacting with carousel
+      const carouselContainer = document.querySelector('.carousel-container');
+      if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+          clearInterval(carouselInterval);
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+          carouselInterval = setInterval(() => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+          }, 5000);
+        });
       }
     });
   </script>
