@@ -26,7 +26,7 @@
     </div>
 
     <div id="video-container">
-      <video id="background-video" autoplay muted loop playsinline>
+      <video id="background-video" autoplay muted loop playsinline preload="none" poster="video-poster.jpg">
         <source src="khayali travels.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -44,36 +44,16 @@
     <!-- Rest of your HTML -->
     <div id="image-grid">
       <div class="grid-image-container">
-        <img
-          class="grid-image"
-          src="Tiger black and white/row-1-column-1.jpg"
-          alt="Image 1"
-          id="image-1"
-        />
+        <img class="grid-image lazy" src="placeholder.png" data-src="Tiger black and white/row-1-column-1.jpg" alt="Image 1" id="image-1" />
       </div>
       <div class="grid-image-container">
-        <img
-          class="grid-image"
-          src="Tiger black and white/row-1-column-2.jpg"
-          alt="Image 2"
-          id="image-2"
-        />
+        <img class="grid-image lazy" src="placeholder.png" data-src="Tiger black and white/row-1-column-2.jpg" alt="Image 2" id="image-2" />
       </div>
       <div class="grid-image-container">
-        <img
-          class="grid-image"
-          src="Tiger black and white/row-2-column-1.jpg"
-          alt="Image 3"
-          id="image-3"
-        />
+        <img class="grid-image lazy" src="placeholder.png" data-src="Tiger black and white/row-2-column-1.jpg" alt="Image 3" id="image-3" />
       </div>
       <div class="grid-image-container">
-        <img
-          class="grid-image"
-          src="Tiger black and white/row-2-column-2.jpg"
-          alt="Image 4"
-          id="image-4"
-        />
+        <img class="grid-image lazy" src="placeholder.png" data-src="Tiger black and white/row-2-column-2.jpg" alt="Image 4" id="image-4" />
       </div>
     </div>
     <div class="navbar" id="navbar">
@@ -136,7 +116,7 @@
             <!-- Location 1 -->
             <div class="location-card" data-location="1">
               <div class="location-image">
-                <img src="solretreat.png" alt="Sol Retreat" />
+                <img class="lazy" src="placeholder.png" data-src="solretreat.png" alt="Sol Retreat" />
               </div>
               <div class="location-details">
                 <h3>Sol Retreat</h3>
@@ -161,7 +141,7 @@
             <!-- Location 2 -->
             <div class="location-card" data-location="2">
               <div class="location-image">
-                <img src="kesharparvat.jpg" alt="Keshar Parvat" />
+                <img class="lazy" src="placeholder.png" data-src="solretreat.png" alt="Sol Retreat" />
               </div>
               <div class="location-details">
                 <h3>Keshar Parvat</h3>
@@ -183,7 +163,7 @@
             <!-- Location 3 -->
             <div class="location-card" data-location="3">
               <div class="location-image">
-                <img src="tiger kheoni.jpg" alt="Kheoni Wildlife Sanctuary" />
+                <img class="lazy" src="placeholder.png" data-src="solretreat.png" alt="Sol Retreat" />
               </div>
               <div class="location-details">
                 <h3>Kheoni Wildlife Sanctuary</h3>
@@ -210,6 +190,7 @@
       </div>
     </div>
 
+    <script src="js/lazy-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>

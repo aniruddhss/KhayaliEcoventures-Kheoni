@@ -8,32 +8,31 @@ html.has-scroll-smooth {
   overflow: hidden;
 }
 body {
-  font-family: 'Work Sans', sans-serif;
+  cursor: default;
+  font-family: "Work Sans", sans-serif;
   background-color: #000;
   color: white;
   font-weight: 300;
 }
 
 /* Apply the condensed font to headings */
-h1, h2, h3, .navbar-logo {
-  font-family: 'Oswald', sans-serif;
+h1,
+h2,
+h3,
+.navbar-logo {
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
-/* @font-face {
-  font-family: 'Mauline';
-  src: url('/Mauline.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
-body {
-  cursor: default;
-}
 
-a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"] {
+a,
+button,
+.cta-button,
+.menu-toggle,
+input[type="button"],
+input[type="submit"] {
   cursor: pointer;
 }
 #loader {
@@ -60,8 +59,12 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #video-container {
@@ -88,10 +91,11 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   height: 100vh;
   display: grid;
   grid-template-columns: 50% 50%; /* Equal width columns */
-  grid-template-rows: 50% 50%;    /* Equal height rows */
+  grid-template-rows: 50% 50%; /* Equal height rows */
   z-index: 2;
-  gap: 0;                        /* Remove any gap */
-  overflow: hidden;              /* Prevent any overflow */
+  gap: 0; /* Remove any gap */
+  contain: strict; 
+  overflow: hidden; /* Prevent any overflow */
 }
 
 /* Container for each grid image */
@@ -180,7 +184,7 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
 }
 /* Make the navbar logo more distinctive */
 .navbar-logo {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 28px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -204,7 +208,7 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
 }
 
 .navbar-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -228,8 +232,6 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   z-index: 102;
 }
 
-
-
 .c-scrollbar {
   z-index: 1000;
 }
@@ -241,14 +243,14 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none !important; 
+  pointer-events: none !important;
   /* Force this to not capture any clicks */
 }
 #background-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none; 
+  pointer-events: none;
   /* Make sure the video doesn't capture clicks */
 }
 
@@ -274,7 +276,6 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   pointer-events: none;
 }
 
-
 #hero-content p {
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
@@ -285,8 +286,6 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   pointer-events: none;
 }
 
-/* Make the CTA button more interactive */
-/* Enhanced CTA button */
 .cta-button {
   display: inline-block;
   padding: 15px 30px;
@@ -318,71 +317,7 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Media queries for responsive design */
-@media (max-width: 1024px) {
-  #hero-content h1 {
-    font-size: 3.5rem;
-  }
-  
-  #hero-content p {
-    font-size: 1.1rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 15px 5%;
-  }
-  
-  #hero-content {
-    bottom: 15%;
-  }
-  
-  #hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  #hero-content p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .cta-button {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-
-  /* Show hamburger menu on tablets */
-  .menu-toggle {
-    display: block;
-  }
-  
-  .navbar-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: right 0.3s ease;
-    padding: 2rem;
-    gap: 40px;
-  }
-  
-  .navbar-links.active {
-    right: 0;
-  }
-  
-  .navbar-links a {
-    font-size: 1.2rem;
-  }
-}
-
-/* About Us Section Styling */
 .about-section {
   background-color: #0c0c0c;
   color: #fff;
@@ -394,8 +329,7 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-    "title content";
+  grid-template-areas: "title content";
   height: 100%;
   width: 100%;
   max-width: 1600px;
@@ -420,7 +354,11 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   line-height: 0.9;
   text-transform: uppercase;
   opacity: 0.8;
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -451,60 +389,8 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   margin-bottom: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .about-title h2 {
-    font-size: 4rem;
-  }
-  
-  .about-paragraph {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "title"
-      "content";
-  }
-  
-  .about-title {
-    padding-bottom: 2rem;
-    padding-top: 3rem;
-    justify-content: center;
-    padding-left: 0;
-  }
-  
-  .about-content {
-    padding: 0 2rem 4rem 2rem;
-  }
-  
-  .about-title h2 {
-    font-size: 3.5rem;
-  }
-  
-  .about-paragraph {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-title h2 {
-    font-size: 2.5rem;
-  }
-  
-  .about-content {
-    padding: 0 1.5rem 3rem 1.5rem;
-  }
-}
-
 .about-section {
-  background-image: url('/peacock\ 2.jpg');
+  background-image: url("/peacock\ 2.jpg");
   background-blend-mode: overlay;
 }
 /* Locations Section Styling */
@@ -537,14 +423,19 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
 
   margin-bottom: 15px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.7) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .locations-header h2,
 .about-title h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -563,28 +454,31 @@ a, button, .cta-button, .menu-toggle, input[type="button"], input[type="submit"]
   width: 100%;
 }
 .location-details h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
   letter-spacing: 0.03em;
 }
 /* Update paragraph styling for better readability */
-p, .location-description, .about-paragraph {
-  font-family: 'Work Sans', sans-serif;
+p,
+.location-description,
+.about-paragraph {
+  font-family: "Work Sans", sans-serif;
   font-weight: 300;
   letter-spacing: 0.01em;
 }
 
 /* Style navigation links */
 .navbar-links a {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 500;
   letter-spacing: 0.06em;
   font-size: 0.9rem;
 }
 
 /* Style the CTA button */
-.cta-button, .location-button {
-  font-family: 'Oswald', sans-serif;
+.cta-button,
+.location-button {
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -613,13 +507,17 @@ p, .location-description, .about-paragraph {
 }
 
 .location-image::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 50%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
 }
 
 .location-image img {
@@ -672,7 +570,7 @@ p, .location-description, .about-paragraph {
   padding: 12px 25px;
   background-color: transparent;
   color: white;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   text-decoration: none;
   font-size: 0.9rem;
@@ -689,7 +587,7 @@ p, .location-description, .about-paragraph {
 
 /* Add hover effect */
 .location-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -707,58 +605,176 @@ p, .location-description, .about-paragraph {
   transform: scaleX(1);
   opacity: 1;
 }
-
-/* Responsive adjustments */
-
+.grid-image,
+.carousel-track,
+.hero-content {
+  transform: translateZ(0); /* GPU acceleration for critical animations */
+}
 
 
 @media (max-width: 1220px) {
+  #hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  #hero-content p {
+    font-size: 1.1rem;
+  }
+  .about-title h2 {
+    font-size: 4rem;
+  }
+
+  .about-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
   .section {
     height: auto !important; /* Override the fixed height */
     min-height: 100vh; /* Set minimum height instead */
     padding: 60px 20px;
   }
 
+  /* Now update the locations section specifically */
 
-/* Now update the locations section specifically */
+  .locations-section {
+    height: auto !important;
+    padding-bottom: 40px;
+  }
 
-.locations-section {
-  height: auto !important;
-  padding-bottom: 40px;
-}
+  .locations-container {
+    height: auto;
+    padding: 60px 20px 20px 20px; /* Adjusted padding */
+  }
 
-.locations-container {
-  height: auto;
-  padding: 60px 20px 20px 20px; /* Adjusted padding */
-}
+  .locations-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 30px;
+  }
 
-.locations-grid {
-  grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 30px;
-}
-  
   .locations-header h2 {
     font-size: 2.5rem;
   }
-  
+
   .locations-header p {
     font-size: 1rem;
   }
-  
+
   .location-card {
     max-width: 100%; /* Make cards fill the container width */
     margin: 0 auto;
   }
-  
+
   .location-details {
     padding: 20px; /* Slightly decrease padding */
   }
-  
+
   .location-description {
     font-size: 0.95rem; /* Slightly smaller text */
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  #hero-content {
+    bottom: 15%;
+  }
+
+  #hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  #hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  /* Show hamburger menu on tablets */
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: right 0.3s ease;
+    padding: 2rem;
+    gap: 40px;
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "content";
+  }
+
+  .about-title {
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .about-content {
+    padding: 0 2rem 4rem 2rem;
+  }
+
+  .about-title h2 {
+    font-size: 3.5rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .navbar:hover {
+    backdrop-filter: none; /* Remove on mobile */
+  }
+  
+  /* Simplify complex effects on mobile */
+  .location-card::before {
+    display: none; /* Remove gradient animation on mobile */
+  }
+  
+  /* Disable complex hover transitions on mobile */
+  .location-card:hover .location-image img {
+    transform: none;
+  }
+}
+
+
 @media (max-width: 480px) {
+  .about-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-content {
+    padding: 0 1.5rem 3rem 1.5rem;
+  }
   .locations-section {
     padding-bottom: 20px;
   }
@@ -766,27 +782,27 @@ p, .location-description, .about-paragraph {
   .locations-container {
     padding: 40px 15px 10px 15px; /* Further reduced padding on very small screens */
   }
-  
+
   .locations-grid {
     gap: 25px;
   }
-  
+
   .locations-header {
     margin-bottom: 30px;
   }
-  
+
   .locations-header h2 {
     font-size: 2rem;
   }
-  
+
   .location-image {
     height: 180px; /* Slightly shorter images on very small screens */
   }
-  
+
   .location-details h3 {
     font-size: 1.5rem; /* Smaller headings */
   }
-  
+
   .location-button {
     padding: 10px 20px; /* Slightly smaller buttons */
     font-size: 0.85rem;

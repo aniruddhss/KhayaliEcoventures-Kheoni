@@ -157,7 +157,7 @@ body {
 /* Main Content Layout */
 .location-container {
   display: flex;
-  max-width: 1600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   background-color: #000;

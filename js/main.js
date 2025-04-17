@@ -1,5 +1,7 @@
-// let isCursorEnabled = true;
-
+// if (window.innerWidth <= 768) {
+//   // Mobile - load smaller assets
+//   document.getElementById('background-video').src = "khayali-travels-mobile.mp4";
+// } later add a different video for mobile
 window.addEventListener("load", function () {
   // Variables
   const loader = document.getElementById("loader");
@@ -13,7 +15,6 @@ window.addEventListener("load", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navbarLinks = document.getElementById("navbar-links");
 
-
   // Rest of your existing code starts here
   console.log("Script loaded and running");
 
@@ -24,12 +25,6 @@ window.addEventListener("load", function () {
     { opacity: 1, y: 0, duration: 2, delay: 2.2, ease: "power4.out" }
   );
 
-  // Show hero content initially with a shorter animation
-  gsap.fromTo(
-    heroContent,
-    { opacity: 0, y: 50 },
-    { opacity: 1, y: 0, duration: 2, delay: 2.2, ease: "power4.out" }
-  );
   if (menuToggle && navbarLinks) {
     menuToggle.addEventListener("click", function () {
       navbarLinks.classList.toggle("active");
@@ -84,16 +79,26 @@ window.addEventListener("load", function () {
   }, 2000);
 
   function initScrollAnimations() {
+    const isMobile = window.innerWidth <= 768;
     const locoScroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
       multiplier: 1,
       smartphone: {
-        smooth: true,
+        smooth: false,
       },
       tablet: {
         smooth: true,
+        breakpoint: 1024,
       },
+    });
+
+    let scrollTimeout;
+    locoScroll.on("scroll", function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        ScrollTrigger.update();
+      }, 20); // Small delay to reduce number of updates
     });
 
     gsap.registerPlugin(ScrollTrigger);
@@ -127,10 +132,31 @@ window.addEventListener("load", function () {
       },
     });
 
-    tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
-      .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
-      .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
-      .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
+    if (!isMobile) {
+      // Keep complex animations only for desktop
+      tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
+        .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
+        .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
+        .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
+    } else {
+      // Simpler animation for mobile
+      tl.to(
+        [image1, image2, image3, image4],
+        { opacity: 0, ease: "power2.inOut" },
+        0
+      );
+    }
+
+    document.querySelectorAll(".grid-image").forEach((img) => {
+      img.style.willChange = "transform";
+    });
+
+    // Remove will-change after animations
+    setTimeout(() => {
+      document.querySelectorAll(".grid-image").forEach((img) => {
+        img.style.willChange = "auto";
+      });
+    }, 3000);
 
     // Navbar animation - using earlier timing
     const navTl = gsap.timeline({
@@ -180,6 +206,7 @@ window.addEventListener("load", function () {
 
     locoScroll.on("scroll", ScrollTrigger.update);
     ScrollTrigger.refresh();
+
     // Add this inside your initScrollAnimations function in main.js
     // Animation for About Us section
     const aboutTitle = document.querySelector(".about-title h2");
@@ -321,6 +348,5 @@ window.addEventListener("load", function () {
         });
       });
     }
-  
   }
 });
