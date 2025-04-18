@@ -1,615 +1,613 @@
 /* Room Page Styling with fixed sticky panel */
 
 body {
-    overflow-y: auto !important;
-    height: auto !important;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #000;
-  }
-  
-  html, body {
-    width: 100%;
-    scroll-behavior: smooth;
-  }
-  
-  /* Hero Section */
-  .room-hero {
-    height: 80vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 80px; /* Space for fixed navbar */
-  }
-  
-  .room-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
-  }
-  
-  .room-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
-  }
-  
-  .room-type {
-    font-family: "Work Sans", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .room-title {
-    font-family: "Oswald", sans-serif;
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    line-height: 1.1;
-  }
-  
-  .room-price {
-    font-family: "Work Sans", sans-serif;
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-top: 20px;
-    display: inline-block;
-    padding: 8px 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-  }
-  
-  /* Room Content Container - Matching location-page structure */
+  overflow-y: auto !important;
+  height: auto !important;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+html,
+body {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.room-hero {
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 80px; /* Space for fixed navbar */
+}
+
+.room-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+}
+
+.room-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.room-type {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.room-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.room-price {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 8px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Room Content Container - Matching location-page structure */
+.room-content-container {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  min-height: calc(100vh - 80vh - 80px);
+  flex: 1;
+}
+
+/* Room Details (Left Column) */
+.room-details {
+  flex: 2; /* Takes up 2/3 of the container */
+  padding-right: 3rem;
+  max-width: 800px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.booking-panel {
+  flex: 1; /* Takes up 1/3 of the container */
+  position: sticky;
+  top: 100px;
+  height: auto;
+  max-height: calc(100vh - 120px); /* Limit maximum height */
+  background-color: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Hide horizontal overflow */
+  width: 100%; /* Ensure full width within its container */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.2); /* For Firefox */
+}
+.booking-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.booking-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.booking-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Room content styling */
+.room-description h2,
+.room-amenities h2,
+.room-gallery h2,
+.sustainability-features h2,
+.room-experiences h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.room-description p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Room Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Room Amenities */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.amenity-category h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #6dd5ed;
+}
+
+.amenity-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.amenity-category li {
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.amenity-icon {
+  font-size: 1.1rem;
+}
+
+/* Sustainability Features */
+.sustainability-features {
+  background-color: rgba(15, 15, 15, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sustainability-features p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.eco-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.eco-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Work Sans", sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.eco-icon {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Price Details */
+.price-details {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Work Sans", sans-serif;
+}
+
+.price {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #6dd5ed;
+}
+
+.price-info {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Room stats */
+.room-stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-icon {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+/* Booking Form */
+.booking-form {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.booking-form h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.95rem; /* Slightly reduce font size to prevent overflow */
+  box-sizing: border-box; /* Ensure padding doesn't increase width */
+}
+
+.form-group textarea {
+  height: 80px;
+  resize: none;
+}
+.booking-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Fix */
+.site-footer {
+  margin-top: auto; /* Push footer to bottom when content is short */
+  width: 100%;
+  background-color: #0a0a0a;
+  padding: 4rem 2rem 2rem;
+}
+
+/* Fix mobile layout for booking panel */
+@media (max-width: 1024px) {
   .room-content-container {
-    display: flex;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #000;
-    color: #fff;
-    min-height: calc(100vh - 80vh - 80px);
-    flex: 1;
+    flex-direction: column;
+    padding: 1.5rem;
   }
-  
-  /* Room Details (Left Column) */
+
   .room-details {
-    flex: 2; /* Takes up 2/3 of the container */
-    padding-right: 3rem;
-    max-width: 800px;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+    padding-right: 0;
+    max-width: 100%;
   }
-  
+
   .booking-panel {
-    flex: 1; /* Takes up 1/3 of the container */
-    position: sticky;
-    top: 100px;
-    height: auto;
-    max-height: calc(100vh - 120px); /* Limit maximum height */
-    background-color: rgba(15, 15, 15, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    margin-bottom: 2rem;
-    overflow-y: auto; /* Enable vertical scrolling */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    width: 100%; /* Ensure full width within its container */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.2); /* For Firefox */
-  }
-  .booking-panel::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .booking-panel::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-  
-  .booking-panel::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-  }
-  
-  /* Room content styling */
-  .room-description h2,
-  .room-amenities h2,
-  .room-gallery h2,
-  .sustainability-features h2,
-  .room-experiences h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    font-weight: 500;
-    color: #fff;
-  }
-  
-  .room-description p {
-    font-family: "Work Sans", sans-serif;
-    font-size: 1.1rem;  
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  /* Room Gallery */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .gallery-item {
     position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    aspect-ratio: 4/3;
-  }
-  
-  .gallery-item img {
+    top: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    margin-top: 2rem;
+    max-height: none;
+    overflow: visible;
   }
-  
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-  
-  .gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.9rem;
-  }
-  
-  /* Room Amenities */
-  .amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-  
-  .amenity-category h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #6dd5ed;
-  }
-  
-  .amenity-category ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .amenity-category li {
-    font-family: "Work Sans", sans-serif;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  .amenity-icon {
-    font-size: 1.1rem;
-  }
-  
-  /* Sustainability Features */
-  .sustainability-features {
-    background-color: rgba(15, 15, 15, 0.6);
-    border-radius: 15px;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .sustainability-features p {
-    font-family: "Work Sans", sans-serif;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .eco-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .eco-features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: "Work Sans", sans-serif;
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  .eco-icon {
-    font-size: 1.2rem;
-    opacity: 0.9;
-  }
-  
-  /* Price Details */
-  .price-details {
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .price-details h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-family: "Work Sans", sans-serif;
-  }
-  
-  .price {
-    font-family: "Oswald", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #6dd5ed;
-  }
-  
-  .price-info {
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  /* Room stats */
-  .room-stats {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .stat-icon {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-  }
-  
-  /* Booking Form */
-  .booking-form {
-    margin-top: 25px;
-    width: 100%;
-  }
-  
-  .booking-form h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .form-group {
-    margin-bottom: 1.2rem;
-  }
-  
-  .form-group label {
+
+  .site-footer {
     display: block;
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 1;
+    margin-top: 2rem;
+    overflow: visible;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .room-title {
+    font-size: 3rem;
+  }
+
+  .gallery-grid,
+  .eco-features,
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-details {
+    gap: 40px;
+  }
+
+  .room-content-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Fix for the "Explore Other Accommodations" section */
+.similar-rooms-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.similar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.similar-container h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.similar-card {
+  background-color: rgba(15, 15, 15, 0.6);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.similar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.similar-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.similar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.similar-card:hover .similar-image img {
+  transform: scale(1.05);
+}
+
+.similar-details {
+  padding: 1.5rem;
+}
+
+.similar-location {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.similar-details h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.similar-price {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  color: #6dd5ed;
+  margin-bottom: 15px;
+}
+
+.similar-button {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.similar-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Make sure media queries address both issues at smaller screen sizes */
+@media (max-width: 1024px) {
+  .room-content-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .room-details {
+    padding-right: 0;
+    max-width: 100%;
+  }
+
+  .booking-panel {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-top: 2rem;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .similar-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .similar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group label,
   .form-group input,
   .form-group select,
   .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    color: #fff;
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.95rem; /* Slightly reduce font size to prevent overflow */
-    box-sizing: border-box; /* Ensure padding doesn't increase width */
-  }
-  
-  .form-group textarea {
-    height: 80px;
-    resize: none;
-  }
-  .booking-note {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 15px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: "Oswald", sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  
-  .submit-button:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Footer Fix */
-  .site-footer {
-    margin-top: auto; /* Push footer to bottom when content is short */
-    width: 100%;
-    background-color: #0a0a0a;
-    padding: 4rem 2rem 2rem;
-  }
-  
-  /* Fix mobile layout for booking panel */
-  @media (max-width: 1024px) {
-    .room-content-container {
-      flex-direction: column;
-      padding: 1.5rem;
-    }
-  
-    .room-details {
-      padding-right: 0;
-      max-width: 100%;
-    }
-  
-    .booking-panel {
-      position: relative;
-      top: 0;
-      width: 100%;
-      margin-top: 2rem;
-      max-height: none;
-      overflow: visible;
-    }
-  
-    .site-footer {
-      display: block;
-      position: relative;
-      z-index: 1;
-      margin-top: 2rem;
-      overflow: visible;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .room-title {
-      font-size: 3rem;
-    }
-  
-    .gallery-grid,
-    .eco-features,
-    .amenities-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .room-details {
-      gap: 40px;
-    }
-  
-    .room-content-container {
-      padding: 1.5rem;
-    }
+    font-size: 0.9rem;
   }
 
-  /* Fix for the "Explore Other Accommodations" section */
-.similar-rooms-section {
-    width: 100%;
-    padding: 4rem 2rem;
-    background-color: transparent;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .similar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .similar-container h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #fff;
-    text-align: center;
-  }
-  
-.similar-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-  
-  .similar-card {
-    background-color: rgba(15, 15, 15, 0.6);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .similar-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .similar-image {
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .similar-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .similar-card:hover .similar-image img {
-    transform: scale(1.05);
-  }
-  
-  .similar-details {
+  .booking-panel {
     padding: 1.5rem;
   }
-  
-  .similar-location {
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 5px;
-  }
-  
-  .similar-details h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  .similar-price {
-    font-family: "Work Sans", sans-serif;
-    font-size: 1rem;
-    color: #6dd5ed;
-    margin-bottom: 15px;
-  }
-  
-  .similar-button {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    text-decoration: none;
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-  
-  .similar-button:hover {
-    background-color: #fff;
-    color: #000;
-  }
-  
+}
 
-  
-  /* Make sure media queries address both issues at smaller screen sizes */
-  @media (max-width: 1024px) {
-    .room-content-container {
-      flex-direction: column;
-      padding: 1.5rem;
-    }
-  
-    .room-details {
-      padding-right: 0;
-      max-width: 100%;
-    }
-  
-    .booking-panel {
-      position: relative;
-      top: 0;
-      width: 100%;
-      margin-top: 2rem;
-      max-height: none;
-      overflow: visible;
-    }
-  
-    .similar-grid {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .similar-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .form-group label,
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-size: 0.9rem;
-    }
-  
-    .booking-panel {
-      padding: 1.5rem;
-    }
-  }
+.additional-info {
+  margin-top: 20px;
+}
 
-  .additional-info {
-    margin-top: 20px;
-  }
-  
-  .info-item {
-    margin-bottom: 15px;
-  }
-  
-  .info-item h4 {
-    font-family: "Work Sans", sans-serif;
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .info-item p {
-    font-family: "Work Sans", sans-serif;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-left: 20px;
-  }
-  
-  .info-icon {
-    color: #6dd5ed;
-  }
-  
+.info-item {
+  margin-bottom: 15px;
+}
+
+.info-item h4 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.info-item p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 20px;
+}
+
+.info-icon {
+  color: #6dd5ed;
+}
