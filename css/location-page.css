@@ -510,23 +510,6 @@ body {
   border-radius: 5px;
 }
 
-/* Smooth scrolling styles for consistency with index page
-html.has-scroll-smooth {
-  overflow: hidden;
-}
-
-html.has-scroll-dragging {
-  user-select: none;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
-}
-
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh;
-} */
-
 /* Actual height adjustment for location pages */
 .location-container {
   min-height: calc(100vh - 85vh - 80px);
