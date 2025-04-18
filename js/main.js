@@ -178,23 +178,29 @@ function setupScrollerProxy() {
       },
     });
 
-    if (!isMobile) {
-      // Keep complex animations only for desktop
-      tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
-        .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
-        .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
-        .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
-    } else {
-      // Simpler animation for mobile
-      tl.to(
-        [image1, image2, image3, image4],
-        { opacity: 0, ease: "power2.inOut" },
-        0
-      );
-    }
+    // if (!isMobile) {
+    //   // Keep complex animations only for desktop
+    //   tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
+    //     .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
+    //     .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
+    //     .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
+    // } else {
+    //   // Simpler animation for mobile
+    //   tl.to(
+    //     [image1, image2, image3, image4],
+    //     { opacity: 0, ease: "power2.inOut" },
+    //     0
+    //   );
+    // }
+    tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
+    .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
+    .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
+    .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
+
 
     document.querySelectorAll(".grid-image").forEach((img) => {
       img.style.willChange = "transform";
+      img.style.transform = "translateZ(0)"; // Force GPU acceleration
     });
 
     // Remove will-change after animations
