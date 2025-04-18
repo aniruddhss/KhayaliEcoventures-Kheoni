@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Package route data
     const packageRoutes = {
-      '2d2n.html': {
-        title: 'Kheoni Retreat - 2 Days/2 Nights',
+      '3d2n.html': {
+        title: 'Kheoni Retreat - 3 Days/2 Nights',
         locations: [
           { name: 'Indore Airport', coords: [22.7196, 75.8011], type: 'start' },
           { name: 'Wellness Spa', coords: [22.7276, 75.8723], type: 'stop', optional: true },
@@ -28,13 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         route: true
       },
-      '3d2n.html': {
-        title: 'Kheoni Retreat - 3 Days/2 Nights',
+      '4d3n.html': {
+        title: 'Kheoni Retreat - 4 Days/3 Nights',
         locations: [
           { name: 'Indore Airport', coords: [22.7196, 75.8011], type: 'start' },
           { name: 'Kheoni Retreat', coords: [22.4922, 76.8154], type: 'destination' },
           { name: 'Kheoni Wildlife Sanctuary', coords: [22.4700, 76.8300], type: 'activity' },
-          { name: 'Devbadla Temple', coords: [22.5100, 76.8200], type: 'activity' }
+          { name: 'Devbadla Temple', coords: [22.5100, 76.8200], type: 'activity' },
+          { name: 'Indore', coords: [22.7196, 75.8011], type: 'start' },
+          { name: 'Mahakaleshwar Temple', coords: [23.1828, 75.7682], type: 'activity' },
+          { name: 'Heritage Haveli Stay', coords: [23.1756, 75.7712], type: 'destination' },
+          { name: 'Ayurvedic Wellness Center', coords: [23.1700, 75.7690], type: 'activity', optional: true }
         ],
         route: true
       },

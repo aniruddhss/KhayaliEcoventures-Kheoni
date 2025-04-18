@@ -8,6 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+  crossorigin="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/location-page.css" />
 </head>
@@ -34,16 +38,16 @@
     <div class="carousel-container">
       <div class="carousel-track">
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="solretreat media/patio.jpg" alt="Sol Retreat patio" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="solretreat media/patio1.jpg" alt="Sol Retreat patio" loading="lazy">
         </div>
         <div class="carousel-slide">
           <img class="lazy" src="placeholder.png" data-src="/solretreat media/solretreat doublebed.jpg" alt="Sol Retreat Surroundings" loading="lazy">
         </div>
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="/solretreat media/patio 2.jpg" alt="Sol Retreat patio" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="/kheoni wildlife media/tiger kheoni.jpg" alt="Sol Retreat patio" loading="lazy">
         </div>
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="/solretreat media/minipool3.jpg" alt="Sol Retreat Surroundings" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="/solretreat media/pathway2.jpg" alt="Sol Retreat Surroundings" loading="lazy">
         </div>
       </div>
       <div class="carousel-nav">
@@ -63,14 +67,17 @@
   <div class="location-container" >
     <!-- Left Column: Scrollable Content -->
     <div class="location-content">
-      <h1 class="location-title" >Kheoni Retreat - 3 Days / 2 Nights</h1>
+      <h1 class="location-title" >Kheoni Retreat - 3 Days / 2 Nights </h1>
       
       <div class="location-description">
         <p>Escape to the heart of Madhya Pradesh with a luxurious two-day retreat at Kheoni Retreat and Kheoni Wildlife Sanctuary—where nature, culture, and comfort come together seamlessly.</p>
         <p>From thrilling tiger safaris and ancient temple visits to private plunge pools shaded by mango trees and evenings under the stars, this curated getaway offers the perfect balance of adventure and relaxation.</p>
         <p>Whether you're seeking serene moments or unforgettable wildlife encounters, this retreat promises a deeply immersive forest experience.</p>
       </div>
-      
+      <div class="package-map-section">
+        <h2>Your Journey Map</h2>
+        <div id="package-map" class="package-map"></div>
+      </div>
       <div class="location-features">
         <h2>What's Included</h2>
         <div class="features-grid">
@@ -103,12 +110,18 @@
           </div>
           <div class="itinerary-content">
             <div class="itinerary-image">
-              <img class="lazy" src="placeholder.png" data-src="solretreat media/solretreat doublebed 2.jpg" alt="Sol Retreat Surroundings" loading="lazy">
+              <img class="lazy" src="placeholder.png" data-src="/kheoni wildlife media/tiger kheoni.jpg" alt="Sol Retreat Surroundings" loading="lazy">
             </div>
             <div class="itinerary-details">
-                <p><span class="feature-icon">•</span> Land in Indore (late evening flight).</p>
-                <p><span class="feature-icon">•</span> 2-hour scenic drive to Kheoni Retreat; check-in by 10 PM.</p>
-                <p><span class="feature-icon">•</span> Dinner at the retreat along with drinks. <span class="optional-tag">(Drinks Optional)</span></p>
+                <p><span class="feature-icon">•</span> Land in Indore (morning/afternoon flight).</p>
+                <p><span class="feature-icon">•</span> Luxurious spa treatment for 2 (60 mins) followed by lavish multi-cuisine buffet spread at Indore's premium 5-star hotel. </p>
+                <p><span class="feature-icon">•</span> 1.5 hours of travel to the recently excavated Devbadla temples from Indore via road followed by arrival at the Tiger Safari Lodge.</p>
+                <p><span class="feature-icon">•</span> Arrive at the Devbadla temples dating back to 1000 AD.</p>
+                <p><span class="feature-icon">•</span> Accompanied by a guide to show around and explain the historical importance of the temples and the area.</p>
+                <p><span class="feature-icon">•</span> 30 min ride to the Tiger Safari Lodge.</p>
+                <p><span class="feature-icon">•</span> Arrive at the Tiger Safari Lodge.</p>
+                <p><span class="feature-icon">•</span> Rooms with attached private plunge pool.</p>
+                <p><span class="feature-icon">•</span> Open-air dinner and drinks under a mango tree.</p>
             </div>
           </div>
         </div>
@@ -120,26 +133,26 @@
           </div>
           <div class="itinerary-content">
             <div class="itinerary-image">
-                <img class="lazy" src="placeholder.png" data-src="/kheoni wildlife media/tiger kheoni2.jpg" alt="Forest Day" loading="lazy">
+                <img class="lazy" src="placeholder.png" data-src="/solretreat media/devbadla temple.jpg" alt="Forest Day" loading="lazy">
             </div>
             <div class="itinerary-details">
-                <p><span class="feature-icon">•</span> Leave the hotel by 5:30AM for an early morning safari to a pristine, untouched area of the Kheoni Sanctuary where it will be just your car at the time.</p>
-                <p><span class="feature-icon">•</span> Have light breakfast on the way to the sanctuary.</p>
+                <p><span class="feature-icon">•</span> Leave the Tiger Safari Lodge by 5:30AM for an early morning totally private safari to a pristine, untouched area of the Kheoni Sanctuary.</p>
+                <p><span class="feature-icon">•</span> Have light breakfast on the way to the sanctuary.<span class="optional-tag">(Optional)</span></p>
                 <p><span class="feature-icon">•</span> Enjoy the adrenaline filled safari and head back to the retreat.</p>
-                <p><span class="feature-icon">•</span> Arrive back at the retreat by 10AM.</p>
-                <p><span class="feature-icon">•</span> Refresh yourself with a dip in the attached private plunge pool.</p>
-                <p><span class="feature-icon">•</span> Brunch at the retreat including local home-cooked delicacies.</p>
-                <p><span class="feature-icon">•</span> Post-lunch, leave for the evening tiger safari. (1hr 15min drive from the hotel).</p>
-                <p><span class="feature-icon">•</span> Arrive at the main gate at 4pm and witness the magnificent tigers of Kheoni.</p>
+                <p><span class="feature-icon">•</span> Brunch at the lodge including local delicacies.</p>
+                <p><span class="feature-icon">•</span> Leave for the safari at 2:15pm to reach the Southern Circuit gate by 3:30 pm.</p>
+                <p><span class="feature-icon">•</span> Arrive at the gate at 3:30pm and witness the magnificent tigress, Meera, in the meadows of Kheoni Wildlife Sanctuary.</p>
                 <p><span class="feature-icon">•</span> Ride back to the hotel and arrive by 7:15PM.</p>
-                <p><span class="feature-icon">•</span> Have dinner and relax in the private plunge pool.</p>
+                <p><span class="feature-icon">•</span> Folk music performance under the stars and mango tree shade.</p>
+                <p><span class="feature-icon">•</span> Local delicacies and snacks for dinner.</p>
+                <p><span class="feature-icon">•</span> Open bar and drinks served throughout the evening.</p>
+                <p><span class="feature-icon">•</span> Have dinner and relax in your private plunge pool.</p>
             </div>
           </div>
         </div>
-        
         <div class="itinerary-item">
           <div class="itinerary-header">
-            <h3>Day 3: Culture</h3>
+            <h3>Day 3: Take Back Memories</h3>
             <span class="toggle-icon">+</span>
           </div>
           <div class="itinerary-content">
@@ -147,12 +160,28 @@
                 <img class="lazy" src="placeholder.png" data-src="/solretreat media/devbadla temple.jpg" alt="Forest Day" loading="lazy">
             </div>
             <div class="itinerary-details">
-                <p><span class="feature-icon">•</span> Visit to the recently excavated Devbadla temple dating back to 1000 AD.</p>
-                <p><span class="feature-icon">•</span> Ride back to the retreat for lunch.</p>
-                <p><span class="feature-icon">•</span> Drop to Indore Airport/Bhopal city.</p>
+                <p><span class="feature-icon">•</span> Wake up to the sounds of nature and enjoy a filling breakfast.</p>
+                <p><span class="feature-icon">•</span> Departure gift of sustainable lavender eye pillows for in-flight relaxation.</p>
+                <p><span class="feature-icon">•</span> Drop to Indore airport/Bhopal.</p>
             </div>
           </div>
         </div>
+        
+        <!-- <div class="itinerary-item">
+          <div class="itinerary-header">
+            <h3>Day 3: Wellness & Culture</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="itinerary-content">
+            <div class="itinerary-image">
+              <img src="/solretreat.png" alt="Wellness Day">
+            </div>
+            <div class="itinerary-details">
+              <p>Your third day focuses on holistic well-being and cultural immersion. Begin with a guided meditation session, followed by a specially prepared Ayurvedic breakfast. Spend the morning enjoying a personalized wellness treatment using locally sourced herbs and essential oils.</p>
+              <p>After lunch, visit a nearby village community where you'll participate in traditional daily activities, from cooking to crafts, learning directly from the families who have called these mountains home for generations. Return to Sol Retreat for a special dinner featuring regional delicacies, followed by cultural performances by local musicians.</p>
+            </div>
+          </div>
+        </div> -->
       </div>
       
       <div class="must-know-section">
@@ -165,7 +194,7 @@
           <li>The nearest medical facility is 30 minutes away; we maintain basic first aid equipment and trained staff on-site.</li>
         </ul>
       </div>
-      <div class="location-features">
+      <!-- <div class="location-features">
         <h2>Optional Add-Ons</h2>
         <div class="features-grid">
           <div class="feature">
@@ -177,18 +206,18 @@
             <span class="feature-text">Alcoholic beverages any time of the day.</span>
           </div>
         </div>
-      </div>
-      
-      <!-- <div class="bottom-cta">
-        <a href="#booking" class="cta-button">Book Your Mountain Escape</a>
       </div> -->
+      
+      <div class="bottom-cta">
+        <a href="#booking" class="cta-button">Book Your Mountain Escape</a>
+      </div>
     </div>
     
     <!-- Right Column: Sticky Booking Panel -->
     <div class="booking-panel">
       <div class="price-details">
         <h2>Starting at</h2>
-        <div class="price">₹45,00</div>
+        <div class="price">₹89,000</div>
         <p class="price-info">for 2 guests</p>
       </div>
       
@@ -248,6 +277,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="js/location-page.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+  crossorigin=""></script>
+  <script src="js/package-map.js"></script>
   <script>
     // Force hide loader after 3 seconds maximum
     setTimeout(function() {
