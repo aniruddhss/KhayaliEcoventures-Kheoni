@@ -312,17 +312,17 @@ function setupScrollerProxy() {
         }
       );
     }
-    gsap.to(".about-section", {
-      backgroundPosition: "0 -300px",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".about-section",
-        scroller: "[data-scroll-container]",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+    // gsap.to(".about-section", {
+    //   backgroundPosition: "0 -300px",
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: ".about-section",
+    //     scroller: "[data-scroll-container]",
+    //     start: "top bottom",
+    //     end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
     // Locations section animations
     const locationsSection = document.querySelector(".locations-section");
     const locationsHeader = document.querySelector(".locations-header");

@@ -389,10 +389,10 @@ input[type="submit"] {
   margin-bottom: 0;
 }
 
-.about-section {
+/* .about-section {
   background-image: url("/peacock\ 2.jpg");
   background-blend-mode: overlay;
-}
+} */
 /* Locations Section Styling */
 .locations-section {
   background-color: #050505;
