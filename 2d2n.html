@@ -8,6 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+  crossorigin="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/location-page.css" />
 </head>
@@ -70,7 +74,10 @@
         <p>From thrilling tiger safaris and ancient temple visits to private plunge pools shaded by mango trees and evenings under the stars, this curated getaway offers the perfect balance of adventure and relaxation.</p>
         <p>Whether you're seeking serene moments or unforgettable wildlife encounters, this retreat promises a deeply immersive forest experience.</p>
       </div>
-      
+      <div class="package-map-section">
+        <h2>Your Journey Map</h2>
+        <div id="package-map" class="package-map"></div>
+      </div>
       <div class="location-features">
         <h2>What's Included</h2>
         <div class="features-grid">
@@ -256,6 +263,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="js/location-page.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+  crossorigin=""></script>
+  <script src="js/package-map.js"></script>
   <script>
     // Force hide loader after 3 seconds maximum
     setTimeout(function() {
