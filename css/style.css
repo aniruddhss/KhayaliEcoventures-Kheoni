@@ -610,7 +610,232 @@ p,
 .hero-content {
   transform: translateZ(0); /* GPU acceleration for critical animations */
 }
+/* Our Stays Section Styling */
+.stays-section {
+  background-color: #050505;
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+}
 
+.stays-container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.stays-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-subtitle {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.stays-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Make the grid responsive */
+@media (max-width: 1200px) {
+  .stays-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stays-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stay-card {
+  background-color: rgba(15, 15, 15, 0.6);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stay-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stay-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.stay-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.stay-card:hover .stay-image img {
+  transform: scale(1.05);
+}
+
+.stay-details {
+  padding: 25px;
+}
+
+.stay-location {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.stay-details h3 {
+  font-size: 1.6rem;
+  margin: 0 0 15px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+}
+
+.stay-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Work Sans', sans-serif;
+}
+
+.stay-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.stay-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+  font-size: 14px;
+}
+
+.stay-pricing {
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 20px;
+}
+
+.price-from {
+  font-weight: 500;
+  color: #6dd5ed;
+}
+.cta-button.outline {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff !important;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button.outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #6dd5ed;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button.outline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6dd5ed, transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.cta-button.outline:hover::after {
+  transform: translateX(100%);
+}
+
+/* Make sure stays-cta section has proper spacing */
+.stays-cta {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Stay CTA Button Styling */
+.stay-cta {
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* Ensure proper margin between price and CTA */
+.stay-pricing {
+  margin-bottom: 5px;
+}
+
+/* Style consistency for buttons */
+.stay-card .location-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stay-card .location-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #6dd5ed;
+  color: #6dd5ed;
+}
+
+/* Adjust spacing in mobile view */
+@media (max-width: 768px) {
+  .stay-cta {
+    margin-top: 15px;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stays-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stays-container {
+    padding: 0 20px;
+  }
+}
 
 @media (max-width: 1220px) {
   #hero-content h1 {
@@ -808,3 +1033,5 @@ p,
     font-size: 0.85rem;
   }
 }
+
+
