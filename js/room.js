@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize locomotive scroll if it exists
-    if (typeof LocomotiveScroll !== 'undefined') {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        smartphone: {
-          smooth: true
-        },
-        tablet: {
-          smooth: true
-        }
-      });
+    // if (typeof LocomotiveScroll !== 'undefined') {
+    //   const scroll = new LocomotiveScroll({
+    //     el: document.querySelector('[data-scroll-container]'),
+    //     smooth: true,
+    //     smartphone: {
+    //       smooth: true
+    //     },
+    //     tablet: {
+    //       smooth: true
+    //     }
+    //   });
   
-      // Update scroll on window resize
-      window.addEventListener('resize', () => scroll.update());
-    }
+    //   // Update scroll on window resize
+    //   window.addEventListener('resize', () => scroll.update());
+    // }
   
     // Handle booking form submission
     const bookingForm = document.querySelector('.booking-form');
