@@ -626,19 +626,10 @@ p,
 }
 
 .stays-header {
+  /* margin-top:60px; */
   text-align: center;
   margin-bottom: 60px;
 }
-
-.section-subtitle {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.1rem;
-  opacity: 0.8;
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-
 .stays-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -707,16 +698,18 @@ p,
 }
 
 .stay-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 1rem !important;
+  line-height: 1.4; /* Reduced from 1.6 */
+  margin-bottom: 15px; /* Reduced from 20px */
   color: rgba(255, 255, 255, 0.9);
   font-family: 'Work Sans', sans-serif;
 }
 
+
 .stay-features {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 15px;
 }
@@ -789,14 +782,24 @@ p,
   margin-bottom: 20px;
 }
 /* Stay CTA Button Styling */
-.stay-cta {
-  text-align: right;
+.stay-card .pricing-cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
 }
 
-/* Ensure proper margin between price and CTA */
+/* Adjust stay pricing for side-by-side layout */
 .stay-pricing {
-  margin-bottom: 5px;
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 0; /* Remove top margin as it's now handled by container */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Adjust stay CTA for side-by-side layout */
+.stay-cta {
+  margin-top: 0; /* Remove top margin as it's now handled by container */
+  text-align: right;
 }
 
 /* Style consistency for buttons */
@@ -834,6 +837,14 @@ p,
   
   .stays-container {
     padding: 0 20px;
+  }
+  .stay-card .pricing-cta-container {
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+    gap: 10px;
+  }
+  
+  .stay-pricing {
+    margin-bottom: 5px;
   }
 }
 /* Footer styles */
