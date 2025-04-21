@@ -12,8 +12,8 @@
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
   crossorigin="" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/location-page.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/location-page.css" />
 </head>
 <body >
   <div id="loader">
@@ -38,16 +38,16 @@
     <div class="carousel-container">
       <div class="carousel-track">
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="solretreat media/patio1.jpg" alt="Sol Retreat patio" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="/images/solretreat media/patio1.jpg" alt="Sol Retreat patio" loading="lazy">
         </div>
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="/solretreat media/solretreat doublebed.jpg" alt="Sol Retreat Surroundings" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="/images/solretreat media/solretreat doublebed.jpg" alt="Sol Retreat Surroundings" loading="lazy">
         </div>
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="/kheoni wildlife media/tiger kheoni.jpg" alt="Sol Retreat patio" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="/images/kheoni wildlife media/tiger kheoni.jpg" alt="Sol Retreat patio" loading="lazy">
         </div>
         <div class="carousel-slide">
-          <img class="lazy" src="placeholder.png" data-src="/solretreat media/pathway2.jpg" alt="Sol Retreat Surroundings" loading="lazy">
+          <img class="lazy" src="placeholder.png" data-src="/images/solretreat media/pathway2.jpg" alt="Sol Retreat Surroundings" loading="lazy">
         </div>
       </div>
       <div class="carousel-nav">
@@ -110,7 +110,7 @@
           </div>
           <div class="itinerary-content">
             <div class="itinerary-image">
-              <img class="lazy" src="placeholder.png" data-src="/kheoni wildlife media/tiger kheoni.jpg" alt="Sol Retreat Surroundings" loading="lazy">
+              <img class="lazy" src="placeholder.png" data-src="/images/kheoni wildlife media/tiger kheoni.jpg" alt="Sol Retreat Surroundings" loading="lazy">
             </div>
             <div class="itinerary-details">
                 <p><span class="feature-icon">•</span> Land in Indore (morning/afternoon flight).</p>
@@ -133,7 +133,7 @@
           </div>
           <div class="itinerary-content">
             <div class="itinerary-image">
-                <img class="lazy" src="placeholder.png" data-src="/solretreat media/devbadla temple.jpg" alt="Forest Day" loading="lazy">
+                <img class="lazy" src="placeholder.png" data-src="/images/solretreat media/devbadla temple.jpg" alt="Forest Day" loading="lazy">
             </div>
             <div class="itinerary-details">
                 <p><span class="feature-icon">•</span> Leave the Tiger Safari Lodge by 5:30AM for an early morning totally private safari to a pristine, untouched area of the Kheoni Sanctuary.</p>
@@ -157,7 +157,7 @@
           </div>
           <div class="itinerary-content">
             <div class="itinerary-image">
-                <img class="lazy" src="placeholder.png" data-src="/solretreat media/devbadla temple.jpg" alt="Forest Day" loading="lazy">
+                <img class="lazy" src="placeholder.png" data-src="/images/solretreat media/devbadla temple.jpg" alt="Forest Day" loading="lazy">
             </div>
             <div class="itinerary-details">
                 <p><span class="feature-icon">•</span> Wake up to the sounds of nature and enjoy a filling breakfast.</p>
@@ -239,6 +239,36 @@
       </form>
     </div>
   </div>
+  <!-- Booking Modal -->
+<div id="booking-modal" class="booking-modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="booking-panel-modal">
+      <div class="price-details">
+        <h2>Starting at</h2>
+        <div class="price">₹1,29,000</div>
+        <p class="price-info">for 2 guests</p>
+      </div>
+      
+      <form class="booking-form" id="booking-form-modal">
+        <h3>Make an Enquiry</h3>
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message (Optional)"></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</div>
 
   <!-- Footer -->
   <footer class="site-footer" >
@@ -271,16 +301,16 @@
       <p>&copy; 2025 Khayali Ecoventures. All rights reserved.</p>
     </div>
   </footer>
-  <script src="js/lazy-loader.js"></script>
+  <script src="/js/lazy-loader.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <script src="js/location-page.js"></script>
+  <script src="/js/location-page.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
   crossorigin=""></script>
-  <script src="js/package-map.js"></script>
+  <script src="/js/package-map.js"></script>
   <script>
     // Force hide loader after 3 seconds maximum
     setTimeout(function() {
@@ -376,6 +406,52 @@
             currentSlide = (currentSlide + 1) % slides.length;
             updateCarousel();
           }, 5000);
+        });
+      }
+    });
+  </script>
+  <script>
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the modal elements
+      const modal = document.getElementById('booking-modal');
+      const bottomCta = document.querySelector('.bottom-cta a');
+      const closeBtn = document.querySelector('.close-modal');
+      
+      // Open the modal when clicking the CTA button
+      if (bottomCta) {
+        bottomCta.addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.style.display = 'block';
+          document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        });
+      }
+      
+      // Close the modal when clicking the close button
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+      }
+      
+      // Close the modal when clicking outside of it
+      window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+      });
+      
+      // Handle form submission in the modal
+      const modalForm = document.getElementById('booking-form-modal');
+      if (modalForm) {
+        modalForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Thank you for your inquiry! We will contact you soon.');
+          modalForm.reset();
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto'; // Re-enable scrolling
         });
       }
     });
