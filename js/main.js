@@ -400,5 +400,30 @@ function setupScrollerProxy() {
         });
       });
     }
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Collect form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          interest: document.getElementById('interest').value,
+          message: document.getElementById('message').value
+        };
+        
+        // Here you would normally send this data to your server
+        console.log('Form submitted:', formData);
+        
+        // Show success message
+        alert('Thank you for reaching out! Our team will contact you shortly.');
+        
+        // Reset form
+        contactForm.reset();
+      });
+    }
   }
 });
