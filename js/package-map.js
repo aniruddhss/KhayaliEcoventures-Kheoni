@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Package route data
     const packageRoutes = {
-      '3d2n.html': {
+      '/pages/3d2n.html': {
         title: 'Kheoni Retreat - 3 Days/2 Nights',
         locations: [
           { name: 'Indore Airport', coords: [22.7196, 75.8011], type: 'start' },
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         route: true
       },
-      '4d3n.html': {
+      '/pages/4d3n.html': {
         title: 'Kheoni Retreat - 4 Days/3 Nights',
         locations: [
           { name: 'Indore Airport', coords: [22.7196, 75.8011], type: 'start' },
