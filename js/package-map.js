@@ -51,6 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
           { name: 'Ayurvedic Wellness Center', coords: [23.1700, 75.7690], type: 'activity', optional: true }
         ],
         route: true
+      },
+      'keshar-parvat-mandu-trip.html': {
+        title: 'Keshar Parvat Mandu Trip',
+        locations: [
+          { name: 'Indore', coords: [22.7196, 75.8011], type: 'start' },
+          { name: 'Mahakaleshwar Temple', coords: [23.1828, 75.7682], type: 'activity' },
+          { name: 'Heritage Haveli Stay', coords: [23.1756, 75.7712], type: 'destination' },
+          { name: 'Ayurvedic Wellness Center', coords: [23.1700, 75.7690], type: 'activity', optional: true }
+        ],
+        route: true
       }
     };
     
