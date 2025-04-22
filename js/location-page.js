@@ -9,33 +9,6 @@ window.addEventListener("load", function () {
     navbar.style.opacity = "1";
   }
 
-  // Mobile menu toggle
-  if (menuToggle && navbarLinks) {
-    menuToggle.addEventListener("click", function () {
-      navbarLinks.classList.toggle("active");
-      menuToggle.textContent = navbarLinks.classList.contains("active")
-        ? "✕"
-        : "☰";
-    });
-
-    // Close menu when clicking a link
-    const navLinks = document.querySelectorAll(".navbar-links a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        navbarLinks.classList.remove("active");
-        menuToggle.textContent = "☰";
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (e) {
-      if (!navbarLinks.contains(e.target) && e.target !== menuToggle) {
-        navbarLinks.classList.remove("active");
-        menuToggle.textContent = "☰";
-      }
-    });
-  }
-
   // Itinerary dropdown functionality
   const itineraryItems = document.querySelectorAll(".itinerary-item");
 
