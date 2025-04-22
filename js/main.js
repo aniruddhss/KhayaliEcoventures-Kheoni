@@ -15,6 +15,46 @@ window.addEventListener("load", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navbarLinks = document.getElementById("navbar-links");
   const navLinks = document.querySelectorAll(".navbar-links a");
+  // Add near the top of your script
+
+// Check if user is coming from another page on our site
+const referrer = document.referrer;
+const isInternalNavigation = referrer && referrer.includes('khayali');
+
+// If coming from another page on our site and has a hash, skip animations
+if (isInternalNavigation && window.location.hash) {
+  // Skip or shorten animations
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 300);
+  }
+  
+  // Hide hero content faster
+  const heroContent = document.getElementById("hero-content");
+  if (heroContent) {
+    gsap.to(heroContent, { opacity: 0, duration: 0.3 });
+  }
+  
+  // Skip image grid animation
+  const imageGrid = document.getElementById("image-grid");
+  if (imageGrid) {
+    imageGrid.style.opacity = 0;
+    setTimeout(() => {
+      imageGrid.style.display = "none";
+    }, 300);
+  }
+  
+  // Scroll to the target section sooner
+  setTimeout(() => {
+    const targetElement = document.querySelector(window.location.hash);
+    if (targetElement && typeof locoScroll !== "undefined") {
+      locoScroll.scrollTo(targetElement);
+    }
+  }, 800);
+}
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
@@ -291,6 +331,36 @@ window.addEventListener("load", function () {
     locoScroll.on("scroll", ScrollTrigger.update);
     ScrollTrigger.refresh();
 
+    // Place after your initial animations
+
+// Check if we need to scroll to a specific section after all animations
+setTimeout(function() {
+  // Check for stored scroll target or URL hash
+  const storedTarget = sessionStorage.getItem('scrollTarget');
+  const urlHash = window.location.hash.substring(1); // Remove the # symbol
+  const targetId = storedTarget || urlHash;
+  
+  if (targetId) {
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // If using LocomotiveScroll
+      if (typeof locoScroll !== "undefined") {
+        locoScroll.scrollTo(targetElement);
+      } else {
+        // Fallback for browsers without LocomotiveScroll
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, 
+          behavior: 'smooth'
+        });
+      }
+      
+      // Clear the stored target to prevent unwanted scrolling on future page loads
+      sessionStorage.removeItem('scrollTarget');
+    }
+  }
+}, 2500); // Adjust timing based on your animations
+
     // Add this inside your initScrollAnimations function in main.js
     // Animation for About Us section
     const aboutTitle = document.querySelector(".about-title h2");
@@ -356,6 +426,7 @@ window.addEventListener("load", function () {
     //   },
     // });
     // Locations section animations
+
     const locationsSection = document.querySelector(".locations-section");
     const locationsHeader = document.querySelector(".locations-header");
     const locationCards = document.querySelectorAll(".location-card");
