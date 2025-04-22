@@ -14,6 +14,38 @@ window.addEventListener("load", function () {
   const ctaButton = document.getElementById("explore-button");
   const menuToggle = document.getElementById("menu-toggle");
   const navbarLinks = document.getElementById("navbar-links");
+  const navLinks = document.querySelectorAll(".navbar-links a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      if (targetId && targetId !== "#") {
+        // Get the target element
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // If using LocomotiveScroll
+          if (typeof locoScroll !== "undefined") {
+            locoScroll.scrollTo(targetElement);
+          } else {
+            // Fallback for browsers without LocomotiveScroll
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Offset for navbar height
+              behavior: "smooth",
+            });
+          }
+        }
+      }
+
+      // Close mobile menu if open
+      const navbarLinks = document.getElementById("navbar-links");
+      if (navbarLinks && navbarLinks.classList.contains("active")) {
+        navbarLinks.classList.remove("active");
+        document.getElementById("menu-toggle").textContent = "☰";
+      }
+    });
+  });
 
   // Rest of your existing code starts here
   console.log("Script loaded and running");
@@ -77,51 +109,52 @@ window.addEventListener("load", function () {
       initScrollAnimations();
     }, 500);
   }, 2000);
-  
-function setupScrollerProxy() {
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    multiplier: 1,
-    smartphone: {
-      smooth: false,
-    },
-    tablet: {
+
+  let locoScroll
+
+  function setupScrollerProxy() {
+    locoScroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
       smooth: true,
-      breakpoint: 1024,
-    },
-  });
+      multiplier: 1,
+      smartphone: {
+        smooth: false,
+      },
+      tablet: {
+        smooth: true,
+        breakpoint: 1024,
+      },
+    });
 
-  // Tell ScrollTrigger to use these proxy methods
-  ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector("[data-scroll-container]").style.transform
-      ? "transform"
-      : "fixed",
-  });
+    // Tell ScrollTrigger to use these proxy methods
+    ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+      scrollTop(value) {
+        return arguments.length
+          ? locoScroll.scrollTo(value, 0, 0)
+          : locoScroll.scroll.instance.scroll.y;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      pinType: document.querySelector("[data-scroll-container]").style.transform
+        ? "transform"
+        : "fixed",
+    });
 
-  // Update ScrollTrigger when scroll updates
-  locoScroll.on("scroll", ScrollTrigger.update);
+    // Update ScrollTrigger when scroll updates
+    locoScroll.on("scroll", ScrollTrigger.update);
 
-  // After everything is set up, refresh
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
+    // After everything is set up, refresh
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
 
-  return locoScroll;
-}
-
+    return locoScroll;
+  }
 
   function initScrollAnimations() {
     const isMobile = window.innerWidth <= 768;
@@ -193,10 +226,9 @@ function setupScrollerProxy() {
     //   );
     // }
     tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
-    .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
-    .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
-    .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
-
+      .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
+      .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
+      .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
 
     document.querySelectorAll(".grid-image").forEach((img) => {
       img.style.willChange = "transform";
@@ -400,27 +432,27 @@ function setupScrollerProxy() {
         });
       });
     }
-    const contactForm = document.querySelector('.contact-form');
-    
+    const contactForm = document.querySelector(".contact-form");
+
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
+      contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        
+
         // Collect form data
         const formData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          phone: document.getElementById('phone').value,
-          interest: document.getElementById('interest').value,
-          message: document.getElementById('message').value
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          interest: document.getElementById("interest").value,
+          message: document.getElementById("message").value,
         };
-        
+
         // Here you would normally send this data to your server
-        console.log('Form submitted:', formData);
-        
+        console.log("Form submitted:", formData);
+
         // Show success message
-        alert('Thank you for reaching out! Our team will contact you shortly.');
-        
+        alert("Thank you for reaching out! Our team will contact you shortly.");
+
         // Reset form
         contactForm.reset();
       });
