@@ -10,7 +10,7 @@ html.has-scroll-smooth {
 body {
   cursor: default;
   font-family: "Work Sans", sans-serif;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.1);
   color: white;
   font-weight: 300;
 }
@@ -319,7 +319,7 @@ input[type="submit"] {
 
 
 .about-section {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -395,7 +395,7 @@ input[type="submit"] {
 } */
 /* Locations Section Styling */
 .locations-section {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   position: relative;
   overflow: visible; /* Change from hidden to visible to allow content to show fully */
@@ -610,302 +610,10 @@ p,
 .hero-content {
   transform: translateZ(0); /* GPU acceleration for critical animations */
 }
-/* Our Stays Section Styling */
-.stays-section {
-  background-color: #000;
-  color: #fff;
-  padding: 80px 0;
-  position: relative;
-}
 
-.stays-container {
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.stays-header {
-  /* margin-top:60px; */
-  text-align: center;
-  margin-bottom: 60px;
-}
-.stays-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px; /* Increased gap for better visual separation */
-  max-width: 1400px; /* Constrain width for better appearance with two cards */
-  margin: 0 auto 60px;
-}
-
-/* Make the grid responsive */
-@media (max-width: 1200px) {
-  .stays-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .stays-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.stay-card {
-  background-color: rgba(15, 15, 15, 0.6);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
-}
-
-
-.stay-card:hover {
-  transform: translateY(-10px); /* More noticeable hover effect */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border-color: rgba(109, 213, 237, 0.3); /* Subtle highlight on hover */
-}
-.stay-image {
-  height: 280px; /* Slightly taller images for better impact */
-  overflow: hidden;
-  position: relative;
-}
-.stay-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 50%
-  );
-}
-.stay-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.stay-card:hover .stay-image img {
-  transform: scale(1.05);
-}
-
-.stay-details {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Left align all content */
-  flex-grow: 1; /* Allow it to fill remaining space */
-}
-
-
-.stay-location {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 8px;
-  font-family: 'Work Sans', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.stay-details h3 {
-  font-size: 1.8rem;
-  margin: 0 0 15px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  align-self: flex-start; /* Ensure left alignment */
-}
-
-.stay-description {
-  font-size: 1rem !important;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
-  font-family: 'Work Sans', sans-serif;
-  text-align: left; /* Left align text */
-  max-width: 100%; /* Allow text to use full width */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Features row improvements */
-.stay-features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 12px;
-  margin-bottom: 20px;
-  width: 100%; /* Full width */
-}
-
-.stay-feature {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  background-color: rgba(255, 255, 255, 0.08);
-  padding: 8px 14px;
-  border-radius: 20px;
-  color: rgba(255, 255, 255, 0.9);
-  transition: background-color 0.3s ease;
-}
-
-.stay-feature:hover {
-  background-color: rgba(109, 213, 237, 0.15);
-}
-
-.feature-icon {
-  font-size: 15px;
-}
-
-.stay-pricing {
-  font-family: 'Work Sans', sans-serif;
-  margin-top: 0;
-}
-
-.price-from {
-  font-weight: 500;
-  color: #6dd5ed;
-}
-.cta-button.outline {
-  background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  color: #fff !important;
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  margin-top: 20px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button.outline:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: #6dd5ed;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.cta-button.outline::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #6dd5ed, transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.cta-button.outline:hover::after {
-  transform: translateX(100%);
-}
-
-/* Make sure stays-cta section has proper spacing */
-.stays-cta {
-  text-align: center;
-  color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-/* Stay CTA Button Styling */
-.pricing-cta-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto; /* Push to bottom */
-  width: 100%;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.stay-cta {
-  text-align: right;
-}
-
-/* Style consistency for buttons */
-.stay-card .location-button {
-  padding: 10px 20px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-}
-
-
-.stay-card .location-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: #6dd5ed;
-  color: #6dd5ed;
-  transform: translateY(-2px);
-}
-/* Adjust spacing in mobile view */
-@media (max-width: 768px) {
-  .stay-cta {
-    margin-top: 15px;
-  }
-}
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .stays-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stays-container {
-    padding: 0 20px;
-  }
-  .stay-card .pricing-cta-container {
-    flex-wrap: wrap; /* Allow wrapping on very small screens */
-    gap: 10px;
-  }
-  
-  .stay-pricing {
-    margin-bottom: 5px;
-  }
-}
-/* Responsive adjustments for better mobile view */
-@media (max-width: 1024px) {
-  .stays-grid {
-    gap: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .stays-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px; /* Center single column on mobile */
-    gap: 40px;
-  }
-  
-  .stay-image {
-    height: 240px;
-  }
-  
-  .stay-details {
-    padding: 25px;
-  }
-  
-  .stay-details h3 {
-    font-size: 1.6rem;
-  }
-}
 /* Footer styles */
 .site-footer {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
   color: white;
   padding: 4rem 2rem 2rem;
   margin-top: auto;
@@ -1201,7 +909,7 @@ p,
 
 /* Contact Section Styling */
 .contact-section {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   padding: 100px 0;
   position: relative;
@@ -1436,7 +1144,7 @@ p,
 
 /* Amenities Section Styling */
 .amenities-section {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -1492,11 +1200,11 @@ p,
 
 .amenity-card {
   position: relative;
-  background-color: rgba(15, 15, 15, 0.5);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: rgba(15, 15, 15, 0.5);
   height: 100%;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1844,7 +1552,7 @@ p,
 /* Property Map Section */
 .map-section {
   padding: 6rem 0;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
@@ -2038,5 +1746,219 @@ p,
   .google-maps-button {
     padding: 10px 15px;
     font-size: 0.8rem;
+  }
+}
+
+/* Nearby Attractions Section */
+.nearby-section {
+  padding: 6rem 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nearby-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nearby-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.nearby-header h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+}
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nearby-place {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nearby-place:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.place-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.place-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.nearby-place:hover .place-image-container img {
+  transform: scale(1.05);
+}
+
+.place-distance {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.place-details {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.place-details h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  font-family: 'Oswald', sans-serif;
+  
+}
+
+.place-details p {
+  font-size: 0.95rem;
+ 
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.place-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.place-feature {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.place-feature .feature-icon {
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
+.nearby-map {
+  margin-top: 3rem;
+  height: 300px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mp-map.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.map-overlay-text {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.map-overlay-text h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+.map-overlay-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.map-link-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+}
+
+.map-link-button:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .nearby-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nearby-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nearby-map {
+    height: 250px;
+  }
+  
+  .map-overlay-text h3 {
+    font-size: 1.7rem;
+  }
+  
+  .map-overlay-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nearby-map {
+    height: 200px;
+  }
+  
+  .map-overlay-text {
+    padding: 1.5rem;
+  }
+  
+  .map-overlay-text h3 {
+    font-size: 1.5rem;
   }
 }
