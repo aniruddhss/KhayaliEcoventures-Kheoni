@@ -2,6 +2,91 @@
 //   // Mobile - load smaller assets
 //   document.getElementById('background-video').src = "khayali-travels-mobile.mp4";
 // } later add a different video for mobile
+
+function initPropertyMap() {
+  // Check if map container exists
+  const mapContainer = document.getElementById('property-map');
+  if (!mapContainer) return;
+  
+  // Coordinates for Tiger Safari Lodge (Kheoni Wildlife Sanctuary area)
+  const propertyCoords = [22.4922, 76.8154]; // Replace with exact coordinates
+  
+  // Initialize the map
+  const map = L.map('property-map').setView(propertyCoords, 11); // Changed zoom level from 13 to 11 to show more area
+  
+  // Add a tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
+  }).addTo(map);
+  
+  // Add a marker for the property
+  const lodgeIcon = L.divIcon({
+    html: '<div style="background-color: #3a3a3a; width: 12px; height: 12px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></div>',
+    className: 'property-marker',
+    iconSize: [18, 18],
+    iconAnchor: [9, 9]
+  });
+  
+  L.marker(propertyCoords, {icon: lodgeIcon}).addTo(map)
+    .bindPopup('<b>Tiger Safari Lodge</b><br>Kheoni Wildlife Sanctuary')
+    .openPopup();
+    
+  // Add a circle to show the general area
+  L.circle(propertyCoords, {
+    color: '#3a3a3a',
+    fillColor: '#3a3a3a',
+    fillOpacity: 0.1,
+    radius: 2000
+  }).addTo(map);
+  
+  // Add nearby landmarks
+  const landmarks = [
+    {
+      name: "Kheoni Wildlife Sanctuary Main Gate",
+      coords: [22.4700, 76.8300],
+      icon: "🦁",
+      description: "Main entrance to the sanctuary"
+    },
+    {
+      name: "Devbadla Temple",
+      coords: [22.5100, 76.8200],
+      icon: "🏛️",
+      description: "Ancient temple dating back to 1000 AD"
+    },
+    {
+      name: "Jam Gate",
+      coords: [22.5220, 76.7900],
+      icon: "🚪",
+      description: "Historical entrance to the forest region"
+    },
+    {
+      name: "Bhikangaon",
+      coords: [22.5500, 76.9000],
+      icon: "🏪",
+      description: "Nearest town with local markets"
+    },
+    {
+      name: "Maheshwar",
+      coords: [22.1763, 75.5841],
+      icon: "🏰",
+      description: "Historic town with famous temple and ghats (1.5 hours drive)"
+    }
+  ];
+  
+  // Create custom icon for landmarks
+  landmarks.forEach(landmark => {
+    const landmarkIcon = L.divIcon({
+      html: `<div style="background-color: #fff; color: #333; width: 30px; height: 30px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(0,0,0,0.3); font-size: 16px;">${landmark.icon}</div>`,
+      className: 'landmark-marker',
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
+    });
+    
+    L.marker(landmark.coords, {icon: landmarkIcon}).addTo(map)
+      .bindPopup(`<b>${landmark.name}</b><br>${landmark.description}`);
+  });
+}
 window.addEventListener("load", function () {
   // Variables
   const loader = document.getElementById("loader");
@@ -195,7 +280,7 @@ if (isInternalNavigation && window.location.hash) {
 
     return locoScroll;
   }
-
+  initPropertyMap();
   function initScrollAnimations() {
     const isMobile = window.innerWidth <= 768;
     // const locoScroll = new LocomotiveScroll({
@@ -307,26 +392,27 @@ if (isInternalNavigation && window.location.hash) {
     });
 
     heroTl.to(heroContent, { opacity: 0, y: 30, ease: "power2.inOut" }, 0);
-
-    gsap.utils.toArray(".section").forEach((section, i) => {
-      gsap.fromTo(
-        section,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            scroller: "[data-scroll-container]",
-            start: "top 80%",
-            end: "top 50%",
-            scrub: true,
-          },
-        }
-      );
-    });
+// In initScrollAnimations function
+gsap.utils.toArray(".section").forEach((section, i) => {
+  gsap.fromTo(
+    section,
+    { opacity: 0, y: 30 }, // Reduced from 50 to 30 for subtler effect
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: section,
+        scroller: "[data-scroll-container]",
+        start: "top 85%", // Trigger earlier (was 80%)
+        end: "top 60%",   // End earlier (was 50%)
+        scrub: 0.5,       // Smoother scrubbing
+        once: true,       // Only animate once
+      }
+    }
+  );
+});
 
     locoScroll.on("scroll", ScrollTrigger.update);
     ScrollTrigger.refresh();
@@ -528,5 +614,76 @@ setTimeout(function() {
         contactForm.reset();
       });
     }
+    
+  const carouselTrack = document.querySelector('.full-screen-carousel .carousel-track');
+  const carouselIndicators = document.querySelector('.full-screen-carousel .carousel-indicators');
+  let currentSlide = 0;
+  
+  // Skip if carousel doesn't exist on page
+  if (!carouselTrack) return;
+  
+  function updateCarousel() {
+    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update indicators
+    document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+      if (index === currentSlide) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
   }
+  
+  // Set up navigation buttons
+  const prevButton = document.querySelector('.full-screen-carousel .carousel-prev');
+  const nextButton = document.querySelector('.full-screen-carousel .carousel-next');
+  
+  if (prevButton) {
+    prevButton.addEventListener('click', () => {
+      const slides = document.querySelectorAll('.carousel-slide');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  }
+  
+  if (nextButton) {
+    nextButton.addEventListener('click', () => {
+      const slides = document.querySelectorAll('.carousel-slide');
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    });
+  }
+  
+  // Set up indicators
+  document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      currentSlide = index;
+      updateCarousel();
+    });
+  });
+  
+  // Auto-advance carousel
+  let carouselInterval = setInterval(() => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+  }, 5000);
+  
+  // Pause auto-advance when interacting with carousel
+  const carouselContainer = document.querySelector('.full-screen-carousel');
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => {
+      clearInterval(carouselInterval);
+    });
+    
+    carouselContainer.addEventListener('mouseleave', () => {
+      carouselInterval = setInterval(() => {
+        const slides = document.querySelectorAll('.carousel-slide');
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+      }, 5000);
+    });
+  }
+}
 });
