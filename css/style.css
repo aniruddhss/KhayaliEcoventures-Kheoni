@@ -954,7 +954,7 @@ p,
   display: inline-block;
 }
 
-.contact-header h2::after {
+/* .contact-header h2::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -963,7 +963,7 @@ p,
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, rgba(0,0,0,0), #6dd5ed, rgba(0,0,0,0));
-}
+} */
 
 
 .contact-content {
@@ -1372,7 +1372,7 @@ p,
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 3rem;
+  padding: 5rem 3rem 4rem; /* Increased top and bottom padding */
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
   color: white;
   max-width: 100%;
@@ -1410,22 +1410,27 @@ p,
   transition: all 0.3s ease;
   border-radius: 4px;
   backdrop-filter: blur(5px);
+  margin-bottom: 2.5rem; 
 }
 
 .carousel-cta-button:hover {
   background-color: white;
   color: #000;
 }
-
 .carousel-nav {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px; /* Position at the bottom of carousel */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 20px;
   z-index: 10;
+  padding: 8px 15px;
+  border-radius: 30px;
+
 }
+
 
 .carousel-prev,
 .carousel-next {
@@ -1517,7 +1522,7 @@ p,
   }
   
   .slide-content {
-    padding: 2rem;
+    padding: 4rem 2rem 3.5rem;
   }
   
   .slide-content h3 {
@@ -1537,16 +1542,45 @@ p,
   .highlight-item {
     width: 100%;
   }
+  .carousel-cta-button {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
   .full-screen-carousel {
     height: 50vh;
   }
+  .slide-content {
+    padding: 3rem 1.5rem 3rem;
+  }
+  
+  .carousel-cta-button {
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
   
   .carousel-nav {
     bottom: 15px;
-    right: 15px;
+    /* Keep it centered with transform */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .carousel-prev,
+  .carousel-next {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  
+  .carousel-indicators {
+    gap: 8px;
+  }
+  
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
   }
 }
 /* Property Map Section */
@@ -1773,6 +1807,13 @@ p,
   font-family: 'Oswald', sans-serif;
   color: #fff;
 }
+.nearby-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+  text-align: center;
+}
 
 .nearby-grid {
   display: grid;
@@ -1798,7 +1839,7 @@ p,
 
 .place-image-container {
   position: relative;
-  height: 200px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -1875,7 +1916,7 @@ p,
   margin-top: 3rem;
   height: 300px;
   border-radius: 10px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mp-map.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/solretreat media/pathway2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
