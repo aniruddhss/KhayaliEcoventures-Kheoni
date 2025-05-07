@@ -264,7 +264,7 @@ input[type="submit"] {
   z-index: 100;
   opacity: 1;
   transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: all !important;
+  pointer-events: none !important;
 }
 #hero-content h1 {
   font-size: 4.5rem;
@@ -316,7 +316,16 @@ input[type="submit"] {
   background-color: #e0e0e0;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
+#hero-content .cta-button, 
+#hero-content button {
+  pointer-events: auto !important;
+}
 
+/* After scrolling a bit, ensure hero content doesn't block anything */
+.scrolled #hero-content {
+  opacity: 0;
+  pointer-events: none !important;
+}
 
 .about-section {
   background-color: rgba(0, 0, 0, 0.2);

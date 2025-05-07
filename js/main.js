@@ -2,7 +2,15 @@
 //   // Mobile - load smaller assets
 //   document.getElementById('background-video').src = "khayali-travels-mobile.mp4";
 // } later add a different video for mobile
-
+// Add this at the top of main.js
+document.addEventListener("scroll", function() {
+  // After scrolling 100px, add 'scrolled' class to body
+  if (window.scrollY > 100) {
+    document.body.classList.add('scrolled');
+  } else {
+    document.body.classList.remove('scrolled');
+  }
+});
 function initPropertyMap() {
   // Check if map container exists
   const mapContainer = document.getElementById('property-map');
