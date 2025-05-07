@@ -9,7 +9,7 @@ function initPropertyMap() {
   if (!mapContainer) return;
   
   // Coordinates for Tiger Safari Lodge (Kheoni Wildlife Sanctuary area)
-  const propertyCoords = [22.4922, 76.8154]; // Replace with exact coordinates
+  const propertyCoords = [22.99706366963482, 76.55440659849152]; // Replace with exact coordinates
   
   // Initialize the map
   const map = L.map('property-map').setView(propertyCoords, 11); // Changed zoom level from 13 to 11 to show more area
@@ -22,9 +22,9 @@ function initPropertyMap() {
   
   // Add a marker for the property
   const lodgeIcon = L.divIcon({
-    html: '<div style="background-color: #3a3a3a; width: 12px; height: 12px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></div>',
+    html: '<div style="background-color: #3a3a3a; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></div>',
     className: 'property-marker',
-    iconSize: [18, 18],
+    iconSize: [20, 20],
     iconAnchor: [9, 9]
   });
   
@@ -37,39 +37,45 @@ function initPropertyMap() {
     color: '#3a3a3a',
     fillColor: '#3a3a3a',
     fillOpacity: 0.1,
-    radius: 2000
+    radius: 8000
   }).addTo(map);
   
   // Add nearby landmarks
   const landmarks = [
     {
       name: "Kheoni Wildlife Sanctuary Main Gate",
-      coords: [22.4700, 76.8300],
+      coords: [22.8384887235879, 76.88388395033772],
       icon: "🦁",
       description: "Main entrance to the sanctuary"
     },
     {
       name: "Devbadla Temple",
-      coords: [22.5100, 76.8200],
+      coords: [22.899320162030847, 76.47492485404727],
       icon: "🏛️",
       description: "Ancient temple dating back to 1000 AD"
     },
     {
-      name: "Jam Gate",
-      coords: [22.5220, 76.7900],
-      icon: "🚪",
-      description: "Historical entrance to the forest region"
+      name: "Dewas Temples",
+      coords: [22.980346428454457, 76.0608566133082],
+      icon: "🛕",
+      description: "Famous temples on a hilltop (1 hour drive)"
     },
     {
-      name: "Bhikangaon",
-      coords: [22.5500, 76.9000],
-      icon: "🏪",
-      description: "Nearest town with local markets"
+      name: "Indore Airport",
+      coords: [22.743612346255823, 75.80141545009442],
+      icon: "🛫",
+      description: "Nearest city famous for its food and culture (1.5 hours drive)"
     },
     {
-      name: "Maheshwar",
-      coords: [22.1763, 75.5841],
-      icon: "🏰",
+      name: "Bhopal Airport",
+      coords: [23.307955403106853, 77.33628045714181],
+      icon: "✈️",
+      description: "City of lakes and capital of Madhya Pradesh (1.5 hours drive)"
+    },
+    {
+      name: "Ujjain Mahakaleshwar Temple",
+      coords: [23.196621817456894, 75.76922894204955],
+      icon: "🛕",
       description: "Historic town with famous temple and ghats (1.5 hours drive)"
     }
   ];
@@ -77,10 +83,10 @@ function initPropertyMap() {
   // Create custom icon for landmarks
   landmarks.forEach(landmark => {
     const landmarkIcon = L.divIcon({
-      html: `<div style="background-color: #fff; color: #333; width: 30px; height: 30px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(0,0,0,0.3); font-size: 16px;">${landmark.icon}</div>`,
+      html: `<div style="background-color: #0c0c0c; color: #333; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(0,0,0,0.3); font-size: 16px;">${landmark.icon}</div>`,
       className: 'landmark-marker',
-      iconSize: [30, 30],
-      iconAnchor: [15, 15]
+      iconSize: [50, 50],
+      iconAnchor: [25, 25]
     });
     
     L.marker(landmark.coords, {icon: landmarkIcon}).addTo(map)
