@@ -1203,7 +1203,7 @@ p,
 .amenities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 10px;
   margin-bottom: 60px;
 }
 
@@ -1215,7 +1215,7 @@ p,
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-color: rgba(15, 15, 15, 0.5);
   height: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1226,7 +1226,7 @@ p,
 }
 
 .amenity-image {
-  height: 240px;
+  height: 300px;
   position: relative;
   overflow: hidden;
 }
@@ -1242,46 +1242,17 @@ p,
   transform: scale(1.05);
 }
 
-.amenity-icon {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.amenity-card:hover .amenity-icon {
-  transform: scale(1.2) rotate(15deg);
-}
-
 .amenity-details {
-  padding: 25px;
+  padding: 15px;
 }
 
 .amenity-details h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 12px;
   letter-spacing: 0.03em;
 }
 
-.amenity-details p {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 300;
-  letter-spacing: 0.01em;
-}
 
 /* Responsive Adjustments */
 @media (max-width: 1220px) {
@@ -1643,6 +1614,7 @@ p,
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   max-width: 350px;
+  text-align: center;
   transition: transform 0.3s ease;
   z-index: 999;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1925,7 +1897,7 @@ p,
   margin-top: 3rem;
   height: 300px;
   border-radius: 10px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/solretreat media/pathway2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mp\ dark.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

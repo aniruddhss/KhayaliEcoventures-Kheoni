@@ -20,7 +20,7 @@ function initPropertyMap() {
   const propertyCoords = [22.99706366963482, 76.55440659849152]; // Replace with exact coordinates
   
   // Initialize the map
-  const map = L.map('property-map').setView(propertyCoords, 11); // Changed zoom level from 13 to 11 to show more area
+  const map = L.map('property-map').setView(propertyCoords, 10); // Changed zoom level from 13 to 11 to show more area
   
   // Add a tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -54,13 +54,13 @@ function initPropertyMap() {
       name: "Kheoni Wildlife Sanctuary Main Gate",
       coords: [22.8384887235879, 76.88388395033772],
       icon: "🦁",
-      description: "Main entrance to the sanctuary"
+      description: "Main entrance to the sanctuary(90 mins drive)"
     },
     {
       name: "Devbadla Temple",
       coords: [22.899320162030847, 76.47492485404727],
       icon: "🏛️",
-      description: "Ancient temple dating back to 1000 AD"
+      description: "Ancient temple dating back to 1000 AD(45 min drive)"
     },
     {
       name: "Dewas Temples",
@@ -72,7 +72,7 @@ function initPropertyMap() {
       name: "Indore Airport",
       coords: [22.743612346255823, 75.80141545009442],
       icon: "🛫",
-      description: "Nearest city famous for its food and culture (1.5 hours drive)"
+      description: "Nearest city famous for its food and culture (1 hour 45 minutes drive)"
     },
     {
       name: "Bhopal Airport",
@@ -84,7 +84,7 @@ function initPropertyMap() {
       name: "Ujjain Mahakaleshwar Temple",
       coords: [23.196621817456894, 75.76922894204955],
       icon: "🛕",
-      description: "Historic town with famous temple and ghats (1.5 hours drive)"
+      description: "Historic town with famous temple and ghats (2 hours drive)"
     }
   ];
   
