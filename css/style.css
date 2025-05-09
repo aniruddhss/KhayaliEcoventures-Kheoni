@@ -378,6 +378,7 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* align-items: left; */
   padding: 10% 10% 10% 5%;
 }
 
@@ -398,12 +399,8 @@ input[type="submit"] {
   margin-bottom: 0;
 }
 
-/* .about-section {
-  background-image: url("/peacock\ 2.jpg");
-  background-blend-mode: overlay;
-} */
-/* Locations Section Styling */
-.locations-section {
+
+.kheoniwildlife-section {
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   position: relative;
@@ -411,7 +408,7 @@ input[type="submit"] {
   padding: 0;
 }
 
-.locations-container {
+.kheoniwildlife-container {
   height: 100%;
   width: 100%;
   max-width: 1800px;
@@ -421,13 +418,13 @@ input[type="submit"] {
   flex-direction: column;
 }
 
-.locations-header {
+.kheoniwildlife-header {
   text-align: center;
   margin-bottom: 60px;
-  opacity: 0; /* For animation */
+
 }
 
-.locations-header h2 {
+.kheoniwildlife-header h2 {
   font-size: 3.5rem;
 
   margin-bottom: 15px;
@@ -442,34 +439,22 @@ input[type="submit"] {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.locations-header h2,
+.kheoniwildlife-header h2,
 .about-title h2 {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
 
-.locations-header p {
+.kheoniwildlife-header p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
   opacity: 0.8;
 }
 
-.locations-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  width: 100%;
-}
-.location-details h3 {
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-}
 /* Update paragraph styling for better readability */
 p,
-.location-description,
 .about-paragraph {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
@@ -485,135 +470,13 @@ p,
 }
 
 /* Style the CTA button */
-.cta-button,
-.location-button {
+.cta-button{
   font-family: "Oswald", sans-serif;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.location-card {
-  background-color: rgba(15, 15, 15, 0.5);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  height: 100%;
-  opacity: 0; /* For animation */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
 
-.location-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-}
-
-.location-image {
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-}
-
-.location-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0) 50%
-  );
-}
-
-.location-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
-}
-
-.location-card:hover .location-image img {
-  transform: scale(1.1);
-}
-
-.location-details {
-  padding: 25px;
-}
-
-.location-details h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.location-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  opacity: 0.8;
-}
-
-.location-address {
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-  margin-bottom: 25px;
-  opacity: 0.7;
-}
-
-.location-icon {
-  margin-right: 8px;
-  font-size: 1.2rem;
-}
-
-.location-cta {
-  text-align: right;
-}
-
-.location-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.location-button:hover {
-  background-color: white;
-  color: #000;
-  border-color: white;
-}
-
-/* Add hover effect */
-.location-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #6dd5ed, #2193b0, #6dd5ed);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-  z-index: 1;
-  opacity: 0;
-}
-
-.location-card:hover::before {
-  transform: scaleX(1);
-  opacity: 1;
-}
 .grid-image,
 .carousel-track,
 .hero-content {
@@ -703,21 +566,6 @@ p,
   color: white;
 }
 
-/* Responsive footer */
-@media (max-width: 768px) {
-  .footer-links {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .footer-column {
-    width: 100%;
-  }
-  
-  .site-footer {
-    padding: 3rem 1.5rem 1.5rem;
-  }
-}
 @media (max-width: 1220px) {
   #hero-content h1 {
     font-size: 3.5rem;
@@ -740,43 +588,25 @@ p,
     padding: 60px 20px;
   }
 
-  /* Now update the locations section specifically */
 
-  .locations-section {
+  .kheoniwildlife-section {
     height: auto !important;
     padding-bottom: 40px;
   }
 
-  .locations-container {
+  .kheoniwildlife-container {
     height: auto;
     padding: 60px 20px 20px 20px; /* Adjusted padding */
   }
 
-  .locations-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
-    gap: 30px;
-  }
-
-  .locations-header h2 {
+  .kheoniwildlife-header h2 {
     font-size: 2.5rem;
   }
 
-  .locations-header p {
+  .kheoniwildlife-header p {
     font-size: 1rem;
   }
 
-  .location-card {
-    max-width: 100%; /* Make cards fill the container width */
-    margin: 0 auto;
-  }
-
-  .location-details {
-    padding: 20px; /* Slightly decrease padding */
-  }
-
-  .location-description {
-    font-size: 0.95rem; /* Slightly smaller text */
-  }
 }
 
 @media (max-width: 768px) {
@@ -861,15 +691,7 @@ p,
     backdrop-filter: none; /* Remove on mobile */
   }
   
-  /* Simplify complex effects on mobile */
-  .location-card::before {
-    display: none; /* Remove gradient animation on mobile */
-  }
-  
-  /* Disable complex hover transitions on mobile */
-  .location-card:hover .location-image img {
-    transform: none;
-  }
+
 }
 
 
@@ -881,38 +703,23 @@ p,
   .about-content {
     padding: 0 1.5rem 3rem 1.5rem;
   }
-  .locations-section {
+  .kheoniwildlife-section {
     padding-bottom: 20px;
   }
 
-  .locations-container {
+  .kheoniwildlife-container {
     padding: 40px 15px 10px 15px; /* Further reduced padding on very small screens */
   }
 
-  .locations-grid {
-    gap: 25px;
-  }
-
-  .locations-header {
+  .kheoniwildlife-header {
     margin-bottom: 30px;
   }
 
-  .locations-header h2 {
+  .kheoniwildlife-header h2 {
     font-size: 2rem;
   }
 
-  .location-image {
-    height: 180px; /* Slightly shorter images on very small screens */
-  }
 
-  .location-details h3 {
-    font-size: 1.5rem; /* Smaller headings */
-  }
-
-  .location-button {
-    padding: 10px 20px; /* Slightly smaller buttons */
-    font-size: 0.85rem;
-  }
 }
 
 
@@ -1306,7 +1113,6 @@ p,
     font-size: 2rem;
   }
 }
-/* Full Screen Carousel for Kheoni Wildlife Section */
 .full-screen-carousel {
   position: relative;
   height: 90vh;
@@ -1644,9 +1450,9 @@ p,
 
 .location-info p {
   margin-bottom: 10px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   display: flex;
-  align-items: center;
+  align-items: left;
   line-height: 1.5;
   color: #666;
 }
@@ -1732,7 +1538,7 @@ p,
   }
   
   .location-info p {
-    width: 48%; /* Put location details side by side */
+    width: 48%; 
     font-size: 0.9rem;
     margin-bottom: 10px;
   }
