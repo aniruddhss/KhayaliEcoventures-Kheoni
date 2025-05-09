@@ -1713,6 +1713,7 @@ p,
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .map-overlay-text {
@@ -1720,6 +1721,8 @@ p,
   color: white;
   padding: 2rem;
   max-width: 600px;
+  width: 90%;
+  transition: all 0.3s ease;
 }
 
 .map-overlay-text h3 {
@@ -1751,6 +1754,8 @@ p,
 .map-link-button:hover {
   background-color: white;
   color: #222;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive adjustments */
@@ -1758,37 +1763,86 @@ p,
   .nearby-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .map-overlay-text {
+    max-width: 80%;
+  }
 }
-
 @media (max-width: 768px) {
   .nearby-grid {
     grid-template-columns: 1fr;
   }
   
   .nearby-map {
-    height: 250px;
-  }
-  
-  .map-overlay-text h3 {
-    font-size: 1.7rem;
-  }
-  
-  .map-overlay-text p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nearby-map {
-    height: 200px;
+    height: auto;
+    min-height: 280px;
+    background-attachment: scroll;
+    padding: 20px 0;
   }
   
   .map-overlay-text {
+    width: 90%;
     padding: 1.5rem;
   }
   
   .map-overlay-text h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .map-overlay-text p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .map-link-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .nearby-map {
+    min-height: 250px;
+    margin-top: 2rem;
+  }
+  
+  .map-overlay-text {
+    padding: 1.2rem;
+    width: 92%;
+  }
+  
+  .map-overlay-text h3 {
     font-size: 1.5rem;
+  }
+  
+  .map-overlay-text p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .map-link-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .map-link-button {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .map-link-button:active {
+    background-color: white;
+    color: #222;
+    transform: translateY(-1px);
   }
 }
 
