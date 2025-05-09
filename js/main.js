@@ -3,6 +3,32 @@
 //   document.getElementById('background-video').src = "khayali-travels-mobile.mp4";
 // } later add a different video for mobile
 // Add this at the top of main.js
+// Scroll navigation functionality
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Get all links with data-scroll-to attribute
+//   const scrollLinks = document.querySelectorAll('[data-scroll-to]');
+  
+//   scrollLinks.forEach(link => {
+//     link.addEventListener('click', function(e) {
+//       e.preventDefault();
+      
+//       const targetId = this.getAttribute('data-scroll-to');
+//       const targetElement = document.getElementById(targetId);
+      
+//       if (targetElement && typeof locoScroll !== 'undefined') {
+//         // If using Locomotive Scroll
+//         locoScroll.scrollTo(targetElement);
+        
+//         // Close mobile menu if it's open
+//         const navbarLinks = document.getElementById('navbar-links');
+//         if (navbarLinks && navbarLinks.classList.contains('active')) {
+//           navbarLinks.classList.remove('active');
+//           document.getElementById('menu-toggle').textContent = '☰';
+//         }
+//       }
+//     });
+//   });
+// });
 document.addEventListener("scroll", function() {
   // After scrolling 100px, add 'scrolled' class to body
   if (window.scrollY > 100) {
@@ -154,37 +180,37 @@ if (isInternalNavigation && window.location.hash) {
     }
   }, 800);
 }
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+  // navLinks.forEach((link) => {
+  //   link.addEventListener("click", function (e) {
+  //     e.preventDefault();
 
-      const targetId = this.getAttribute("href");
-      if (targetId && targetId !== "#") {
-        // Get the target element
-        const targetElement = document.querySelector(targetId);
+  //     const targetId = this.getAttribute("href");
+  //     if (targetId && targetId !== "#") {
+  //       // Get the target element
+  //       const targetElement = document.querySelector(targetId);
 
-        if (targetElement) {
-          // If using LocomotiveScroll
-          if (typeof locoScroll !== "undefined") {
-            locoScroll.scrollTo(targetElement);
-          } else {
-            // Fallback for browsers without LocomotiveScroll
-            window.scrollTo({
-              top: targetElement.offsetTop - 100, // Offset for navbar height
-              behavior: "smooth",
-            });
-          }
-        }
-      }
+  //       if (targetElement) {
+  //         // If using LocomotiveScroll
+  //         if (typeof locoScroll !== "undefined") {
+  //           locoScroll.scrollTo(targetElement);
+  //         } else {
+  //           // Fallback for browsers without LocomotiveScroll
+  //           window.scrollTo({
+  //             top: targetElement.offsetTop - 100, // Offset for navbar height
+  //             behavior: "smooth",
+  //           });
+  //         }
+  //       }
+  //     }
 
-      // Close mobile menu if open
-      const navbarLinks = document.getElementById("navbar-links");
-      if (navbarLinks && navbarLinks.classList.contains("active")) {
-        navbarLinks.classList.remove("active");
-        document.getElementById("menu-toggle").textContent = "☰";
-      }
-    });
-  });
+  //     // Close mobile menu if open
+  //     const navbarLinks = document.getElementById("navbar-links");
+  //     if (navbarLinks && navbarLinks.classList.contains("active")) {
+  //       navbarLinks.classList.remove("active");
+  //       document.getElementById("menu-toggle").textContent = "☰";
+  //     }
+  //   });
+  // });
 
   // Rest of your existing code starts here
   console.log("Script loaded and running");
@@ -196,33 +222,33 @@ if (isInternalNavigation && window.location.hash) {
     { opacity: 1, y: 0, duration: 2, delay: 2.2, ease: "power4.out" }
   );
 
-  if (menuToggle && navbarLinks) {
-    menuToggle.addEventListener("click", function () {
-      navbarLinks.classList.toggle("active");
+  // if (menuToggle && navbarLinks) {
+  //   menuToggle.addEventListener("click", function () {
+  //     navbarLinks.classList.toggle("active");
 
-      // Change the toggle button text based on menu state
-      menuToggle.textContent = navbarLinks.classList.contains("active")
-        ? "✕"
-        : "☰";
-    });
+  //     // Change the toggle button text based on menu state
+  //     menuToggle.textContent = navbarLinks.classList.contains("active")
+  //       ? "✕"
+  //       : "☰";
+  //   });
 
-    // Close menu when clicking a link
-    const navLinks = document.querySelectorAll(".navbar-links a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        navbarLinks.classList.remove("active");
-        menuToggle.textContent = "☰";
-      });
-    });
+  //   // Close menu when clicking a link
+  //   const navLinks = document.querySelectorAll(".navbar-links a");
+  //   navLinks.forEach((link) => {
+  //     link.addEventListener("click", function () {
+  //       navbarLinks.classList.remove("active");
+  //       menuToggle.textContent = "☰";
+  //     });
+  //   });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", function (e) {
-      if (!navbarLinks.contains(e.target) && e.target !== menuToggle) {
-        navbarLinks.classList.remove("active");
-        menuToggle.textContent = "☰";
-      }
-    });
-  }
+  //   // Close menu when clicking outside
+  //   document.addEventListener("click", function (e) {
+  //     if (!navbarLinks.contains(e.target) && e.target !== menuToggle) {
+  //       navbarLinks.classList.remove("active");
+  //       menuToggle.textContent = "☰";
+  //     }
+  //   });
+  // }
   // Direct event handler for the explore button
   if (ctaButton) {
     ctaButton.onclick = function (e) {
@@ -249,10 +275,11 @@ if (isInternalNavigation && window.location.hash) {
     }, 500);
   }, 2000);
 
-  let locoScroll
+  // let locoScroll
+  window.locoScroll = null; 
 
   function setupScrollerProxy() {
-    locoScroll = new LocomotiveScroll({
+  window.locoScroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
       multiplier: 1,

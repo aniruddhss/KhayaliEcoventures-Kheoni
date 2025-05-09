@@ -832,9 +832,9 @@ p,
 }
 
 .contact-form .submit-button {
-  background: rgba(109, 213, 237, 0.8);
-  color: #000;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 2px solid white;
   padding: 12px 25px;
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
@@ -848,7 +848,8 @@ p,
 }
 
 .contact-form .submit-button:hover {
-  background-color: #6dd5ed;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
 }
 
 .contact-info {
@@ -1033,7 +1034,7 @@ p,
 }
 
 .amenity-image {
-  height: 300px;
+  height: 250px;
   position: relative;
   overflow: hidden;
 }
@@ -1788,5 +1789,53 @@ p,
   
   .map-overlay-text h3 {
     font-size: 1.5rem;
+  }
+}
+
+.amenities-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.amenities-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.amenities-cta-button:hover {
+  background-color: white;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.amenities-cta-button svg {
+  transition: transform 0.3s ease;
+}
+
+.amenities-cta-button:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .amenities-cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }

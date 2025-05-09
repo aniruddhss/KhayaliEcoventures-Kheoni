@@ -20,18 +20,18 @@
 
     <!-- Navbar -->
     <div class="navbar" id="navbar">
-      <div class="navbar-logo">Tiger Safari Lodge</div>
-      <button class="menu-toggle" id="menu-toggle">☰</button>
-      <div class="navbar-links" id="navbar-links">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#about-us">Our Story</a>
-        <a href="../index.html#locations">Find Us</a>
-        <a href="../index.html#stays">Amenities</a>
-        <a href="../index.html#stays">Kheoni Wildlife</a>
-        <a href="../index.html#stays">Explore</a>
-        <a href="../index.html#contact">Contact Us</a>
-      </div>
-    </div>
+  <div class="navbar-logo">Tiger Safari Lodge</div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <div class="navbar-links" id="navbar-links">
+    <a href="../index.html" data-scroll-to>Home</a>
+    <a href="../index.html#about-us" data-scroll-to>Our Story</a>
+    <a href="../index.html#find-us" data-scroll-to>Find Us</a>
+    <a href="../index.html#amenities" data-scroll-to>Amenities</a>
+    <a href="../index.html#kheoniwildlife" data-scroll-to>Kheoni Wildlife</a>
+    <a href="../index.html#nearby" data-scroll-to>Explore</a>
+    <a href="../index.html#contact" data-scroll-to>Contact Us</a>
+  </div>
+</div>
 
     <!-- Hero Section -->
     <div
@@ -311,19 +311,19 @@
           </div>
         </div>
 
-        <form class="booking-form" id="booking">
+        <form class="booking-form" id="booking" action="https://formsubmit.co/bd4@kheoni.com" method="POST">
           <h3>Check Availability</h3>
           <div class="form-group">
             <label for="check-in">Check In</label>
-            <input type="date" id="check-in" required />
+            <input name="check-in" type="date" id="check-in" required />
           </div>
           <div class="form-group">
             <label for="check-out">Check Out</label>
-            <input type="date" id="check-out" required />
+            <input type="date" id="check-out" name="check-out" required />
           </div>
           <div class="form-group">
             <label for="guests">Guests</label>
-            <select id="guests" required>
+            <select name="guests" id="guests" required>
               <option value="1">1 Guest</option>
               <option value="2" selected>2 Guests</option>
               <option value="3">3 Guests</option>
@@ -331,13 +331,14 @@
           </div>
           <div class="form-group">
             <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Full Name" required />
+            <input type="text" id="name" placeholder="Full Name" name="name" required />
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
             <input
               type="email"
               id="email"
+              name="email"
               placeholder="your@email.com"
               required
             />
@@ -347,6 +348,7 @@
             <input
               type="tel"
               id="phone"
+              name="phone"
               placeholder="+(Country Code) XXX XXX XXXX"
               required
             />
@@ -355,6 +357,7 @@
             <label for="special-requests">Special Requests</label>
             <textarea
               id="special-requests"
+              name="special-requests"
               placeholder="Any special requirements or preferences?"
             ></textarea>
           </div>
@@ -443,19 +446,19 @@
             </div>
           </div>
 
-          <form class="booking-form" id="booking-form-modal">
+          <form class="booking-form" id="booking-form-modal" action="https://formsubmit.co/bd4@kheoni.com" method="POST">
             <h3>Check Availability</h3>
             <div class="form-group">
               <label for="check-in-modal">Check In</label>
-              <input type="date" id="check-in-modal" required />
+              <input type="date" id="check-in-modal" name="check-in" required />
             </div>
             <div class="form-group">
               <label for="check-out-modal">Check Out</label>
-              <input type="date" id="check-out-modal" required />
+              <input type="date" id="check-out-modal" name="check-out" required />
             </div>
             <div class="form-group">
               <label for="guests-modal">Guests</label>
-              <select id="guests-modal" required>
+              <select name="Guests" id="guests-modal" required>
                 <option value="1">1 Guest</option>
                 <option value="2" selected>2 Guests</option>
                 <option value="3">3 Guests</option>
@@ -466,6 +469,7 @@
               <input
                 type="text"
                 id="name-modal"
+                name="name"
                 placeholder="Full Name"
                 required
               />
@@ -475,6 +479,7 @@
               <input
                 type="email"
                 id="email-modal"
+                name="email"
                 placeholder="your@email.com"
                 required
               />
@@ -484,6 +489,7 @@
               <input
                 type="tel"
                 id="phone-modal"
+                name="phone"
                 placeholder="+(Country Code) XXX XXX XXXX"
                 required
               />
@@ -492,6 +498,7 @@
               <label for="special-requests-modal">Special Requests</label>
               <textarea
                 id="special-requests-modal"
+                name="special-requests"
                 placeholder="Any special requirements or preferences?"
               ></textarea>
             </div>
@@ -512,13 +519,15 @@
         <div class="footer-logo">Tiger Safari Lodge</div>
         <div class="footer-links">
           <div class="footer-column">
-            <h3>Navigate</h3>
-            <a href="../index.html">Home</a>
-            <a href="../index.html#about-us">Our Story</a>
-            <a href="../index.html#locations">Packages</a>
-            <a href="../index.html#stays">Stays</a>
-            <a href="../index.html#contact">Contact</a>
-          </div>
+  <h3>Navigate</h3>
+  <a href="../index.html" data-scroll-to>Home</a>
+  <a href="../index.html#about-us" data-scroll-to>Our Story</a>
+  <a href="../index.html#find-us" data-scroll-to>Find Us</a>
+  <a href="../index.html#amenities" data-scroll-to>Amenities</a>
+  <a href="../index.html#kheoniwildlife" data-scroll-to>Kheoni Wildlife</a>
+  <a href="../index.html#nearby" data-scroll-to>Explore</a>
+  <a href="../index.html#contact" data-scroll-to>Contact Us</a>
+</div>
           <div class="footer-column">
             <h3>Properties</h3>
             <a href="kheoni-wildlife.html">Kheoni Wildlife Sanctuary</a>
