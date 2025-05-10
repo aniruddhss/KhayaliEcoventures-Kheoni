@@ -606,6 +606,32 @@ p,
   .kheoniwildlife-header p {
     font-size: 1rem;
   }
+   .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: right 0.3s ease;
+    padding: 2rem;
+    gap: 40px;
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+  }
 
 }
 
@@ -633,33 +659,7 @@ p,
     font-size: 1rem;
   }
 
-  /* Show hamburger menu on tablets */
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: right 0.3s ease;
-    padding: 2rem;
-    gap: 40px;
-  }
-
-  .navbar-links.active {
-    right: 0;
-  }
-
-  .navbar-links a {
-    font-size: 1.2rem;
-  }
+  
   .about-container {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -965,20 +965,20 @@ p,
   color: #fff;
   position: relative;
   overflow: hidden;
-  padding: 80px 0;
+  padding: 2vw 0;
 }
 
 .amenities-container {
   width: 100%;
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
 .amenities-header {
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .amenities-header h2 {
@@ -1012,7 +1012,7 @@ p,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .amenity-card {
@@ -1034,7 +1034,7 @@ p,
 }
 
 .amenity-image {
-  height: 250px;
+  height: 12vw;
   position: relative;
   overflow: hidden;
 }
@@ -1051,12 +1051,12 @@ p,
 }
 
 .amenity-details {
-  padding: 15px;
+  padding: 10px;
 }
 
 .amenity-details h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.03em;
 }
@@ -1070,6 +1070,9 @@ p,
   
   .amenities-header h2 {
     font-size: 3rem;
+  }
+  .amenity-image{
+    height:18vw;
   }
 }
 
@@ -1578,7 +1581,7 @@ p,
 }
 
 .nearby-container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -1589,14 +1592,14 @@ p,
 }
 
 .nearby-header h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 1rem;
   font-family: 'Oswald', sans-serif;
   color: #fff;
 }
 .nearby-header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
   opacity: 0.8;
@@ -1627,7 +1630,7 @@ p,
 
 .place-image-container {
   position: relative;
-  height: 250px;
+  height: 12vw;
   overflow: hidden;
 }
 
@@ -1656,14 +1659,14 @@ p,
 }
 
 .place-details {
-  padding: 1.5rem;
+  padding: 1.4rem;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .place-details h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
   font-family: 'Oswald', sans-serif;
@@ -1671,9 +1674,9 @@ p,
 }
 
 .place-details p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
  
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
   flex: 1;
 }
@@ -1702,7 +1705,7 @@ p,
 
 .nearby-map {
   margin-top: 20px;
-  height: 280px;
+  height: 14vw;
   border-radius: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/mp\ dark.png');
   background-size: cover;
@@ -1719,28 +1722,29 @@ p,
 .map-overlay-text {
   text-align: center;
   color: white;
-  padding: 2rem;
+  padding: 4rem 2rem;
   max-width: 600px;
-  width: 90%;
+  width: 80%;
   transition: all 0.3s ease;
+  position:absolute;
 }
 
 .map-overlay-text h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1rem;
   font-family: 'Oswald', sans-serif;
 }
 
 .map-overlay-text p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
 .map-link-button {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 10px 20px;
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid white;
   color: white;
@@ -1759,13 +1763,18 @@ p,
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .nearby-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
-  
+  .place-image-container {
+  height: 25vw;
+}
   .map-overlay-text {
     max-width: 80%;
+  }
+  .nearby-map {
+    height: 28vw;
   }
 }
 @media (max-width: 768px) {
@@ -1775,23 +1784,25 @@ p,
   
   .nearby-map {
     height: auto;
-    min-height: 280px;
+    min-height: 50vw;
     background-attachment: scroll;
     padding: 20px 0;
   }
-  
+  .place-image-container {
+  height: 35vw;
+}
   .map-overlay-text {
     width: 90%;
     padding: 1.5rem;
   }
   
   .map-overlay-text h3 {
-    font-size: 1.7rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
   }
   
   .map-overlay-text p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 1.2rem;
     line-height: 1.5;
   }
@@ -1809,7 +1820,7 @@ p,
 
 @media (max-width: 480px) {
   .nearby-map {
-    min-height: 250px;
+    min-height: 100vw;
     margin-top: 2rem;
   }
   

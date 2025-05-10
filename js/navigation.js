@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Scroll behavior with animation support
-      if (window.innerWidth <= 768 || !window.locoScroll) {
+      if (window.innerWidth <= 1220 || !window.locoScroll) {
         // MOBILE SCROLL - basic approach with smooth behavior
         const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
         
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       // Use same scrolling logic as above with animations
-      if (window.innerWidth <= 768 || !window.locoScroll) {
+      if (window.innerWidth <= 1220 || !window.locoScroll) {
         const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
         const rect = targetElement.getBoundingClientRect();
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
