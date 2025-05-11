@@ -20,6 +20,40 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Critical CSS for above-the-fold content */
+      body {
+        font-family: "Work Sans", sans-serif;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white;
+      }
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 1000;
+      }
+      #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      #hero-content {
+        position: fixed;
+        bottom: 10%;
+        left: 5%;
+        max-width: 800px;
+        width: 90%;
+        z-index: 100;
+      }
+    </style>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -36,9 +70,9 @@
         loop
         playsinline
         preload="none"
-        poster="video-poster.jpg"
+        poster="videoposter.jpg"
       >
-        <source src="khayali homepage video (1).mp4" type="video/mp4" />
+        <source src="tigersafarilodge (1).mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -47,7 +81,8 @@
     <div id="hero-content">
       <h1>Tiger Safari Lodge</h1>
       <p>
-        Experience wildlife, luxury, and nature like never before. Scroll down to explore.
+        Experience wildlife, luxury, and nature like never before. Scroll down
+        to explore.
       </p>
       <!-- <a href="#" id="explore-button" class="cta-button">Explore Now</a> -->
     </div>
@@ -56,54 +91,57 @@
     <div id="image-grid">
       <div class="grid-image-container">
         <img
-          class="grid-image lazy"
-          src="placeholder.png"
-          data-src="/images/Tiger black and white/row-1-column-1.jpg"
+          class="grid-image"
+          src="/images/Tiger black and white/row-1-column-1.jpg"
           alt="Image 1"
           id="image-1"
         />
       </div>
       <div class="grid-image-container">
         <img
-          class="grid-image lazy"
-          src="placeholder.png"
-          data-src="/images/Tiger black and white/row-1-column-2.jpg"
+          class="grid-image"
+          src="/images/Tiger black and white/row-1-column-2.jpg"
           alt="Image 2"
           id="image-2"
         />
       </div>
       <div class="grid-image-container">
         <img
-          class="grid-image lazy"
-          src="placeholder.png"
-          data-src="/images/Tiger black and white/row-2-column-1.jpg"
+          class="grid-image"
+          src="/images/Tiger black and white/row-2-column-1.jpg"
           alt="Image 3"
           id="image-3"
         />
       </div>
       <div class="grid-image-container">
         <img
-          class="grid-image lazy"
-          src="placeholder.png"
-          data-src="/images/Tiger black and white/row-2-column-2.jpg"
+          class="grid-image"
+          src="/images/Tiger black and white/row-2-column-2.jpg"
           alt="Image 4"
           id="image-4"
         />
       </div>
     </div>
-    <div class="navbar" id="navbar" data-scroll-sticky data-scroll-target="#content">
-  <div class="navbar-logo">Tiger Safari Lodge</div>
-  <button class="menu-toggle" id="menu-toggle">☰</button>
-  <div class="navbar-links" id="navbar-links">
-    <a href="#" data-scroll-to="hero-section">Home</a>
-    <a href="#about-us" data-scroll-to="about-us">Our Story</a>
-    <a href="#find-us" data-scroll-to="find-us">Find Us</a>
-    <a href="#amenities" data-scroll-to="amenities">Amenities</a>
-    <a href="#kheoniwildlife" data-scroll-to="kheoniwildlife">Kheoni Wildlife</a>
-    <a href="#nearby" data-scroll-to="nearby">Explore</a>
-    <a href="#contact" data-scroll-to="contact">Contact Us</a>
-  </div>
-</div>
+    <div
+      class="navbar"
+      id="navbar"
+      data-scroll-sticky
+      data-scroll-target="#content"
+    >
+      <div class="navbar-logo">Tiger Safari Lodge</div>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="#" data-scroll-to="hero-section">Home</a>
+        <a href="#about-us" data-scroll-to="about-us">Our Story</a>
+        <a href="#find-us" data-scroll-to="find-us">Find Us</a>
+        <a href="#amenities" data-scroll-to="amenities">Amenities</a>
+        <a href="#kheoniwildlife" data-scroll-to="kheoniwildlife"
+          >Kheoni Wildlife</a
+        >
+        <a href="#nearby" data-scroll-to="nearby">Explore</a>
+        <a href="#contact" data-scroll-to="contact">Contact Us</a>
+      </div>
+    </div>
     <div id="content" data-scroll-section>
       <div class="section hero-section" data-scroll></div>
       <div class="section about-section" id="about-us" data-scroll>
@@ -111,9 +149,14 @@
           <div class="about-content">
             <div class="about-text">
               <p class="about-paragraph">
-                Welcome to Tiger Safari Lodge – Your Wilderness Retreat<br/>
-                At Tiger Safari Lodge, your adventure comes first. From thrilling jungle safaris to private plunge pools and rustic luxury, we craft experiences that bring you closer to nature while supporting Kheoni's wildlife. Your stay makes a difference.
-                <br/> Discover. Explore. Belong.
+                Welcome to Tiger Safari Lodge – Your Wilderness Retreat<br />
+                At Tiger Safari Lodge, your adventure comes first. From
+                thrilling jungle safaris to private plunge pools and rustic
+                luxury, we craft experiences that bring you closer to nature
+                while supporting Kheoni's wildlife. Your stay makes a
+                difference.
+                <br />
+                Discover. Explore. Belong.
               </p>
             </div>
           </div>
@@ -122,24 +165,36 @@
           </div>
         </div>
       </div>
-            <!-- Location Map Section -->
+      <!-- Location Map Section -->
       <div class="section map-section" id="find-us" data-scroll>
         <div class="map-container">
           <div class="map-header">
             <h2>Find Us</h2>
             <!-- <p class="section-subtitle">Located in the serene wilderness of Kheoni Wildlife Sanctuary</p> -->
           </div>
-          
+
           <div class="map-content">
             <div id="property-map"></div>
-            
+
             <div class="map-overlay">
               <div class="location-info">
                 <h3>Tiger Safari Lodge</h3>
-                <p><i class="location-icon">📍</i> Bhopal - Indore Rd, Tehsil, Bhau Kheda, Jawar, Madhya Pradesh 466221</p>
-                <p><i class="location-icon">🚗</i> 1 hr 45 Mins from Indore Airport</p>
-                <p><i class="location-icon">🐅</i> Near Kheoni Wildlife Sanctuary</p>
-                <a href="https://maps.app.goo.gl/G2wYEvvEMhLnh1Ld8" target="_blank" class="google-maps-button">
+                <p>
+                  <i class="location-icon">📍</i> Bhopal - Indore Rd, Tehsil,
+                  Bhau Kheda, Jawar, Madhya Pradesh 466221
+                </p>
+                <p>
+                  <i class="location-icon">🚗</i> 1 hr 45 Mins from Indore
+                  Airport
+                </p>
+                <p>
+                  <i class="location-icon">🐅</i> Near Kheoni Wildlife Sanctuary
+                </p>
+                <a
+                  href="https://maps.app.goo.gl/G2wYEvvEMhLnh1Ld8"
+                  target="_blank"
+                  class="google-maps-button"
+                >
                   <i class="maps-icon">🗺️</i> Open in Google Maps
                 </a>
               </div>
@@ -152,14 +207,19 @@
         <div class="amenities-container">
           <div class="amenities-header">
             <h2>Experience Luxury in the Wild</h2>
-            <p class="section-subtitle">Our thoughtfully designed amenities blend comfort with nature</p>
+            <p class="section-subtitle">
+              Our thoughtfully designed amenities blend comfort with nature
+            </p>
           </div>
-          
+
           <div class="amenities-grid">
             <!-- Amenity 1: Private Plunge Pools -->
             <div class="amenity-card">
               <div class="amenity-image">
-                <img class="lazy" src="placeholder.png" data-src="/images/tiger safari lodge media/Minipool AI.png" alt="Private Plunge Pool" />
+                <img
+                  src="/images/tiger safari lodge media/Minipool AI.png"
+                  alt="Private Plunge Pool"
+                />
               </div>
               <div class="amenity-details">
                 <h3>Private Plunge Pools</h3>
@@ -169,7 +229,10 @@
             <!-- Amenity 2: Outdoor Dining -->
             <div class="amenity-card">
               <div class="amenity-image">
-                <img class="lazy" src="placeholder.png" data-src="/images/tiger safari lodge media/Patio AI.png" alt="Outdoor Dining" />
+                <img
+                  src="/images/tiger safari lodge media/Patio AI.png"
+                  alt="Outdoor Dining"
+                />
               </div>
               <div class="amenity-details">
                 <h3>Nature Dining</h3>
@@ -179,7 +242,10 @@
             <!-- Amenity 3: Luxury Accommodations -->
             <div class="amenity-card">
               <div class="amenity-image">
-                <img class="lazy" src="placeholder.png" data-src="/images/tiger safari lodge media/doublebed tiger safari lodge AI.png" alt="Luxury Suite" />
+                <img
+                  src="/images/tiger safari lodge media/doublebed tiger safari lodge AI.png"
+                  alt="Luxury Suite"
+                />
               </div>
               <div class="amenity-details">
                 <h3>Rustic Bedrooms</h3>
@@ -189,7 +255,10 @@
             <!-- Amenity 4: Safari Experiences -->
             <div class="amenity-card">
               <div class="amenity-image">
-                <img class="lazy" src="placeholder.png" data-src="/images/kheoni wildlife media/indiantiger3.jpg" alt="Safari Experience" />
+                <img
+                  src="/images/kheoni wildlife media/indiantiger3.jpg"
+                  alt="Safari Experience"
+                />
               </div>
               <div class="amenity-details">
                 <h3>Tiger Safaris</h3>
@@ -199,7 +268,10 @@
             <!-- Amenity 5: Wellness & Spa -->
             <div class="amenity-card">
               <div class="amenity-image">
-                <img class="lazy" src="placeholder.png" data-src="/images/tiger safari lodge media/doublebed.jpg" alt="Wellness Space" />
+                <img
+                  src="/images/tiger safari lodge media/doublebed.jpg"
+                  alt="Wellness Space"
+                />
               </div>
               <div class="amenity-details">
                 <h3>Quality Interiors</h3>
@@ -209,7 +281,10 @@
             <!-- Amenity 6: Stargazing Deck -->
             <div class="amenity-card">
               <div class="amenity-image">
-                <img class="lazy" src="placeholder.png" data-src="/images/tiger safari lodge media/pathway2.jpg" alt="Stargazing Deck" />
+                <img
+                  src="/images/tiger safari lodge media/pathway2.jpg"
+                  alt="Stargazing Deck"
+                />
               </div>
               <div class="amenity-details">
                 <h3>Peaceful Surroundings</h3>
@@ -224,53 +299,92 @@
           </div>
         </div>
       </div>
-      <div class="section kheoniwildlife-section" id="kheoniwildlife" data-scroll>
+      <div
+        class="section kheoniwildlife-section"
+        id="kheoniwildlife"
+        data-scroll
+      >
         <div class="kheoniwildlife-container">
           <div class="kheoniwildlife-header">
             <h2>Kheoni Wildlife Sanctuary</h2>
-            <p class="section-subtitle">Discover the untamed heart of Madhya Pradesh</p>
+            <p class="section-subtitle">
+              Discover the untamed heart of Madhya Pradesh
+            </p>
           </div>
-          
+
           <!-- Full screen carousel section -->
           <div class="full-screen-carousel">
             <div class="carousel-track">
               <!-- Slide 1: Tigers -->
               <div class="carousel-slide">
                 <div class="slide-image">
-                  <img class="lazy" src="placeholder.png" data-src="/images/kheoni wildlife media/indian tiger (1).jpg" alt="Bengal Tiger in Kheoni Wildlife Sanctuary" />
+                  <img
+                    src="/images/kheoni wildlife media/indian tiger (1).jpg"
+                    alt="Bengal Tiger in Kheoni Wildlife Sanctuary"
+                  />
                 </div>
                 <div class="slide-content">
                   <h3>Majestic Tigers of Kheoni</h3>
-                  <p>Witness the apex predators in their natural territory as they patrol the forests of this emerging tiger reserve connected to Ratapani.</p>
-                  <a href="/pages/kheoni-wildlife.html" class="carousel-cta-button">Explore Tiger Safaris</a>
+                  <p>
+                    Witness the apex predators in their natural territory as
+                    they patrol the forests of this emerging tiger reserve
+                    connected to Ratapani.
+                  </p>
+                  <a
+                    href="/pages/kheoni-wildlife.html"
+                    class="carousel-cta-button"
+                    >Explore Tiger Safaris</a
+                  >
                 </div>
               </div>
-              
+
               <!-- Slide 2: Birds -->
               <div class="carousel-slide">
                 <div class="slide-image">
-                  <img class="lazy" src="placeholder.png" data-src="/images/kheoni wildlife media/paradise flycatcher (1).jpg" alt="Paradise Flycatcher Bird" />
+                  <img
+                    src="/images/kheoni wildlife media/paradise flycatcher (1).jpg"
+                    alt="Paradise Flycatcher Bird"
+                  />
                 </div>
                 <div class="slide-content">
                   <h3>Avian Paradise</h3>
-                  <p>Discover over 125 bird species including the exquisite Indian Paradise Flycatcher, the state bird of Madhya Pradesh, in their natural habitat.</p>
-                  <a href="/pages/kheoni-wildlife.html" class="carousel-cta-button">Experience Birdwatching</a>
+                  <p>
+                    Discover over 125 bird species including the exquisite
+                    Indian Paradise Flycatcher, the state bird of Madhya
+                    Pradesh, in their natural habitat.
+                  </p>
+                  <a
+                    href="/pages/kheoni-wildlife.html"
+                    class="carousel-cta-button"
+                    >Experience Birdwatching</a
+                  >
                 </div>
               </div>
-              
+
               <!-- Slide 3: Lush Forest -->
               <div class="carousel-slide">
                 <div class="slide-image">
-                  <img class="lazy" src="placeholder.png" data-src="/images/kheoni wildlife media/forestview.jpg" alt="Lush forest of Kheoni" />
+                  <img
+                    src="/images/kheoni wildlife media/forestview.jpg"
+                    alt="Lush forest of Kheoni"
+                  />
                 </div>
                 <div class="slide-content">
                   <h3>Pristine Forest Wilderness</h3>
-                  <p>Immerse yourself in the verdant deciduous forests of Kheoni, where ancient teak, tendu, and bamboo create a thriving ecosystem for diverse wildlife.</p>
-                  <a href="/pages/kheoni-wildlife.html" class="carousel-cta-button">Walk the Forest Trails</a>
+                  <p>
+                    Immerse yourself in the verdant deciduous forests of Kheoni,
+                    where ancient teak, tendu, and bamboo create a thriving
+                    ecosystem for diverse wildlife.
+                  </p>
+                  <a
+                    href="/pages/kheoni-wildlife.html"
+                    class="carousel-cta-button"
+                    >Walk the Forest Trails</a
+                  >
                 </div>
               </div>
             </div>
-            
+
             <!-- Carousel navigation -->
             <div class="carousel-nav">
               <button class="carousel-prev">❮</button>
@@ -281,7 +395,7 @@
               </div>
               <button class="carousel-next">❯</button>
             </div>
-            
+
             <!-- Featured experience highlights -->
             <div class="experience-highlights">
               <div class="highlight-item">
@@ -291,7 +405,7 @@
                   <p>Home to one of India's thriving tiger populations</p>
                 </div>
               </div>
-              
+
               <div class="highlight-item">
                 <div class="highlight-icon">🛎️</div>
                 <div class="highlight-text">
@@ -299,7 +413,7 @@
                   <p>Personalized attention and premium amenities</p>
                 </div>
               </div>
-              
+
               <div class="highlight-item">
                 <div class="highlight-icon">🌿</div>
                 <div class="highlight-text">
@@ -315,140 +429,203 @@
         <div class="nearby-container">
           <div class="nearby-header">
             <h2>Explore the Region</h2>
-            <p class="section-subtitle">Discover remarkable destinations within reach of Tiger Safari Lodge</p>
+            <p class="section-subtitle">
+              Discover remarkable destinations within reach of Tiger Safari
+              Lodge
+            </p>
           </div>
-          
+
           <div class="nearby-grid">
             <div class="nearby-place">
               <div class="place-image-container">
-                <img class="lazy" src="placeholder.png" data-src="/images/ujjain.jpg" alt="Ujjain Mahakaleshwar Temple" />
+                <img
+                  src="/images/ujjain.jpg"
+                  alt="Ujjain Mahakaleshwar Temple"
+                />
                 <div class="place-distance">1.5 hrs</div>
               </div>
               <div class="place-details">
                 <h3>Ujjain Mahakaleshwar Temple</h3>
-                <p>One of India's most sacred Jyotirlinga shrines dedicated to Lord Shiva, featuring ancient architecture and spiritual significance along the holy Shipra River.</p>
+                <p>
+                  One of India's most sacred Jyotirlinga shrines dedicated to
+                  Lord Shiva, featuring ancient architecture and spiritual
+                  significance along the holy Shipra River.
+                </p>
               </div>
             </div>
-            
+
             <div class="nearby-place">
               <div class="place-image-container">
-                <img class="lazy" src="placeholder.png" data-src="/images/dewas jain temple.jpg" alt="Dewas Temples" />
+                <img
+                  src="/images/dewas jain temple.jpg"
+                  alt="Dewas Temples"
+                />
                 <div class="place-distance">1 hr</div>
               </div>
               <div class="place-details">
                 <h3>Dewas Temples</h3>
-                <p>Historic hilltop temples offering panoramic views of the region, known for the twin shrines of Devi Chamunda and Devi Tulja Bhavani situated on Tekri hills. Also the famous Jain Tirth Kshetras are located here.</p>
+                <p>
+                  Historic hilltop temples offering panoramic views of the
+                  region, known for the twin shrines of Devi Chamunda and Devi
+                  Tulja Bhavani situated on Tekri hills. Also the famous Jain
+                  Tirth Kshetras are located here.
+                </p>
               </div>
             </div>
-            
+
             <div class="nearby-place">
               <div class="place-image-container">
-                <img class="lazy" src="placeholder.png" data-src="/images/tiger safari lodge media/devbadla temple.jpg" alt="Devbadla Temples" />
+                <img
+                  src="/images/tiger safari lodge media/devbadla temple.jpg"
+                  alt="Devbadla Temples"
+                />
                 <div class="place-distance">30 min</div>
               </div>
               <div class="place-details">
                 <h3>Devbadla Temples</h3>
-                <p>Recently excavated 11th century temple complex with intricate stone carvings and spiritual significance, hidden in the forest.</p>
+                <p>
+                  Recently excavated 11th century temple complex with intricate
+                  stone carvings and spiritual significance, hidden in the
+                  forest.
+                </p>
               </div>
             </div>
           </div>
-          
+
           <div class="nearby-map">
             <div class="map-overlay-text">
               <h3>Your Gateway to Central India's Treasures</h3>
-              <p>Tiger Safari Lodge is strategically located to access the rich cultural and natural heritage of Madhya Pradesh.</p>
-              <a href="/pages/kheoni-rooms.html" class="map-link-button">Explore the rooms</a>
+              <p>
+                Tiger Safari Lodge is strategically located to access the rich
+                cultural and natural heritage of Madhya Pradesh.
+              </p>
+              <a href="/pages/kheoni-rooms.html" class="map-link-button"
+                >Explore the rooms</a
+              >
             </div>
           </div>
         </div>
       </div>
 
+      <div class="section contact-section" id="contact" data-scroll>
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2>Connect With Us</h2>
+          </div>
 
-<div class="section contact-section" id="contact" data-scroll>
-  <div class="contact-container">
-    <div class="contact-header">
-      <h2>Connect With Us</h2>
-    </div>
-    
-    <div class="contact-content">
-      
-      
-      <div class="contact-info">
-        <div class="info-card">
-          <div class="info-icon">✉️</div>
-          <h3>Email Us</h3>
-          <p>bd4@kheoni.com</p>
-        </div>
-        
-        <div class="info-card">
-          <div class="info-icon">📞</div>
-          <h3>Call Us</h3>
-          <p>+91 9685656587</p>
-          <p>+91 8878204556</p>
-        </div>
-        
-        <div class="info-card">
-          <div class="info-icon">📍</div>
-          <h3>Visit our Office</h3>
-          <p>C-127, near HDFC Bank, behind Bombay Hospital Service Road</p>
-          <p>Vijay Nagar, Indore, Madhya Pradesh 452010</p>
-        </div>
-        
-        <div class="info-card social-card">
-          <div class="info-icon">🌿</div>
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#" class="social-link"><span>Instagram</span></a>
-            <a href="#" class="social-link"><span>Facebook</span></a>
-            <a href="#" class="social-link"><span>Twitter</span></a>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="info-card">
+                <div class="info-icon">✉️</div>
+                <h3>Email Us</h3>
+                <p>bd4@kheoni.com</p>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>+91 9685656587</p>
+                <p>+91 8878204556</p>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Visit our Office</h3>
+                <p>
+                  C-127, near HDFC Bank, behind Bombay Hospital Service Road
+                </p>
+                <p>Vijay Nagar, Indore, Madhya Pradesh 452010</p>
+              </div>
+
+              <div class="info-card social-card">
+                <div class="info-icon">🌿</div>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                  <a href="#" class="social-link"><span>Instagram</span></a>
+                  <a href="#" class="social-link"><span>Facebook</span></a>
+                  <a href="#" class="social-link"><span>Twitter</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-form-wrapper">
+              <form
+                class="contact-form"
+                action="https://formsubmit.co/bd4@kheoni.com"
+                method="POST"
+                aria-label="Contact form"
+              >
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Booking Enquiry from Tiger Safari Lodge Website"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                    name="name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="your@email.com"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+(country code) XXX XXX XXXX"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Ask anything"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-      <div class="contact-form-wrapper">
-        <form class="contact-form" action="https://formsubmit.co/bd4@kheoni.com" method="POST" aria-label="Contact form">
-          <input type="hidden" name="_subject" value="New Booking Enquiry from Tiger Safari Lodge Website" />
-        <input type="hidden" name="_captcha" value="false">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Full Name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="your@email.com" name="email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+(country code) XXX XXX XXXX">
-          </div>
-          
-          
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" placeholder="Ask anything" rows="4"></textarea>
-          </div>
-          
-          <button type="submit" class="submit-button">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
       <footer class="site-footer" data-scroll>
         <div class="footer-content">
           <div class="footer-logo">Tiger Safari Lodge</div>
           <div class="footer-links">
             <div class="footer-column">
-  <h3>Navigate</h3>
-  <a href="#" data-scroll-to="hero-section">Home</a>
-  <a href="#about-us" data-scroll-to="about-us">Our Story</a>
-  <a href="#find-us" data-scroll-to="find-us">Find Us</a>
-  <a href="#amenities" data-scroll-to="amenities">Amenities</a>
-  <a href="#kheoniwildlife" data-scroll-to="kheoniwildlife">Kheoni Wildlife</a>
-  <a href="#nearby" data-scroll-to="nearby">Explore</a>
-  <a href="#contact" data-scroll-to="contact">Contact Us</a>
-</div>
+              <h3>Navigate</h3>
+              <a href="#" data-scroll-to="hero-section">Home</a>
+              <a href="#about-us" data-scroll-to="about-us">Our Story</a>
+              <a href="#find-us" data-scroll-to="find-us">Find Us</a>
+              <a href="#amenities" data-scroll-to="amenities">Amenities</a>
+              <a href="#kheoniwildlife" data-scroll-to="kheoniwildlife"
+                >Kheoni Wildlife</a
+              >
+              <a href="#nearby" data-scroll-to="nearby">Explore</a>
+              <a href="#contact" data-scroll-to="contact">Contact Us</a>
+            </div>
             <div class="footer-column">
               <h3>Connect</h3>
               <a href="#">Instagram</a>
@@ -467,7 +644,7 @@
       </footer>
     </div>
 
-    <script src="js/lazy-loader.js"></script>
+    <!-- <script src="js-loader.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
