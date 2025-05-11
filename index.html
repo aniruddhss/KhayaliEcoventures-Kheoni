@@ -21,13 +21,15 @@
       rel="stylesheet"
     />
     <style>
-      /* Critical CSS for above-the-fold content */
+      /* Improved critical CSS */
       body {
         font-family: "Work Sans", sans-serif;
         margin: 0;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: #000;
         color: white;
       }
+
+      /* Prevent layout shift */
       #loader {
         position: fixed;
         top: 0;
@@ -37,21 +39,36 @@
         background-color: #000;
         z-index: 1000;
       }
-      #video-container {
+
+      /* Only load visible content first */
+      .section:not(.hero-section, .about-section) {
+        content-visibility: auto;
+        contain-intrinsic-size: 700px;
+      }
+
+      /* Optimize image grid */
+      #image-grid {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        z-index: 1;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        z-index: 2;
       }
-      #hero-content {
-        position: fixed;
-        bottom: 10%;
-        left: 5%;
-        max-width: 800px;
-        width: 90%;
-        z-index: 100;
+      .grid-image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .grid-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     </style>
 
@@ -59,22 +76,34 @@
   </head>
   <body data-scroll-container>
     <div id="loader">
-      <div class="loader-content"></div>
+  <div class="loader-content">
+    <h1>Tiger Safari Lodge</h1>
+    <p>Loading your wilderness experience...</p>
+    <div class="loading-bar">
+      <div class="loading-progress" id="loading-progress"></div>
     </div>
-
+  </div>
+</div>
+    <!-- Replace current video setup with this -->
     <div id="video-container">
-      <video
-        id="background-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="none"
-        poster="videoposter.jpg"
-      >
-        <source src="tigersafarilodge (1).mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <img
+        src="videoposter.jpg"
+        alt="Tiger Safari Lodge"
+        style="width: 100%; height: 100%; object-fit: cover"
+      />
+      <script>
+        // Load video after page content is ready
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            const videoContainer = document.getElementById("video-container");
+            videoContainer.innerHTML = `
+          <video id="background-video" autoplay muted loop playsinline>
+            <source src="tigersafarilodge (1).mp4" type="video/mp4">
+          </video>
+        `;
+          }, 1000); // 1 second delay after load
+        });
+      </script>
     </div>
 
     <!-- Hero content moved outside of video container -->
@@ -456,10 +485,7 @@
 
             <div class="nearby-place">
               <div class="place-image-container">
-                <img
-                  src="/images/dewas jain temple.jpg"
-                  alt="Dewas Temples"
-                />
+                <img src="/images/dewas jain temple.jpg" alt="Dewas Temples" />
                 <div class="place-distance">1 hr</div>
               </div>
               <div class="place-details">
@@ -644,16 +670,25 @@
       </footer>
     </div>
 
-    <!-- <script src="js-loader.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      defer
+    ></script>
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
+      defer
     ></script>
-    <script src="js/main.js"></script>
-    <script src="js/navigation.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/navigation.js" defer></script>
   </body>
 </html>

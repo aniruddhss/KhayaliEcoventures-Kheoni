@@ -1,3 +1,4 @@
+
 document.addEventListener("scroll", function() {
   // After scrolling 100px, add 'scrolled' class to body
   if (window.scrollY > 100) {
@@ -98,7 +99,6 @@ function initPropertyMap() {
 }
 window.addEventListener("load", function () {
   // Variables
-  const loader = document.getElementById("loader");
   const image1 = document.getElementById("image-1");
   const image2 = document.getElementById("image-2");
   const image3 = document.getElementById("image-3");
@@ -175,6 +175,17 @@ if (isInternalNavigation && window.location.hash) {
     ctaButton.style.cursor = "pointer";
   }
 
+ const loader = document.getElementById("loader");
+  const progressBar = document.getElementById("loading-progress");
+  
+  // Animate the progress bar from 0% to 100% over 2 seconds
+  if (progressBar) {
+    setTimeout(function() {
+      progressBar.style.width = "100%";
+    }, 100);
+  }
+  
+  // Hide the loader after the animation (your existing code)
   setTimeout(function () {
     console.log("Hiding loader");
     loader.style.opacity = "0";

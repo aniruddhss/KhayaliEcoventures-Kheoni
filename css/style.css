@@ -35,6 +35,7 @@ input[type="button"],
 input[type="submit"] {
   cursor: pointer;
 }
+/* Add this to your existing CSS */
 #loader {
   position: fixed;
   top: 0;
@@ -50,12 +51,53 @@ input[type="submit"] {
 }
 
 .loader-content {
-  width: 10vw;
-  height: 10vw;
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  border-top: 5px solid #fff;
-  animation: spin 1s linear infinite;
+  text-align: center;
+  max-width: 80%;
+}
+
+.loader-content h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.loader-content p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.loading-progress {
+  height: 100%;
+  background-color: #c8a97e;
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .loader-content h1 {
+    font-size: 2rem;
+  }
+  
+  .loader-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .loading-bar {
+    width: 250px;
+  }
 }
 
 @keyframes spin {
