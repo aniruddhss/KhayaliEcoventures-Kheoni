@@ -936,20 +936,28 @@ p,
   text-decoration: none !important;
   color: rgba(255, 255, 255, 0.7) !important;
   transition: color 0.3s ease;
+  position: relative; /* Add this for the underline positioning */
+}
+
+.info-card a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c8a97e; /* Same blue color as social links */
+  transition: width 0.3s ease;
 }
 
 .info-card a:hover {
-  color: white !important;
+  color: #c8a97e !important; /* Change to the light blue color on hover */
 }
 
-/* Remove any visited state color */
-.info-card a:visited {
-  color: rgba(255, 255, 255, 0.7) !important;
+.info-card a:hover::after {
+  width: 100%; /* Expand the underline on hover */
 }
 
-.info-card a:hover:visited {
-  color: white !important;
-}
 .social-icons {
   display: flex;
   justify-content: center;
