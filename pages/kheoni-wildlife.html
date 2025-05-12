@@ -1,483 +1,721 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kheoni Wildlife Sanctuary | Tiger Safari Lodge</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/wildlife-page.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body data-scroll-container>
-  <div id="loader">
-    <div class="loader-content"></div>
-  </div>
-
-  <!-- Navbar -->
-<div class="navbar" id="navbar">
-  <div class="navbar-logo">Tiger Safari Lodge</div>
-  <a href="https://tigersafarilodge.com" class="home-icon" title="Return to Homepage">
-    <span class="material-icons">home</span>
-  </a>
-</div>
-
-  <!-- Hero Carousel Section -->
-  <section class="carousel-section" data-scroll>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <img src="/images/kheoni wildlife media/indian tiger (1).jpg" alt="Tiger in Kheoni" loading="lazy">
-        </div>
-        <div class="carousel-slide">
-          <img src="/images/kheoni wildlife media/leopard (2).jpg" alt="Leopard" loading="lazy">
-        </div>
-        <div class="carousel-slide">
-          <img src="/images/kheoni wildlife media/spotted deer (2).jpg" alt="Spotted Deer" loading="lazy">
-        </div>
-        <div class="carousel-slide">
-          <img src="/images/kheoni wildlife media/paradise flycatcher (1).jpg" alt="Paradise Flycatcher" loading="lazy">
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <button class="carousel-prev">❮</button>
-        <div class="carousel-indicators">
-          <div class="carousel-indicator active"></div>
-          <div class="carousel-indicator"></div>
-          <div class="carousel-indicator"></div>
-          <div class="carousel-indicator"></div>
-        </div>
-        <button class="carousel-next">❯</button>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kheoni Wildlife Sanctuary | Tiger Safari Lodge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/wildlife-page.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-scroll-container>
+    <div id="loader">
+      <div class="loader-content"></div>
     </div>
-  </section>
 
-  <!-- Main Content Section -->
-  <div class="location-container" data-scroll-section>
-    <!-- Left Column: Scrollable Content -->
-    <div class="location-content">
-      <h1 class="location-title">Kheoni Wildlife Sanctuary</h1>
-      
-      <div class="location-description">
-        <p>Nestled in the heart of Madhya Pradesh, Kheoni Wildlife Sanctuary spans 132 square kilometers of pristine wilderness across Dewas and Sehore districts. This hidden gem is connected to Ratapani Tiger Reserve through natural corridors, creating a vital lifeline for wildlife movement in Central India.</p>
-        <p>The sanctuary's dry deciduous forests are dominated by teak, tendu, and bamboo, creating the perfect habitat for a rich diversity of flora and fauna. As you venture through Kheoni's untamed landscapes, you'll discover why this protected area has become one of central India's most promising wildlife destinations.</p>
-      </div>
-      
-      <!-- Safari Options - 3 Column Grid -->
-      <h2 class="section-heading">Safari Experiences</h2>
-      
-      <div class="safari-options">
-        <div class="safari-grid">
-          <div class="safari-card">
-            <img src="/images/kheoni wildlife media/jungle safari morning.jpg" alt="Morning Safari" class="safari-image">
-            <h3 class="safari-title">Morning Safari</h3>
-            <div class="safari-info">
-              <h3>Morning Safari</h3>
-              <p class="safari-time">6:00 AM - 9:30 AM</p>
-              <p class="safari-price">₹5,500 per person</p>
-              <p class="safari-description">Experience the forest awakening with maximum wildlife activity. Perfect lighting for photography as the mist rises from the forest floor.</p>
-              <a href="#" class="safari-button">Book Now</a>
-            </div>
-          </div>
-          
-          <div class="safari-card">
-            <img src="/images/kheoni wildlife media/jungle safari evening.jpg" alt="Evening Safari" class="safari-image">
-            <h3 class="safari-title">Evening Safari</h3>
-            <div class="safari-info">
-              <h3>Evening Safari</h3>
-              <p class="safari-time">3:30 PM - 6:30 PM</p>
-              <p class="safari-price">₹5,500 per person</p>
-              <p class="safari-description">Witness predators beginning their hunts as the day cools. Stunning golden hour light creates a magical atmosphere.</p>
-              <a href="#" class="safari-button">Book Now</a>
-            </div>
-          </div>
-          
-          <div class="safari-card">
-            <img src="/images/kheoni wildlife media/jungle safari night.jpg" alt="Full-Day Safari" class="safari-image">
-            <h3 class="safari-title">Full-Day Safari</h3>
-            <div class="safari-info">
-              <h3>Full-Day Safari</h3>
-              <p class="safari-time">6:00 AM - 6:30 PM</p>
-              <p class="safari-price">₹9,500 per person</p>
-              <p class="safari-description">Complete immersive experience with expert naturalists, including meals in the forest and special tracking sessions.</p>
-              <a href="#" class="safari-button">Book Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Video Section -->
-      <div class="sanctuary-video-section">
-        <h2>Experience Kheoni</h2>
-        <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/QoxmzlMv2pk" title="Kheoni Wildlife Sanctuary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
-        <!-- <p class="video-caption">Discover the untamed beauty and diverse wildlife of Kheoni Sanctuary through this immersive journey</p> -->
-      </div>
-      
-      <!-- Wildlife Section -->
-      <h2 class="section-heading">Remarkable Biodiversity</h2>
-      
-      <div class="wildlife-category">
-        <h3>Big Cats & Predators</h3>
-        <div class="wildlife-grid">
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/indiantiger3.jpg" alt="Bengal Tiger">
-            </div>
-            <div class="wildlife-info">
-              <h4>Tiger</h4>
-              <p>Migrated from Ratapani, these magnificent cats have successfully colonized Kheoni, establishing it as an emerging tiger territory.</p>
-            </div>
-          </div>
-          
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/leopard2.jpg" alt="Leopard">
-            </div>
-            <div class="wildlife-info">
-              <h4>Leopard</h4>
-              <p>Present in significant numbers, these elusive and adaptable big cats can be spotted in the sanctuary's dense forest areas.</p>
-            </div>
-          </div>
-          
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/stripedhyena2.jpg" alt="Striped Hyena">
-            </div>
-            <div class="wildlife-info">
-              <h4>Striped Hyena</h4>
-              <p>These nocturnal scavengers play a vital role in the ecosystem by cleaning up carcasses and maintaining forest health.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="wildlife-category">
-        <h3>Herbivores</h3>
-        <div class="wildlife-grid">
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/spotteddeer2.jpg" alt="Spotted Deer">
-            </div>
-            <div class="wildlife-info">
-              <h4>Chital (Spotted Deer)</h4>
-              <p>The most commonly sighted deer species in Kheoni, recognizable by their distinctive white spots and elegant antlers.</p>
-            </div>
-          </div>
-          
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/nilgai2.jpg" alt="Nilgai">
-            </div>
-            <div class="wildlife-info">
-              <h4>Nilgai</h4>
-              <p>India's largest antelope species, these majestic creatures can be spotted in Kheoni's grasslands and open woodlands.</p>
-            </div>
-          </div>
-          
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/blackbuck2.jpg" alt="Blackbuck">
-            </div>
-            <div class="wildlife-info">
-              <h4>Blackbuck</h4>
-              <p>Known for their distinctive spiral horns and contrasting black and white coloration, these swift antelopes are a joy to observe.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="wildlife-category">
-        <h3>Avian Diversity</h3>
-        <p class="category-intro">A 2018 survey identified approximately 125 bird species in Kheoni, making it a paradise for birdwatchers.</p>
-        <div class="wildlife-grid">
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/paradiseflycatcher1.jpg" alt="Indian Paradise Flycatcher">
-            </div>
-            <div class="wildlife-info">
-              <h4>Indian Paradise Flycatcher</h4>
-              <p>The state bird of Madhya Pradesh, known for its long, streaming white tail feathers that flow behind it in flight.</p>
-            </div>
-          </div>
-          
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/plumheadedparakeet.jpg" alt="Plum-headed Parakeet">
-            </div>
-            <div class="wildlife-info">
-              <h4>Plum-headed Parakeet</h4>
-              <p>These colorful birds add vibrant splashes of green and purple to Kheoni's canopy, often seen in small flocks.</p>
-            </div>
-          </div>
-          
-          <div class="wildlife-card">
-            <div class="wildlife-image">
-              <img src="/images/kheoni wildlife media/blackdrongo.jpg" alt="Black Drongo">
-            </div>
-            <div class="wildlife-info">
-              <h4>Black Drongo</h4>
-              <p>Known for its aggressive behavior, this glossy black bird with a distinctive forked tail is a skilled aerial hunter.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Forest Ecosystem Section -->
-      <div class="ecosystem-section">
-        <div class="ecosystem-bg" style="background-image: url('/images/kheoni wildlife media/forestview.jpg');"></div>
-        <div class="ecosystem-content">
-          <div class="ecosystem-text">
-            <h2>Forest Ecosystem</h2>
-            <p>Kheoni's dry deciduous forests represent one of central India's most important ecosystems. Dominated by valuable timber species like teak, the sanctuary's vegetation also includes tendu (Indian ebony) and bamboo groves that provide crucial habitat for wildlife.</p>
-            <p>The sanctuary experiences distinct seasons, with summer temperatures reaching 45°C while winters can be pleasantly cool. The monsoon transforms the landscape between June and September, bringing vibrant greenery and renewed life to the forest.</p>
-            <p>This balanced ecosystem supports a complete food chain from large predators to the smallest insects, creating a self-sustaining wilderness that offers visitors a glimpse into nature's perfect equilibrium.</p>
-          </div>
-          <div class="ecosystem-image">
-            <img src="/images/kheoni wildlife media/forestview.jpg" alt="Kheoni Forest">
-          </div>
-        </div>
-      </div>
-      
-      <!-- Conservation Section -->
-      <div class="conservation-section">
-        <!-- <div class="conservation-bg"></div> -->
-        <div class="conservation-content">
-          <div class="conservation-info">
-            <h2>Conservation Initiatives</h2>
-            <p>At Tiger Safari Lodge, we're committed to supporting Kheoni's delicate ecosystem through sustainable tourism and active conservation participation. Our initiatives include:</p>
-            
-            <ul class="conservation-list">
-              <li>
-                <span class="conservation-icon">🐾</span> 
-                <span>Supporting tiger monitoring programs through camera trapping and population studies</span>
-              </li>
-              <li>
-                <span class="conservation-icon">🌱</span> 
-                <span>Participating in habitat restoration projects focusing on native plant species</span>
-              </li>
-              <li>
-                <span class="conservation-icon">💧</span> 
-                <span>Maintaining artificial water sources during dry summer months</span>
-              </li>
-              <li>
-                <span class="conservation-icon">👥</span> 
-                <span>Engaging local communities through employment and educational opportunities</span>
-              </li>
-              <li>
-                <span class="conservation-icon">🔬</span> 
-                <span>Supporting wildlife research by providing logistics for visiting scientists</span>
-              </li>
-            </ul>
-            
-            <p class="conservation-highlight">A portion of every safari booking directly supports these conservation initiatives, allowing our guests to contribute meaningfully to Kheoni's protection.</p>
-          </div>
-          <div class="conservation-image">
-            <img src="/images/kheoni wildlife media/forestconservation2.jpg" alt="Conservation Work">
-          </div>
-        </div>
-      </div>
-      
-      <div class="bottom-cta">
-        <a href="../pages/3d2n.html" class="cta-button">Book Your Safari Experience</a>
-      </div>
+    <!-- Navbar -->
+    <div class="navbar" id="navbar">
+      <div class="navbar-logo">Tiger Safari Lodge</div>
+      <a
+        href="https://tigersafarilodge.com"
+        class="home-icon"
+        title="Return to Homepage"
+      >
+        <span class="material-icons">home</span>
+      </a>
     </div>
-    
-    <!-- Right Column: Sticky Booking Panel -->
-    <div class="booking-panel">
-      <div class="price-details">
-        <h2>Safari Packages</h2>
-        <div class="price">₹5,500</div>
-        <p class="price-info">starting price per safari</p>
+
+    <!-- Hero Carousel Section -->
+    <section class="carousel-section" data-scroll>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img
+              src="/images/kheoni wildlife media/indian tiger (1).jpg"
+              alt="Tiger in Kheoni"
+              loading="lazy"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="/images/kheoni wildlife media/leopard (2).jpg"
+              alt="Leopard"
+              loading="lazy"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="/images/kheoni wildlife media/spotted deer (2).jpg"
+              alt="Spotted Deer"
+              loading="lazy"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="/images/kheoni wildlife media/paradise flycatcher (1).jpg"
+              alt="Paradise Flycatcher"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-prev">❮</button>
+          <div class="carousel-indicators">
+            <div class="carousel-indicator active"></div>
+            <div class="carousel-indicator"></div>
+            <div class="carousel-indicator"></div>
+            <div class="carousel-indicator"></div>
+          </div>
+          <button class="carousel-next">❯</button>
+        </div>
       </div>
-      
-      <form class="booking-form" id="booking" action="https://formsubmit.co/bd4@kheoni.com" method="POST">
-        <input type="hidden" name="_subject" value="New Booking Enquiry from Tiger Safari Lodge Website Kheoni Wildlife Page For Safaris" />
-        <input type="hidden" name="_captcha" value="false">
+    </section>
+
+    <!-- Main Content Section -->
+    <div class="location-container" data-scroll-section>
+      <!-- Left Column: Scrollable Content -->
+      <div class="location-content">
+        <h1 class="location-title">Kheoni Wildlife Sanctuary</h1>
+
+        <div class="location-description">
+          <p>
+            Nestled in the heart of Madhya Pradesh, Kheoni Wildlife Sanctuary
+            spans 132 square kilometers of pristine wilderness across Dewas and
+            Sehore districts. This hidden gem is connected to Ratapani Tiger
+            Reserve through natural corridors, creating a vital lifeline for
+            wildlife movement in Central India.
+          </p>
+          <p>
+            The sanctuary's dry deciduous forests are dominated by teak, tendu,
+            and bamboo, creating the perfect habitat for a rich diversity of
+            flora and fauna. As you venture through Kheoni's untamed landscapes,
+            you'll discover why this protected area has become one of central
+            India's most promising wildlife destinations.
+          </p>
+        </div>
+
+        <!-- Safari Options - 3 Column Grid -->
+        <h2 class="section-heading">Safari Experiences</h2>
+
+        <div class="safari-options">
+          <div class="safari-grid">
+            <div class="safari-card">
+              <img
+                src="/images/kheoni wildlife media/jungle safari morning.jpg"
+                alt="Morning Safari"
+                class="safari-image"
+              />
+              <h3 class="safari-title">Morning Safari</h3>
+              <div class="safari-info">
+                <h3>Morning Safari</h3>
+                <p class="safari-time">6:00 AM - 9:30 AM</p>
+                <p class="safari-price">₹5,500 per person</p>
+                <p class="safari-description">
+                  Experience the forest awakening with maximum wildlife
+                  activity. Perfect lighting for photography as the mist rises
+                  from the forest floor.
+                </p>
+                <a href="#" class="safari-button">Book Now</a>
+              </div>
+            </div>
+
+            <div class="safari-card">
+              <img
+                src="/images/kheoni wildlife media/jungle safari evening.jpg"
+                alt="Evening Safari"
+                class="safari-image"
+              />
+              <h3 class="safari-title">Evening Safari</h3>
+              <div class="safari-info">
+                <h3>Evening Safari</h3>
+                <p class="safari-time">3:30 PM - 6:30 PM</p>
+                <p class="safari-price">₹5,500 per person</p>
+                <p class="safari-description">
+                  Witness predators beginning their hunts as the day cools.
+                  Stunning golden hour light creates a magical atmosphere.
+                </p>
+                <a href="#" class="safari-button">Book Now</a>
+              </div>
+            </div>
+
+            <div class="safari-card">
+              <img
+                src="/images/kheoni wildlife media/jungle safari night.jpg"
+                alt="Full-Day Safari"
+                class="safari-image"
+              />
+              <h3 class="safari-title">Full-Day Safari</h3>
+              <div class="safari-info">
+                <h3>Full-Day Safari</h3>
+                <p class="safari-time">6:00 AM - 6:30 PM</p>
+                <p class="safari-price">₹9,500 per person</p>
+                <p class="safari-description">
+                  Complete immersive experience with expert naturalists,
+                  including meals in the forest and special tracking sessions.
+                </p>
+                <a href="#" class="safari-button">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="sanctuary-video-section">
+          <h2>Experience Kheoni</h2>
+          <div class="video-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/QoxmzlMv2pk"
+              title="Kheoni Wildlife Sanctuary"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <!-- <p class="video-caption">Discover the untamed beauty and diverse wildlife of Kheoni Sanctuary through this immersive journey</p> -->
+        </div>
+
+        <!-- Wildlife Section -->
+        <h2 class="section-heading">Remarkable Biodiversity</h2>
+
+        <div class="wildlife-category">
+          <h3>Big Cats & Predators</h3>
+          <div class="wildlife-grid">
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/indiantiger3.jpg"
+                  alt="Bengal Tiger"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Tiger</h4>
+                <p>
+                  Migrated from Ratapani, these magnificent cats have
+                  successfully colonized Kheoni, establishing it as an emerging
+                  tiger territory.
+                </p>
+              </div>
+            </div>
+
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/leopard2.jpg"
+                  alt="Leopard"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Leopard</h4>
+                <p>
+                  Present in significant numbers, these elusive and adaptable
+                  big cats can be spotted in the sanctuary's dense forest areas.
+                </p>
+              </div>
+            </div>
+
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/stripedhyena2.jpg"
+                  alt="Striped Hyena"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Striped Hyena</h4>
+                <p>
+                  These nocturnal scavengers play a vital role in the ecosystem
+                  by cleaning up carcasses and maintaining forest health.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wildlife-category">
+          <h3>Herbivores</h3>
+          <div class="wildlife-grid">
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/spotteddeer2.jpg"
+                  alt="Spotted Deer"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Chital (Spotted Deer)</h4>
+                <p>
+                  The most commonly sighted deer species in Kheoni, recognizable
+                  by their distinctive white spots and elegant antlers.
+                </p>
+              </div>
+            </div>
+
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/nilgai2.jpg"
+                  alt="Nilgai"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Nilgai</h4>
+                <p>
+                  India's largest antelope species, these majestic creatures can
+                  be spotted in Kheoni's grasslands and open woodlands.
+                </p>
+              </div>
+            </div>
+
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/blackbuck2.jpg"
+                  alt="Blackbuck"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Blackbuck</h4>
+                <p>
+                  Known for their distinctive spiral horns and contrasting black
+                  and white coloration, these swift antelopes are a joy to
+                  observe.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wildlife-category">
+          <h3>Avian Diversity</h3>
+          <p class="category-intro">
+            A 2018 survey identified approximately 125 bird species in Kheoni,
+            making it a paradise for birdwatchers.
+          </p>
+          <div class="wildlife-grid">
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/paradiseflycatcher1.jpg"
+                  alt="Indian Paradise Flycatcher"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Indian Paradise Flycatcher</h4>
+                <p>
+                  The state bird of Madhya Pradesh, known for its long,
+                  streaming white tail feathers that flow behind it in flight.
+                </p>
+              </div>
+            </div>
+
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/plumheadedparakeet.jpg"
+                  alt="Plum-headed Parakeet"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Plum-headed Parakeet</h4>
+                <p>
+                  These colorful birds add vibrant splashes of green and purple
+                  to Kheoni's canopy, often seen in small flocks.
+                </p>
+              </div>
+            </div>
+
+            <div class="wildlife-card">
+              <div class="wildlife-image">
+                <img
+                  src="/images/kheoni wildlife media/blackdrongo.jpg"
+                  alt="Black Drongo"
+                />
+              </div>
+              <div class="wildlife-info">
+                <h4>Black Drongo</h4>
+                <p>
+                  Known for its aggressive behavior, this glossy black bird with
+                  a distinctive forked tail is a skilled aerial hunter.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forest Ecosystem Section -->
+        <div class="ecosystem-section">
+          <div
+            class="ecosystem-bg"
+            style="
+              background-image: url('/images/kheoni wildlife media/forestview.jpg');
+            "
+          ></div>
+          <div class="ecosystem-content">
+            <div class="ecosystem-text">
+              <h2>Forest Ecosystem</h2>
+              <p>
+                Kheoni's dry deciduous forests represent one of central India's
+                most important ecosystems. Dominated by valuable timber species
+                like teak, the sanctuary's vegetation also includes tendu
+                (Indian ebony) and bamboo groves that provide crucial habitat
+                for wildlife.
+              </p>
+              <p>
+                The sanctuary experiences distinct seasons, with summer
+                temperatures reaching 45°C while winters can be pleasantly cool.
+                The monsoon transforms the landscape between June and September,
+                bringing vibrant greenery and renewed life to the forest.
+              </p>
+              <p>
+                This balanced ecosystem supports a complete food chain from
+                large predators to the smallest insects, creating a
+                self-sustaining wilderness that offers visitors a glimpse into
+                nature's perfect equilibrium.
+              </p>
+            </div>
+            <div class="ecosystem-image">
+              <img
+                src="/images/kheoni wildlife media/forestview.jpg"
+                alt="Kheoni Forest"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Conservation Section -->
+        <div class="conservation-section">
+          <!-- <div class="conservation-bg"></div> -->
+          <div class="conservation-content">
+            <div class="conservation-info">
+              <h2>Conservation Initiatives</h2>
+              <p>
+                At Tiger Safari Lodge, we're committed to supporting Kheoni's
+                delicate ecosystem through sustainable tourism and active
+                conservation participation. Our initiatives include:
+              </p>
+
+              <ul class="conservation-list">
+                <li>
+                  <span class="conservation-icon">🐾</span>
+                  <span
+                    >Supporting tiger monitoring programs through camera
+                    trapping and population studies</span
+                  >
+                </li>
+                <li>
+                  <span class="conservation-icon">🌱</span>
+                  <span
+                    >Participating in habitat restoration projects focusing on
+                    native plant species</span
+                  >
+                </li>
+                <li>
+                  <span class="conservation-icon">💧</span>
+                  <span
+                    >Maintaining artificial water sources during dry summer
+                    months</span
+                  >
+                </li>
+                <li>
+                  <span class="conservation-icon">👥</span>
+                  <span
+                    >Engaging local communities through employment and
+                    educational opportunities</span
+                  >
+                </li>
+                <li>
+                  <span class="conservation-icon">🔬</span>
+                  <span
+                    >Supporting wildlife research by providing logistics for
+                    visiting scientists</span
+                  >
+                </li>
+              </ul>
+
+              <p class="conservation-highlight">
+                A portion of every safari booking directly supports these
+                conservation initiatives, allowing our guests to contribute
+                meaningfully to Kheoni's protection.
+              </p>
+            </div>
+            <div class="conservation-image">
+              <img
+                src="/images/kheoni wildlife media/forestconservation2.jpg"
+                alt="Conservation Work"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-cta">
+          <a href="../pages/3d2n.html" class="cta-button"
+            >Book Your Safari Experience</a
+          >
+        </div>
+      </div>
+
+      <!-- Right Column: Sticky Booking Panel -->
+      <div class="booking-panel">
+        <div class="price-details">
+          <h2>Safari Packages</h2>
+          <div class="price">₹5,500</div>
+          <p class="price-info">starting price per safari</p>
+        </div>
+
+        <form
+          class="booking-form"
+          id="booking"
+          action="https://formsubmit.co/bd4@kheoni.com"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Booking Enquiry from Tiger Safari Lodge Website Kheoni Wildlife Page For Safaris"
+          />
+          <input type="hidden" name="_captcha" value="false" />
           <h3>Check Availability</h3>
-        <h3>Make an Enquiry</h3>
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" name="name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Email Address" name="email" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" placeholder="Phone Number" name="phone" required>
-        </div>
-        <div class="form-group">
-          <textarea name="message" placeholder="Your Message (Optional)"></textarea>
-        </div>
-        <button type="submit" class="submit-button">Send Enquiry</button>
-      </form>
-    </div>
-  </div>
-  <!-- Booking Modal -->
-<div id="booking-modal" class="booking-modal">
-  <div class="modal-content">
-    <span class="close-modal">&times;</span>
-    <div class="booking-panel-modal">
-      <div class="price-details">
-        <h2>Safari Packages</h2>
-        <div class="price">₹5,500</div>
-        <p class="price-info">starting price per safari</p>
+          <h3>Make an Enquiry</h3>
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" name="name" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              name="phone"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              name="message"
+              placeholder="Your Message (Optional)"
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Enquiry</button>
+        </form>
       </div>
-      
-      <form class="booking-form" id="booking-form-modal" action="https://formsubmit.co/bd4@kheoni.com" method="POST">
-        <input type="hidden" name="_subject" value="New Booking Enquiry from Tiger Safari Lodge Website Kheoni Wildlife Page For Safaris" />
-        <input type="hidden" name="_captcha" value="false">
-        <h3>Make an Enquiry</h3>
-        <div class="form-group">
-          <input type="text" id="name-modal" placeholder="Your Name" name="name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email-modal" placeholder="Email Address" name="email" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" id="phone-modal" placeholder="Phone Number" name="phone" required>
-        </div>
-        <div class="form-group">
-          <textarea name="message" id="message-modal" placeholder="Your Message (Optional)"></textarea>
-        </div>
-        <button type="submit" class="submit-button">Send Enquiry</button>
-        <p class="booking-note">
-          *We'll contact you shortly to discuss safari options
-        </p>
-      </form>
     </div>
-  </div>
-</div>
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="booking-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="booking-panel-modal">
+          <div class="price-details">
+            <h2>Safari Packages</h2>
+            <div class="price">₹5,500</div>
+            <p class="price-info">starting price per safari</p>
+          </div>
 
-  <!-- Footer -->
-  <footer class="site-footer" data-scroll-section>
-    <div class="footer-content">
-      <div class="footer-logo">Tiger Safari Lodge</div>
-      <div class="footer-links">
-        <div class="footer-column">
-  <h3>Navigate</h3>
-  <a href="../index.html" data-scroll-to>Home</a>
-  <a href="../index.html#about-us" data-scroll-to>Our Story</a>
-  <a href="../index.html#find-us" data-scroll-to>Find Us</a>
-  <a href="../index.html#amenities" data-scroll-to>Amenities</a>
-  <a href="../index.html#kheoniwildlife" data-scroll-to>Kheoni Wildlife</a>
-  <a href="../index.html#nearby" data-scroll-to>Explore</a>
-  <a href="../index.html#contact" data-scroll-to>Contact Us</a>
-</div>
-        <div class="footer-column">
-          <h3>Contact</h3>
-          <p>reservations@khayali.com</p>
-          <p>+91 98765 43210</p>
+          <form
+            class="booking-form"
+            id="booking-form-modal"
+            action="https://formsubmit.co/bd4@kheoni.com"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Booking Enquiry from Tiger Safari Lodge Website Kheoni Wildlife Page For Safaris"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <h3>Make an Enquiry</h3>
+            <div class="form-group">
+              <input
+                type="text"
+                id="name-modal"
+                placeholder="Your Name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email-modal"
+                placeholder="Email Address"
+                name="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                id="phone-modal"
+                placeholder="Phone Number"
+                name="phone"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                id="message-modal"
+                placeholder="Your Message (Optional)"
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Enquiry</button>
+            <p class="booking-note">
+              *We'll contact you shortly to discuss safari options
+            </p>
+          </form>
         </div>
-        <div class="footer-column">
+      </div>
+    </div>
+
+    <!-- Footer -->
+     <footer class="site-footer" >
+      <div class="footer-content">
+        <div class="footer-logo">Tiger Safari Lodge</div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Navigate</h3>
+            <a href="https://tigersafarilodge.com">Home</a>
+            <a href="https://tigersafarilodge.com/pages/kheoni-rooms.html">Stays</a>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <a href="mailto:reservations.tigersafarilodge@gmail.com">reservations.tigersafarilodge@gmail.com</a>
+            <a href="tel:+919685656587">+91 96856 56587</a>
+            <a href="tel:+917389901815">+91 73899 01815</a>
+          </div>
+          <!-- <div class="footer-column">
           <h3>Follow Us</h3>
           <div class="social-links">
             <a href="#">Instagram</a>
             <a href="#">Facebook</a>
             <a href="#">Twitter</a>
           </div>
+        </div> -->
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Khayali Ecoventures. All rights reserved.</p>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Khayali Ecoventures. All rights reserved.</p>
+      </div>
+    </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <script src="../js/location-page.js"></script>
-  <script src="../js/navigation.js"></script>
-  <script>
-    // Set up the carousel images when DOM is loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      const carouselTrack = document.querySelector('.carousel-track');
-      const carouselIndicators = document.querySelector('.carousel-indicators');
-      let currentSlide = 0;
-      
-      // Carousel functionality
-      function updateCarousel() {
-        if (!carouselTrack) return;
-        carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        // Update indicators
-        document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
-          if (index === currentSlide) {
-            indicator.classList.add('active');
-          } else {
-            indicator.classList.remove('active');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="../js/location-page.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script>
+      // Set up the carousel images when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        const carouselTrack = document.querySelector(".carousel-track");
+        const carouselIndicators = document.querySelector(
+          ".carousel-indicators"
+        );
+        let currentSlide = 0;
+
+        // Carousel functionality
+        function updateCarousel() {
+          if (!carouselTrack) return;
+          carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+          // Update indicators
+          document
+            .querySelectorAll(".carousel-indicator")
+            .forEach((indicator, index) => {
+              if (index === currentSlide) {
+                indicator.classList.add("active");
+              } else {
+                indicator.classList.remove("active");
+              }
+            });
+        }
+
+        // Set up click handlers for next/prev buttons
+        document
+          .querySelector(".carousel-prev")
+          ?.addEventListener("click", () => {
+            const slides = document.querySelectorAll(".carousel-slide").length;
+            currentSlide = (currentSlide - 1 + slides) % slides;
+            updateCarousel();
+          });
+
+        document
+          .querySelector(".carousel-next")
+          ?.addEventListener("click", () => {
+            const slides = document.querySelectorAll(".carousel-slide").length;
+            currentSlide = (currentSlide + 1) % slides;
+            updateCarousel();
+          });
+
+        // Set up click handlers for indicators
+        document
+          .querySelectorAll(".carousel-indicator")
+          .forEach((indicator, index) => {
+            indicator.addEventListener("click", () => {
+              currentSlide = index;
+              updateCarousel();
+            });
+          });
+
+        // Modal functionality
+        const modal = document.getElementById("booking-modal");
+        const ctaButton = document.querySelector(".bottom-cta a");
+        const safariButtons = document.querySelectorAll(".safari-button");
+        const closeBtn = document.querySelector(".close-modal");
+
+        // Open modal when clicking CTA button
+        if (ctaButton) {
+          ctaButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+          });
+        }
+
+        // Open modal when clicking safari booking buttons
+        safariButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+          });
+        });
+
+        // Close modal when clicking X button
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
+          });
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
           }
         });
-      }
-      
-      // Set up click handlers for next/prev buttons
-      document.querySelector('.carousel-prev')?.addEventListener('click', () => {
-        const slides = document.querySelectorAll('.carousel-slide').length;
-        currentSlide = (currentSlide - 1 + slides) % slides;
-        updateCarousel();
       });
-      
-      document.querySelector('.carousel-next')?.addEventListener('click', () => {
-        const slides = document.querySelectorAll('.carousel-slide').length;
-        currentSlide = (currentSlide + 1) % slides;
-        updateCarousel();
-      });
-      
-      // Set up click handlers for indicators
-      document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          currentSlide = index;
-          updateCarousel();
-        });
-      });
-  
-      // Modal functionality
-      const modal = document.getElementById("booking-modal");
-      const ctaButton = document.querySelector(".bottom-cta a");
-      const safariButtons = document.querySelectorAll(".safari-button");
-      const closeBtn = document.querySelector(".close-modal");
-  
-      // Open modal when clicking CTA button
-      if (ctaButton) {
-        ctaButton.addEventListener("click", function(e) {
-          e.preventDefault();
-          modal.style.display = "block";
-          document.body.style.overflow = "hidden"; // Prevent scrolling
-        });
-      }
-  
-      // Open modal when clicking safari booking buttons
-      safariButtons.forEach(button => {
-        button.addEventListener("click", function(e) {
-          e.preventDefault();
-          modal.style.display = "block";
-          document.body.style.overflow = "hidden"; // Prevent scrolling
-        });
-      });
-  
-      // Close modal when clicking X button
-      if (closeBtn) {
-        closeBtn.addEventListener("click", function() {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto"; // Re-enable scrolling
-        });
-      }
-  
-      // Close modal when clicking outside
-      window.addEventListener("click", function(e) {
-        if (e.target === modal) {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto"; // Re-enable scrolling
-        }
-      });
-  
-      
-    });
-  </script>
-  
-</body>
+    </script>
+  </body>
 </html>
