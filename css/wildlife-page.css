@@ -184,7 +184,31 @@ body {
     height: 100%;
     border: none;
   }
-  
+  .home-icon {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home-icon:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: #c8a97e;
+}
+
+/* Make logo link back to home too */
+.navbar-logo {
+  cursor: pointer;
+}
+
+/* Remove existing menu-toggle button and navbar-links completely */
+.menu-toggle, .navbar-links {
+  display: none !important;
+}
 
   
   /* Section Headings */

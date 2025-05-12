@@ -16,6 +16,8 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
+    opacity: 1 !important;
+  transition: background-color 0.3s ease;
 }
 
 .navbar-logo {
@@ -23,21 +25,35 @@ body {
   opacity: 1;
 }
 
-.navbar-links a {
-  color: white !important;
-  opacity: 1;
+
+
+
+/* Add to both room-page.css and wildlife-page.css */
+.home-icon {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.menu-toggle {
-  color: white !important;
+.home-icon:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: #c8a97e;
 }
 
-/* Make sure the navbar shows immediately */
-.navbar {
-  opacity: 1 !important;
-  transition: background-color 0.3s ease;
+/* Make logo link back to home too */
+.navbar-logo {
+  cursor: pointer;
 }
 
+/* Remove existing menu-toggle button and navbar-links completely */
+.menu-toggle, .navbar-links {
+  display: none !important;
+}
 /* Hero Section */
 .room-hero {
   height: 80vh;
