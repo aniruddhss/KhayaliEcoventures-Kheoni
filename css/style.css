@@ -932,7 +932,24 @@ p,
   color: rgba(255, 255, 255, 0.7);
   margin: 5px 0;
 }
+.info-card a {
+  text-decoration: none !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: color 0.3s ease;
+}
 
+.info-card a:hover {
+  color: white !important;
+}
+
+/* Remove any visited state color */
+.info-card a:visited {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.info-card a:hover:visited {
+  color: white !important;
+}
 .social-icons {
   display: flex;
   justify-content: center;
