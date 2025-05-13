@@ -1,80 +1,234 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-  // Get loader element
+  // Get loader and progress elements
   const loader = document.getElementById("loader");
   const progressBar = document.getElementById("loading-progress");
+  
+  // Track progress state to prevent double animations
+  let progressState = 0; // 0: not started, 1: at 50%, 2: completed
   
   // Get major page sections
   const navbar = document.getElementById("navbar");
   const heroContent = document.getElementById("hero-content");
   const imageGrid = document.getElementById("image-grid");
+  const videoContainer = document.getElementById("video-container");
   
-  // Define critical elements that should appear first
-  const criticalElements = [navbar, heroContent, imageGrid];
+  // Keep track of whether video has actually started playing
+  let videoIsPlaying = false;
   
-  // Define loading stages with selectors and delays
-  const loadStages = [
-    {
-      elements: document.querySelectorAll('#navbar, #hero-content, #image-grid'),
-      delay: 300
-    },
-    {
-      elements: document.querySelectorAll('.about-section'),
-      delay: 1000
-    },
-    {
-      elements: document.querySelectorAll('.map-section'),
-      delay: 1500
-    },
-    {
-      elements: document.querySelectorAll('.amenities-section, .kheoniwildlife-section'),
-      delay: 2000
-    },
-    {
-      elements: document.querySelectorAll('.nearby-section, .contact-section, .site-footer'),
-      delay: 2500
-    }
-  ];
-
-  // Set up the progress bar animation
-  if (progressBar) {
-    setTimeout(function() {
-      progressBar.style.transition = "width 1.8s cubic-bezier(0.65, 0, 0.35, 1)";
-      progressBar.style.width = "100%";
-    }, 100);
-  }
+  // Create a better detection for mobile devices
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
-  // Page load complete event handler
-  window.addEventListener('load', function() {
-    // Hide loader when main content is ready
-    if (loader) {
-      loader.style.opacity = "0";
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500);
+  // Initialize video more intelligently - keep the placeholder until video loads
+  if (videoContainer) {
+    // Store original placeholder content
+    const placeholderContent = videoContainer.innerHTML;
+    
+    // Create video element but don't replace placeholder yet
+    const videoElement = document.createElement('video');
+    videoElement.id = 'background-video';
+    videoElement.autoplay = true;
+    videoElement.muted = true;
+    videoElement.loop = true;
+    videoElement.playsInline = true;
+    videoElement.style.opacity = "0"; // Hide initially
+    videoElement.style.position = "absolute";
+    videoElement.style.top = "0";
+    videoElement.style.left = "0";
+    videoElement.style.width = "100%";
+    videoElement.style.height = "100%";
+    videoElement.style.objectFit = "cover";
+    
+    const sourceElement = document.createElement('source');
+    sourceElement.src = "tigersafarilodge (1).mp4";
+    sourceElement.type = "video/mp4";
+    
+    videoElement.appendChild(sourceElement);
+    
+    // Pre-load the video in the background without replacing placeholder
+    if (!isMobile) {
+      // For desktop - append video behind poster image
+      videoContainer.appendChild(videoElement);
     }
     
-    // Progressive reveal of content based on stages
-    loadStages.forEach((stage) => {
-      setTimeout(() => {
-        stage.elements.forEach(el => {
-          if (el) {
-            el.style.opacity = "1";
-            el.classList.add('loaded');
+    // Attempt to play and set up event listeners
+    const attemptVideoPlay = function() {
+      // Check if video element exists in the DOM
+      const existingVideo = document.getElementById('background-video');
+      const video = existingVideo || videoElement;
+      
+      // If on mobile and video doesn't exist in DOM yet, add it now
+      if (isMobile && !existingVideo && videoContainer) {
+        videoContainer.appendChild(video);
+      }
+      
+      // Try to play the video with error handling
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // Video started playing successfully
+          videoIsPlaying = true;
+          
+          // Update progress bar if not already done
+          if (progressBar && progressState === 0) {
+            progressState = 1;
+            progressBar.style.width = "50%";
           }
+          
+          // Fade in video and remove placeholder with crossfade
+          setTimeout(() => {
+            video.style.transition = "opacity 1s ease";
+            video.style.opacity = "1";
+            
+            // If there are any images inside videoContainer, fade them out
+            const placeholderImages = videoContainer.querySelectorAll('img');
+            placeholderImages.forEach(img => {
+              img.style.transition = "opacity 1s ease";
+              img.style.opacity = "0";
+            });
+            
+            // Begin loading the rest of the page content
+            loadRemainingContent();
+          }, 100);
+        }).catch(error => {
+          // Video failed to play automatically
+          console.warn("Video autoplay failed:", error);
+          
+          // Keep placeholder visible
+          // Update progress bar anyway and continue
+          if (progressBar && progressState === 0) {
+            progressState = 1;
+            progressBar.style.width = "50%";
+          }
+          
+          loadRemainingContent();
         });
-      }, stage.delay);
+      } else {
+        // Browser doesn't support modern promise-based API
+        // Update progress and continue loading
+        if (progressBar && progressState === 0) {
+          progressState = 1;
+          progressBar.style.width = "50%";
+        }
+        loadRemainingContent();
+      }
+    };
+    
+    // Add event listener for loadeddata
+    videoElement.addEventListener('loadeddata', function() {
+      attemptVideoPlay();
     });
-  });
-  
-  // Fallback: If page takes too long to load, hide loader anyway
-  setTimeout(() => {
-    if (loader && loader.style.opacity !== "0") {
-      loader.style.opacity = "0";
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500);
+    
+    // Set up timeout for slow connections
+    const videoLoadTimeout = setTimeout(() => {
+      if (!videoIsPlaying) {
+        console.warn("Video taking too long to load, continuing with page load");
+        if (progressBar && progressState === 0) {
+          progressState = 1;
+          progressBar.style.width = "50%";
+        }
+        loadRemainingContent();
+      }
+    }, isMobile ? 2000 : 3000); // Shorter timeout for mobile
+    
+    // Add event listeners for user interactions that might trigger playback
+    if (isMobile) {
+      document.addEventListener('touchstart', function() {
+        if (!videoIsPlaying) {
+          attemptVideoPlay();
+        }
+      }, { once: true });
     }
-  }, 4000);
+    
+    // Clean up function for the timeout
+    videoElement.addEventListener('playing', function() {
+      clearTimeout(videoLoadTimeout);
+    });
+    
+  } else {
+    // No video container found, continue with page load
+    if (progressBar && progressState === 0) {
+      progressState = 1;
+      progressBar.style.width = "50%";
+    }
+    loadRemainingContent();
+  }
+  
+  // Function to load remaining content after video is loaded
+  function loadRemainingContent() {
+    // Define loading stages with selectors and delays
+    const loadStages = [
+      {
+        elements: document.querySelectorAll('#hero-content, #image-grid'),
+        delay: 300
+      },
+      {
+        elements: document.querySelectorAll('.about-section'),
+        delay: 1000
+      },
+      {
+        elements: document.querySelectorAll('.map-section'),
+        delay: 1500
+      },
+      {
+        elements: document.querySelectorAll('.amenities-section, .kheoniwildlife-section'),
+        delay: 2000
+      },
+      {
+        elements: document.querySelectorAll('.nearby-section, .contact-section, .site-footer'),
+        delay: 2500
+      }
+    ];
+    
+    // Complete the progress bar animation - only if not already at 100%
+    if (progressBar && progressBar.style.width !== "100%") {
+      setTimeout(function() {
+        progressBar.style.transition = "width 1.5s cubic-bezier(0.65, 0, 0.35, 1)";
+        progressBar.style.width = "100%";
+      }, 300);
+    }
+    
+    // Page load complete event handler - wait for all resources
+    window.addEventListener('load', function() {
+      // Hide loader when main content is ready
+      if (loader) {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }
+      
+      // Progressive reveal of content based on stages
+      loadStages.forEach((stage) => {
+        setTimeout(() => {
+          stage.elements.forEach(el => {
+            if (el) {
+              el.style.opacity = "1";
+              el.classList.add('loaded');
+            }
+          });
+        }, stage.delay);
+      });
+      
+      // Ensure video is visible and playing
+      const video = document.getElementById("background-video");
+      if (video) {
+        video.style.opacity = "1";
+        video.play();
+      }
+    });
+    
+    // Fallback: If page takes too long to load, hide loader anyway
+    setTimeout(() => {
+      if (loader && loader.style.opacity !== "0") {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }
+    }, 4000);
+  }
 });
 document.addEventListener("scroll", function() {
   // After scrolling 100px, add 'scrolled' class to body
@@ -250,16 +404,6 @@ if (isInternalNavigation && window.location.hash) {
     // Make extra sure it's clickable
     ctaButton.style.pointerEvents = "all";
     ctaButton.style.cursor = "pointer";
-  }
-
- const loader = document.getElementById("loader");
-  const progressBar = document.getElementById("loading-progress");
-  
-  // Animate the progress bar from 0% to 100% over 2 seconds
-  if (progressBar) {
-    setTimeout(function() {
-      progressBar.style.width = "100%";
-    }, 100);
   }
   
   // Hide the loader after the animation (your existing code)

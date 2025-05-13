@@ -88,27 +88,15 @@
         </div>
       </div>
     </div>
-    <!-- Replace current video setup with this -->
-    <div id="video-container">
-      <img
-        src="videoposter.jpg"
-        alt="Tiger Safari Lodge"
-        style="width: 100%; height: 100%; object-fit: cover"
-      />
-      <script>
-        // Load video after page content is ready
-        window.addEventListener("load", function () {
-          setTimeout(function () {
-            const videoContainer = document.getElementById("video-container");
-            videoContainer.innerHTML = `
-          <video id="background-video" autoplay muted loop playsinline>
-            <source src="tigersafarilodge (1).mp4" type="video/mp4">
-          </video>
-        `;
-          }, 1000); // 1 second delay after load
-        });
-      </script>
-    </div>
+
+    <!-- Replace your current video container with this improved version -->
+<div id="video-container">
+  <img 
+    src="videoposter.jpg" 
+    alt="Tiger Safari Lodge" 
+    style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"
+  />
+</div>
 
     <!-- Hero content moved outside of video container -->
     <div id="hero-content">
