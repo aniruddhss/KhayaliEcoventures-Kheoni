@@ -1,4 +1,81 @@
+document.addEventListener("DOMContentLoaded", function() {
+  // Get loader element
+  const loader = document.getElementById("loader");
+  const progressBar = document.getElementById("loading-progress");
+  
+  // Get major page sections
+  const navbar = document.getElementById("navbar");
+  const heroContent = document.getElementById("hero-content");
+  const imageGrid = document.getElementById("image-grid");
+  
+  // Define critical elements that should appear first
+  const criticalElements = [navbar, heroContent, imageGrid];
+  
+  // Define loading stages with selectors and delays
+  const loadStages = [
+    {
+      elements: document.querySelectorAll('#navbar, #hero-content, #image-grid'),
+      delay: 300
+    },
+    {
+      elements: document.querySelectorAll('.about-section'),
+      delay: 1000
+    },
+    {
+      elements: document.querySelectorAll('.map-section'),
+      delay: 1500
+    },
+    {
+      elements: document.querySelectorAll('.amenities-section, .kheoniwildlife-section'),
+      delay: 2000
+    },
+    {
+      elements: document.querySelectorAll('.nearby-section, .contact-section, .site-footer'),
+      delay: 2500
+    }
+  ];
 
+  // Set up the progress bar animation
+  if (progressBar) {
+    setTimeout(function() {
+      progressBar.style.transition = "width 1.8s cubic-bezier(0.65, 0, 0.35, 1)";
+      progressBar.style.width = "100%";
+    }, 100);
+  }
+  
+  // Page load complete event handler
+  window.addEventListener('load', function() {
+    // Hide loader when main content is ready
+    if (loader) {
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    }
+    
+    // Progressive reveal of content based on stages
+    loadStages.forEach((stage) => {
+      setTimeout(() => {
+        stage.elements.forEach(el => {
+          if (el) {
+            el.style.opacity = "1";
+            el.classList.add('loaded');
+          }
+        });
+      }, stage.delay);
+    });
+  });
+  
+  // Fallback: If page takes too long to load, hide loader anyway
+  setTimeout(() => {
+    if (loader && loader.style.opacity !== "0") {
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    }
+  }, 4000);
+});
 document.addEventListener("scroll", function() {
   // After scrolling 100px, add 'scrolled' class to body
   if (window.scrollY > 100) {
