@@ -123,8 +123,7 @@ input[type="submit"] {
   height: 100%;
   object-fit: cover;
 }
-/* ...existing code... */
-/* Fix for image grid to properly contain images */
+
 #image-grid {
   position: fixed;
   top: 0;
@@ -328,7 +327,7 @@ input[type="submit"] {
   pointer-events: none;
 }
 
-.cta-button {
+/* .cta-button {
   display: inline-block;
   padding: 15px 30px;
   background-color: white;
@@ -361,7 +360,7 @@ input[type="submit"] {
 #hero-content .cta-button, 
 #hero-content button {
   pointer-events: auto !important;
-}
+} */
 
 /* After scrolling a bit, ensure hero content doesn't block anything */
 .scrolled #hero-content {
@@ -608,7 +607,7 @@ p,
   color: white;
 }
 
-@media (max-width: 1220px) {
+@media (max-width: 1536px) {
   #hero-content h1 {
     font-size: 3.5rem;
   }
@@ -626,7 +625,7 @@ p,
   }
   .section {
     height: auto !important; /* Override the fixed height */
-    min-height: 100vh; /* Set minimum height instead */
+    min-height: 100vh !important; /* Set minimum height instead */
     padding: 60px 20px;
   }
 
