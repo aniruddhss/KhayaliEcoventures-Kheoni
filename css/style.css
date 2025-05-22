@@ -294,7 +294,111 @@ input[type="submit"] {
   pointer-events: none;
   /* Make sure the video doesn't capture clicks */
 }
+/* Book Now Button in navbar */
+.book-now-button {
+  position: absolute;
+  right: 25%; /* Position to the left of menu toggle on mobile */
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #c8a97e;
+  color: #000 !important;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100; /* Ensure it's above other elements */
+}
 
+.book-now-button:hover {
+  background-color: #d9ba8c;
+  transform: translateY(-50%) translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for the Book Now button */
+@media (min-width: 768px) {
+  .book-now-button {
+    right: 30px; /* Position further right on desktop */
+    padding: 10px 22px;
+    font-size: 1rem;
+  }
+}
+
+/* When navbar links are visible on desktop */
+/* Adjust navbar to properly position elements */
+@media (min-width: 1220px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Change back to space-between */
+    align-items: center;
+    padding: 20px 5%; /* Keep existing padding */
+  }
+  
+  .navbar-logo {
+    flex: 0 0 auto;
+    order: 1; /* Explicitly set logo order */
+  }
+  
+  .navbar-links {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center; /* Center the links */
+    margin: 0 20px; /* Add margin on both sides */
+    order: 2; /* Set navbar links in middle */
+  }
+  
+  .book-now-button {
+    top: auto;
+    transform: none;
+    margin-left: 0;
+    order: 3; 
+    position: absolute;
+    right: 80px;
+    margin-right: 10px; 
+  }
+  
+  .book-now-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .menu-toggle {
+    order: 4; /* Ensure menu toggle comes last */
+  }
+}
+
+/* Mobile layout fixes */
+@media (max-width: 1219px) {
+  
+  .navbar-logo{
+    font-size: 1.1rem;
+  }
+  
+  .book-now-button {
+    font-size:0.6rem;
+    position: absolute;
+    right: 15%;
+    margin-right: 10px; /* Position to the left of menu toggle */
+  }
+  
+  .menu-toggle {
+    position: relative;
+    right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .book-now-button.with-home {
+    right: 70px;
+  }
+}
 #hero-content {
   position: fixed;
   bottom: 10%;
@@ -1970,3 +2074,5 @@ p,
     font-size: 1rem;
   }
 }
+
+
