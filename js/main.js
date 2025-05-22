@@ -264,7 +264,7 @@ function initPropertyMap() {
   });
   
   L.marker(propertyCoords, {icon: lodgeIcon}).addTo(map)
-    .bindPopup('<b>Tiger Safari Lodge</b><br>Kheoni Wildlife Sanctuary')
+    .bindPopup('<b>Tiger Safari Lodge</b>')
     .openPopup();
     
   // Add a circle to show the general area
