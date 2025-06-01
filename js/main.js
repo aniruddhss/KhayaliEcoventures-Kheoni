@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
   // Get major page sections
   const navbar = document.getElementById("navbar");
   const heroContent = document.getElementById("hero-content");
-  const imageGrid = document.getElementById("image-grid");
   const videoContainer = document.getElementById("video-container");
+  if (navbar) {
+    navbar.style.opacity = "1";
+    navbar.style.visibility = "visible";
+  }
   
   // Keep track of whether video has actually started playing
   let videoIsPlaying = false;
@@ -160,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Define loading stages with selectors and delays
     const loadStages = [
       {
-        elements: document.querySelectorAll('#hero-content, #image-grid'),
+        elements: document.querySelectorAll('#hero-content,#navbar'),
         delay: 300
       },
       {
@@ -227,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function() {
           loader.style.display = "none";
         }, 500);
       }
-    }, 4000);
+    }, 2000);
   }
 });
 document.addEventListener("scroll", function() {
@@ -330,10 +333,6 @@ function initPropertyMap() {
 }
 window.addEventListener("load", function () {
   // Variables
-  const image1 = document.getElementById("image-1");
-  const image2 = document.getElementById("image-2");
-  const image3 = document.getElementById("image-3");
-  const image4 = document.getElementById("image-4");
   const navbar = document.getElementById("navbar");
   const heroContent = document.getElementById("hero-content");
   const ctaButton = document.getElementById("explore-button");
@@ -341,6 +340,9 @@ window.addEventListener("load", function () {
   const navbarLinks = document.getElementById("navbar-links");
   const navLinks = document.querySelectorAll(".navbar-links a");
   // Add near the top of your script
+  if (navbar) {
+    navbar.style.opacity = "1";
+  }
 
 // Check if user is coming from another page on our site
 const referrer = document.referrer;
@@ -467,27 +469,7 @@ if (isInternalNavigation && window.location.hash) {
   initPropertyMap();
   function initScrollAnimations() {
     const isMobile = window.innerWidth <= 768;
-    // const locoScroll = new LocomotiveScroll({
-    //   el: document.querySelector("[data-scroll-container]"),
-    //   smooth: true,
-    //   multiplier: 1,
-    //   smartphone: {
-    //     smooth: false,
-    //   },
-    //   tablet: {
-    //     smooth: true,
-    //     breakpoint: 1024,
-    //   },
-    // });
-
-    // let scrollTimeout;
-    // locoScroll.on("scroll", function () {
-    //   clearTimeout(scrollTimeout);
-    //   scrollTimeout = setTimeout(function () {
-    //     ScrollTrigger.update();
-    //   }, 20); // Small delay to reduce number of updates
-    // });
-
+  
     gsap.registerPlugin(ScrollTrigger);
     const locoScroll = setupScrollerProxy();
 
@@ -510,47 +492,11 @@ if (isInternalNavigation && window.location.hash) {
         : "fixed",
     });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#content",
-        scroller: "[data-scroll-container]",
-        start: "top bottom",
-        end: "top top",
-        scrub: true,
-      },
-    });
 
-    
-    tl.to(image1, { x: "-100%", y: "-100%", ease: "power2.inOut" }, 0)
-      .to(image2, { x: "100%", y: "-100%", ease: "power2.inOut" }, 0)
-      .to(image3, { x: "-100%", y: "100%", ease: "power2.inOut" }, 0)
-      .to(image4, { x: "100%", y: "100%", ease: "power2.inOut" }, 0);
-
-    document.querySelectorAll(".grid-image").forEach((img) => {
-      img.style.willChange = "transform";
-      img.style.transform = "translateZ(0)"; // Force GPU acceleration
-    });
-
-    // Remove will-change after animations
-    setTimeout(() => {
-      document.querySelectorAll(".grid-image").forEach((img) => {
-        img.style.willChange = "auto";
-      });
-    }, 3000);
-
-    // Navbar animation - using earlier timing
-    const navTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#content",
-        scroller: "[data-scroll-container]",
-        start: "top 50%",
-        end: "top top",
-        scrub: true,
-      },
-    });
-
-    navTl.to(navbar, { opacity: 1, ease: "power1.inOut" }, 0);
-
+    const navbar = document.getElementById("navbar");
+  if (navbar) {
+    navbar.style.opacity = "1";
+  }
     // Separate timeline for hero content - only start fading when the first content section enters
     const heroTl = gsap.timeline({
       scrollTrigger: {
